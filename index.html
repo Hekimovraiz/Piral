@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="az" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-translate="title_home">Piral Kəndi - Ana Səhifə</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/themes.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="day-mode">
+    <header>
+        <div class="container">
+            <div class="logo">
+               <h1 class="logo-piral">PIRAL</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active" data-translate="menu_home">Ana Səhifə</a></li>
+                    <li><a href="about.html" data-translate="menu_about">Haqqımızda</a></li>
+                    <li><a href="news.html" data-translate="menu_news">Xəbərlər</a></li>
+                    <li><a href="contact.html" data-translate="menu_contact">Əlaqə</a></li>
+                    <li><a href="admin.html" data-translate="menu_admin">Admin</a></li>
+                    
+                </ul>
+            </nav>
+            <div class="language-switcher">
+                <button class="lang-btn active" data-lang="az">AZ</button>
+                <button class="lang-btn" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="ru">RU</button>
+            </div>
+            <button id="theme-toggle" class="theme-toggle">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Updated Hero Section with village image -->
+        <section class="hero">
+            <div class="hero-overlay">
+                <div class="hero-content">
+                    <h2 data-translate="welcome_title">Piral Kəndinə Xoş Gəlmisiniz</h2>
+                    <p data-translate="welcome_subtitle">Qədim tarixi və təbii gözəlliyi ilə məşhur olan Piral kəndi</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="intro">
+            <div class="container">
+                <h3 data-translate="about_section">Piral Haqqında</h3>
+                <p data-translate="about_summary">Piral — Azərbaycan Respublikasının Qusar rayonunda yerləşən kənd.Rayon mərkəzindən 20 km şimal-qərbdə yerləşir.</p>
+                <p>Burada yaşayanlar əsasən ləzgi millətinə məxsusdur. 2023-cü il məlumatına görə kəndin əhalisi 3207 nəfərdir. </p>
+                <a href="about.html" class="btn" data-translate="btn_read_more">Daha çox</a>
+            </div>
+        </section>
+
+        <section class="slider">
+            <div class="container">
+                <h3 data-translate="gallery_title">Kəndimizdən Görüntülər</h3>
+                <div class="slider-container">
+                    <div class="slide active">
+                        <img src="images/slide1.jpg" alt="Piral Duzenliyi" data-translate="slide1_alt">
+                    </div>
+                    <div class="slide">
+                        <img src="images/slide2.jpg" alt="Piral bulağı" data-translate="slide2_alt">
+                    </div>
+                    <div class="slide">
+                        <img src="images/slide3.jpg" alt="Piral məktəbi" data-translate="slide3_alt">
+                    </div>
+                    <div class="slide">
+                        <img src="images/slide4.jpg" alt="Kendimiz" data-translate="slide2_alt">
+                    </div>
+                    <div class="slide">
+                        <img src="images/slide5.jpg" alt="Kendimiz" data-translate="slide3_alt">
+                    </div>
+                    <div class="slide">
+                        <img src="images/slide6.jpg" alt="Golumuz" data-translate="slide2_alt">
+                    </div>
+                    <div class="slider-nav">
+                        <button class="prev"><i class="fas fa-chevron-left"></i></button>
+                        <button class="next"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="latest-news">
+            <div class="container">
+                <h3 data-translate="latest_news">Son Xəbərlər</h3>
+                <div class="news-grid" id="latest-news">
+                    <!-- News loaded from JSON -->
+                </div>
+                <a href="news.html" class="btn" data-translate="btn_all_news">Bütün xəbərlər</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p data-translate="footer_text">&copy; 2026 Piral Kəndi. Bütün hüquqlar qorunur.</p>
+        </div>
+    </footer>
+
+    <script src="js/language.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

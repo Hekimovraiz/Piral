@@ -1,0 +1,60 @@
+/* Night Mode Styles */
+body.night-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+.night-mode h2,
+.night-mode h3,
+.night-mode h4,
+.night-mode h5,
+.night-mode h6 {
+    color: #ffffff;
+}
+
+.night-mode p {
+    color: #b0b0b0;
+}
+
+.night-mode header {
+    background-color: rgba(30, 30, 30, 0.9);
+}
+
+.night-mode .intro,
+.night-mode .about-content article,
+.night-mode .news-card,
+.night-mode .contact-card,
+.night-mode .login-form,
+.night-mode .news-item,
+.night-mode .gallery-item {
+    background-color: #1e1e1e;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.night-mode .form-group input,
+.night-mode .form-group textarea,
+.night-mode .form-group select {
+    background-color: #2d2d2d;
+    border-color: #444;
+    color: #e0e0e0;
+}
+
+.night-mode .theme-toggle {
+    color: #e0e0e0;
+}
+
+.night-mode .slider-nav button {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.night-mode .slider-nav button:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.night-mode .tab-btn {
+    color: #b0b0b0;
+}
+
+.night-mode .tab-btn.active {
+    color: #4CAF50;
+}

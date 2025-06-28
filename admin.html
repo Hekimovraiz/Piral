@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="az" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piral Kəndi - Admin Panel</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/themes.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Admin Profil Dizaynı */
+        .admin-profile {
+            background: #2e7d32;
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+        }
+        
+        .profile-info h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            border-bottom: 2px solid rgba(255,255,255,0.3);
+            padding-bottom: 10px;
+        }
+        
+        .profile-info p {
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+        
+        .profile-contact {
+            margin-top: 15px;
+        }
+        
+        .profile-contact a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .profile-contact a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Admin Paneli Dizaynı */
+        .admin-panel {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .admin-tabs {
+            display: flex;
+            border-bottom: 2px solid #eee;
+            margin-bottom: 25px;
+        }
+        
+        .tab-btn {
+            padding: 12px 25px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            color: #666;
+            position: relative;
+        }
+        
+        .tab-btn.active {
+            color: #2e7d32;
+        }
+        
+        .tab-btn.active:after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: #2e7d32;
+        }
+        
+        /* Form Dizaynı */
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+        
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        
+        .btn {
+            background: #2e7d32;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        
+        .btn:hover {
+            background: #4caf50;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        
+        .logout-btn {
+            background: #f44336;
+            margin-top: 20px;
+        }
+        
+        .logout-btn:hover {
+            background: #d32f2f;
+        }
+        
+        /* Xəbərlər Listi */
+        .news-item {
+            border: 1px solid #eee;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: all 0.3s;
+        }
+        
+        .news-item:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
+        }
+        
+        .news-item-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+        
+        .news-item-image img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .news-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .edit-btn {
+            background: #2196F3;
+        }
+        
+        .delete-btn {
+            background: #f44336;
+        }
+        
+        /* Dark Mode */
+        body.night-mode .admin-profile {
+            background: #1a4d1f;
+        }
+        
+        body.night-mode .admin-panel {
+            background: #1e1e1e;
+            color: #e0e0e0;
+        }
+        
+        body.night-mode .tab-btn {
+            color: #b0b0b0;
+        }
+        
+        body.night-mode .tab-btn.active {
+            color: #8bc34a;
+        }
+        
+        body.night-mode .form-group input,
+        body.night-mode .form-group textarea,
+        body.night-mode .form-group select {
+            background: #2d2d2d;
+            border-color: #444;
+            color: #e0e0e0;
+        }
+        
+        body.night-mode .news-item {
+            border-color: #444;
+            background: #252525;
+        }
+    </style>
+</head>
+<body class="day-mode">
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1 class="logo-piral">PIRAL | Admin</h1> 
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Ana Səhifə</a></li>
+                    <li><a href="admin.html" class="active">Admin</a></li>
+                </ul>
+            </nav>
+            <div class="language-switcher">
+                <button class="lang-btn active" data-lang="az">AZ</button>
+                <button class="lang-btn" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="ru">RU</button>
+            </div>
+            <button id="theme-toggle" class="theme-toggle">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="admin-section">
+            <div class="container">
+                <div id="login-section">
+                    <div class="admin-profile">
+                        <img src="images/raiz.jpg" alt="Raiz Hekimov" class="profile-image">
+                        <div class="profile-info">
+                            <h3>Raiz Hekimov</h3>
+                            <p><strong>Yaşayış yeri:</strong> Piral kəndi, Qusar rayonu, Azərbaycan</p>
+                            <p><strong>İxtisas:</strong> Alqoritmik proqramlaşdırma və veb texnologiyalar</p>
+                            <div class="profile-contact">
+                                <a href="mailto:raizhekimov2010@gmail.com"><i class="fas fa-envelope"></i> raizhekimov2010@gmail.com</a>
+                                <a href="https://t.me/Lezgin_R" target="_blank"><i class="fab fa-telegram"></i> @Lezgin_R</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h2>Admin Girişi</h2>
+                    <form id="login-form">
+                        <div class="form-group">
+                            <label>İstifadəçi adı:</label>
+                            <input type="text" id="username" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Şifrə:</label>
+                            <input type="password" id="password" required>
+                        </div>
+                        <button type="submit" class="btn">Daxil ol</button>
+                    </form>
+                </div>
+
+                <div id="dashboard-section" style="display:none;">
+                    <div class="admin-profile">
+                        <img src="images/raiz.jpg" alt="Raiz Hekimov" class="profile-image">
+                        <div class="profile-info">
+                            <h3>Raiz Hekimov</h3>
+                            <p><strong>Yaşayış yeri:</strong> Piral kəndi, Qusar rayonu, Azərbaycan</p>
+                            <p><strong>İxtisas:</strong> Alqoritmik proqramlaşdırma və veb texnologiyalar</p>
+                            <p><strong>Təcrübə:</strong> Python, C++, JavaScript, CSS, HTML, Git</p>
+                            <div class="profile-contact">
+                                <a href="mailto:raizhekimov2010@gmail.com"><i class="fas fa-envelope"></i> raizhekimov2010@gmail.com</a>
+                                <a href="https://t.me/Lezgin_R" target="_blank"><i class="fab fa-telegram"></i> @Lezgin_R</a>
+                                <a href="https://instagram.com/hek1mov_038r" target="_blank"><i class="fab fa-instagram"></i> @hek1mov_038r</a>
+                            </div>
+                            <button class="btn logout-btn" id="logout-btn">
+                                <i class="fas fa-sign-out-alt"></i> Çıxış
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="admin-panel">
+                        <div class="admin-tabs">
+                            <button class="tab-btn active" data-tab="news-tab">Xəbərlər</button>
+                            <button class="tab-btn" data-tab="gallery-tab">Qalereya</button>
+                        </div>
+
+                        <div class="tab-content active" id="news-tab">
+                            <h3>Yeni Xəbər Əlavə Et</h3>
+                            <form id="add-news-form">
+                                <div class="form-group">
+                                    <label>Başlıq:</label>
+                                    <input type="text" id="news-title" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Tarix:</label>
+                                    <input type="date" id="news-date" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Şəkil:</label>
+                                    <input type="file" id="news-image" accept="image/*">
+                                </div>
+                                <div class="form-group">
+                                    <label>Qısa məzmun:</label>
+                                    <textarea id="news-summary" rows="3" required></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label>Ətraflı məzmun:</label>
+                                    <textarea id="news-content" rows="5" required></textarea>
+                                </div>
+                                <button type="submit" class="btn">Xəbər Əlavə Et</button>
+                            </form>
+
+                            <h3 style="margin-top: 40px;">Mövcud Xəbərlər</h3>
+                            <div class="admin-news-list" id="admin-news-list">
+                                <!-- Xəbərlər burada yüklənəcək -->
+                            </div>
+                        </div>
+
+                        <div class="tab-content" id="gallery-tab">
+                            <h3>Qalereyaya Şəkil Əlavə Et</h3>
+                            <form id="add-gallery-form">
+                                <div class="form-group">
+                                    <label>Başlıq:</label>
+                                    <input type="text" id="image-title" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Şəkil:</label>
+                                    <input type="file" id="gallery-image" accept="image/*" required>
+                                </div>
+                                <button type="submit" class="btn">Şəkil Əlavə Et</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Piral Kəndi. Bütün hüquqlar qorunur.</p>
+        </div>
+    </footer>
+
+    <script src="js/language.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>
