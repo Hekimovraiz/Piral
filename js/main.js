@@ -79,3 +79,4 @@ function displayAllNews(news) {
     `).join('');
 }
 
+

@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
         'az': {
             // Menu
             'menu_home': 'Ana Səhifə',
-            'menu_about': 'Haqqımızda',
+            'menu_about': 'Haqqında',
             'menu_gallery': 'Qalereya',
             'menu_news': 'Xəbərlər',
             'menu_contact': 'Əlaqə',
@@ -23,14 +23,14 @@ document.addEventListener('DOMContentLoaded', function() {
             'about_p3': 'Piral kəndində ənənəvi ləzgi mədəniyyəti bütün canlılığı ilə qorunub saxlanılır...',
             'culture_dance': 'Ləzgi Rəqsləri',
             'culture_clothes': 'Milli Geyimlər',
-            'infra1': 'Piral kənd orta məktəbi (200 şagird)',
-            'infra2': 'Kənd xəstəxanası (5 nəfərlik tibb işçisi heyəti)',
-            'infra3': 'Mədəniyyət evi (300 nəfərlik auditoriya)',
+            'infra1': 'Piral kənd orta məktəbi (300+ şagird)',
+            'infra2': 'Kənd xəstəxanası (10+ nəfərlik tibb işçisi heyəti)',
+            'infra3': 'Mədəniyyət evi (150 nəfərlik auditoriya)',
             'infra4': 'Kütləvi kitabxana (5000-dən çox kitab)',
-            'infra5': 'İdman kompleksi (futbol meydançası, voleybol və basketbol zalları)',
+            'infra5': 'İdman kompleksi (futbol meydançası, voleybol meydançası)',
             'map_alt': 'Piral kəndinin xəritədə yeri',
             'history_alt': 'Piral kəndinin tarixi',
-            'footer_text': '© 2023 Piral Kəndi. Bütün hüquqlar qorunur.',
+            'footer_text': '© 2026 Piral Kəndi. Bütün hüquqlar qorunur.',
             'footer_privacy': 'Məxfilik Siyasəti',
             'footer_terms': 'İstifadə Qaydaları',
             // ... other translations ...
@@ -59,7 +59,9 @@ document.addEventListener('DOMContentLoaded', function() {
             'slide3_alt': 'Piral məktəbi',
             'latest_news': 'Son Xəbərlər',
             'btn_all_news': 'Bütün xəbərlər',
-            'footer_text': '© 2023 Piral Kəndi. Bütün hüquqlar qorunur.'
+            'footer_text': '© 2026 Piral Kəndi. Bütün hüquqlar qorunur.',
+            'AAA1' : 'Burada yaşayanlar əsasən ləzgi millətinə məxsusdur. 2023-cü il məlumatına görə kəndin əhalisi 3207 nəfərdir. ',
+            'KKK1' : 'Piral Kəndi Xəbərləri'
         },
         'en': {
             // Menu
@@ -83,11 +85,11 @@ document.addEventListener('DOMContentLoaded', function() {
             'about_p3': 'Traditional Lezgi culture is preserved in all its vitality in Piral village...',
             'culture_dance': 'Lezgi Dances',
             'culture_clothes': 'Traditional Clothes',
-            'infra1': 'Piral village secondary school (200 students)',
-            'infra2': 'Village hospital (5 medical staff)',
-            'infra3': 'Culture house (300-seat auditorium)',
+            'infra1': 'Piral village secondary school (300+ students)',
+            'infra2': 'Village hospital (10+ medical staff)',
+            'infra3': 'Culture house (150-seat auditorium)',
             'infra4': 'Public library (more than 5000 books)',
-            'infra5': 'Sports complex (football field, volleyball and basketball halls)',
+            'infra5': 'Sports complex (football field, volleyball)',
             'map_alt': 'Location of Piral village on map',
             'history_alt': 'History of Piral village',
             'footer_text': '© 2023 Piral Village. All rights reserved.',
@@ -119,7 +121,9 @@ document.addEventListener('DOMContentLoaded', function() {
             'slide3_alt': 'Piral school',
             'latest_news': 'Latest News',
             'btn_all_news': 'All news',
-            'footer_text': '© 2023 Piral Village. All rights reserved.'
+            'footer_text': '© 2026 Piral Village. All rights reserved.',
+            'AAA1' : 'The people living here are mainly Lezgi. According to 2023 data, the village-s population is 3,207 people.',
+            'KKK1' : 'Piral Village News'
         },
         'ru': {
             // Menu
@@ -143,14 +147,14 @@ document.addEventListener('DOMContentLoaded', function() {
             'about_p3': 'Традиционная лезгинская культура сохраняется в селе Пирал во всей своей жизненности...',
             'culture_dance': 'Лезгинские танцы',
             'culture_clothes': 'Национальная одежда',
-            'infra1': 'Средняя школа села Пирал (200 учеников)',
-            'infra2': 'Сельская больница (5 медицинских работников)',
-            'infra3': 'Дом культуры (зал на 300 мест)',
+            'infra1': 'Средняя школа села Пирал (300+ учеников)',
+            'infra2': 'Сельская больница (10+ медицинских работников)',
+            'infra3': 'Дом культуры (зал на 150 мест)',
             'infra4': 'Общественная библиотека (более 5000 книг)',
-            'infra5': 'Спортивный комплекс (футбольное поле, залы для волейбола и баскетбола)',
+            'infra5': 'Спортивный комплекс (футбольное поле, залы для волейбола)',
             'map_alt': 'Расположение села Пирал на карте',
             'history_alt': 'История села Пирал',
-            'footer_text': '© 2023 Село Пирал. Все права защищены.',
+            'footer_text': '© 2026 Село Пирал. Все права защищены.',
             'footer_privacy': 'Политика конфиденциальности',
             'footer_terms': 'Условия использования',
             'about_title': 'О селе Пирал',
@@ -177,8 +181,10 @@ document.addEventListener('DOMContentLoaded', function() {
             'slide3_alt': 'Школа Пирала',
             'latest_news': 'Последние новости',
             'btn_all_news': 'Все новости',
-            'footer_text': '© 2023 Село Пирал. Все права защищены.',
-            'ppp' : 'В 1921 году был создан Пиральский сельский исполнительный орган Губинского района. В 1930 году был организован Хилийский район (с 1938 года — Гусарский район).'
+            'footer_text': '© 2026 Село Пирал. Все права защищены.',
+            'ppp' : 'В 1921 году был создан Пиральский сельский исполнительный орган Губинского района. В 1930 году был организован Хилийский район (с 1938 года — Гусарский район).',
+            'AAA1' : 'Проживающие здесь люди в основном лезгины. По данным на 2023 год население села составляет 3207 человек.',
+            'KKK1' : 'Новости деревни Пирал'
             
         }
     };
