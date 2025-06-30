@@ -711,3 +711,83 @@ body.night-mode {
         margin-left: 0;
     }
 }
+
+/* Notable People Section */
+.people-hero {
+    height: 400px;
+    background-image: url('../images/people-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    margin-top: 70px;
+}
+
+.people-container {
+    padding: 60px 0;
+}
+
+.people-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.person-card {
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.person-card:hover {
+    transform: translateY(-10px);
+}
+
+.person-image {
+    height: 250px;
+    overflow: hidden;
+}
+
+.person-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.person-card:hover .person-image img {
+    transform: scale(1.05);
+}
+
+.person-info {
+    padding: 20px;
+}
+
+.person-info h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.person-detail {
+    margin-bottom: 10px;
+    display: flex;
+}
+
+.person-detail span:first-child {
+    font-weight: bold;
+    min-width: 100px;
+    color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+    .people-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .person-detail {
+        flex-direction: column;
+    }
+}

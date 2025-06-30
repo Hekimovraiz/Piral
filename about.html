@@ -7,35 +7,53 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/themes.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+    .about-hero {
+        background: url('images/piralimg2.png') center center / cover no-repeat;
+        position: relative;
+        padding: 100px 0;
+        color: white;
+    }
+    .hero-overlay {
+        padding: 60px 0;
+    }
+    .hero-overlay h1,
+    .hero-overlay p {
+        color: #fff;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Kənarlarda qara kölgə effekti */
+    }
+</style>
+
+
 </head>
 <body class="day-mode">
     <header>
-    <div class="container">
-        <div class="logo">
-            <h1 class="logo-piral">PIRAL</h1>
-        </div>
-        <nav>
-            <ul>
+        <div class="container">
+            <div class="logo">
+                <h1 class="logo-piral">PIRAL</h1>
+            </div>
+            <nav>
+                <ul>
                     <li><a href="index.html" class="active" data-translate="menu_home">Ana Səhifə</a></li>
                     <li><a href="about.html" data-translate="menu_about">Haqqında</a></li>
                     <li><a href="news.html" data-translate="menu_news">Xəbərlər</a></li>
+                    <li><a href="notable-people.html" class="active" data-translate="menu_people">Tanınmış Şəxslər</a></li>
                     <li><a href="contact.html" data-translate="menu_contact">Əlaqə</a></li>
                     <li><a href="admin.html" data-translate="menu_admin">Admin</a></li>
-                    
                 </ul>
-        </nav>
-        <div class="header-controls">
-            <div class="language-switcher">
-                <button class="lang-btn active" data-lang="az">AZ</button>
-                <button class="lang-btn" data-lang="en">EN</button>
-                <button class="lang-btn" data-lang="ru">RU</button>
+            </nav>
+            <div class="header-controls">
+                <div class="language-switcher">
+                    <button class="lang-btn active" data-lang="az">AZ</button>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="ru">RU</button>
+                </div>
+                <button id="theme-toggle" class="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
             </div>
-            <button id="theme-toggle" class="theme-toggle">
-                <i class="fas fa-moon"></i>
-            </button>
         </div>
-    </div>
-</header>
+    </header>
 
     <main>
         <section class="about-hero">
@@ -53,8 +71,8 @@
                 <div class="about-section">
                     <h2 data-translate="about_location">Coğrafi Mövqe</h2>
                     <div class="about-text">
-                        <p data-translate="about_p1">Piral kəndi Azərbaycanın şimal-şərqində, Qusar rayonunda yerləşir. Dəniz səviyyəsindən 850 metr yüksəklikdə, 41°31'37.05" şimal enliyi və 48°18'03.54" şərq uzunluğu koordinatlarında yerləşir. Kəndin ümumi sahəsi 2422 hektardır.</p>
-                        <p data-translate="about_p2">Kənd şimaldan və qərbdən Böyük Qafqaz dağları ilə əhatələnib. Ətrafı genişyarpaqlı meşələrlə örtülüdür. İqlimi mülayim kontinentaldır.</p>
+                        <p data-translate="about_p1">Piral kəndi Azərbaycanın şimal-şərqində, Qusar rayonunda yerləşir...</p>
+                        <p data-translate="about_p2">Kənd şimaldan və qərbdən Böyük Qafqaz dağları ilə əhatələnib...</p>
                     </div>
                 </div>
 
@@ -62,8 +80,8 @@
                 <div class="about-section">
                     <h2 data-translate="about_history">Tarixi</h2>
                     <div class="about-text">
-                        <p data-translate="about_p3">Piral kəndinin əsası XVIII əsrin əvvəllərində qoyulub. Kəndin adı "pir" (müqəddəs yer) və "al" (ətraf) sözlərindən yaranıb. Tarixi qaynaqlara görə ilk sakinləri Dağıstandan köçüb gəlmiş ləzgi ailələri olub.</p>
-                        <p data-translate="ppp">1921-ci ildə Quba rayonunun Piral kənd icra nümayəndəliyi yaradılıb. 1930-cu ildə Xılı rayonu (1938-ci ildən Qusar rayonu) təşkil edilib.</p>
+                        <p data-translate="about_p3">Piral kəndinin əsası XVIII əsrin əvvəllərində qoyulub...</p>
+                        <p data-translate="ppp">1921-ci ildə Quba rayonunun Piral kənd icra nümayəndəliyi yaradılıb...</p>
                     </div>
                 </div>
 
@@ -71,7 +89,7 @@
                 <div class="about-section">
                     <h2 data-translate="about_population">Əhali</h2>
                     <div class="about-text">
-                        <p data-translate="about_p5">2023-cü il məlumatına görə kəndin əhalisi 3207 nəfərdir. Əhalinin əsas hissəsini ləzgilər təşkil edir. Kənddə əsasən azərbaycan və ləzgi dillərində danışılır.</p>
+                        <p data-translate="about_p5">2023-cü il məlumatına görə kəndin əhalisi 3207 nəfərdir...</p>
                     </div>
                 </div>
 
@@ -79,7 +97,7 @@
                 <div class="about-section">
                     <h2 data-translate="about_culture">Mədəniyyət</h2>
                     <div class="about-text">
-                        <p data-translate="about_p6">Piral kəndində ənənəvi ləzgi mədəniyyəti qorunub saxlanılır. İllik "Ləzgi Mədəniyyəti Günü", "Novruz" və digər milli bayramlar böyük şənliklərlə qeyd olunur.</p>
+                        <p data-translate="about_p6">Piral kəndində ənənəvi ləzgi mədəniyyəti qorunub saxlanılır...</p>
                     </div>
                 </div>
 
@@ -104,10 +122,6 @@
         <div class="container">
             <div class="footer-content">
                 <p data-translate="footer_text">&copy; 2026 Piral Kəndi. Bütün hüquqlar qorunur.</p>
-                <div class="footer-links">
-                    <a href="#" data-translate="footer_privacy">Məxfilik Siyasəti</a>
-                    <a href="#" data-translate="footer_terms">İstifadə Qaydaları</a>
-                </div>
             </div>
         </div>
     </footer>
