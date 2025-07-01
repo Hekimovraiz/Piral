@@ -841,3 +841,8 @@ img {
         gap: 10px !important;
     }
 }
+@media (max-width: 768px) {
+    .people-grid {
+        grid-template-columns: 1fr;
+    }
+}

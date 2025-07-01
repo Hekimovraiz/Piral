@@ -1,18 +1,10 @@
 [
     {
         "id": 1,
-        "title": "xeber1",
-        "date": "xeber1",
+        "title": "Piral Kəndinə Məxsus Yeni Bir Sayt Açildi",
+        "date": "03-07-2025",
         "image": "images/news1.jpg",
-        "summary": "xeber1",
-        "content": "Piral kəndində yeni tikilmiş məktəbin rəsmi açılışı keçirildi. Açılış mərasiminə rayon rəhbərliyi, kənd sakinləri və təhsil işçiləri qatıldı. Yeni məktəb 200 şagird üçün nəzərdə tutulub və müasir tədris avadanlıqları ilə təchiz edilib."
-    },
-    {
-        "id": 2,
-        "title": "Kəndimizdə su problemi həll olundu",
-        "date": "2023-09-28",
-        "image": "images/news2.jpg",
-        "summary": "Piral kəndində uzun müddətdir davam edən su problemi nəhayət həll edildi.",
-        "content": "Piral kəndində uzun müddətdir davam edən su problemi nəhayət həll edildi. Yeni su kəmərinin çəkilişi başa çatdı və kənd sakinlərinə davamlı su təchizatı təmin edildi. Layihənin həyata keçirilməsində yerli icra hakimiyyətinin və kənd sakinlərinin böyük əməyi olub."
+        "summary": "Piral kəndinin zəngin tarixini və görkəmli insanlarını tanıdan yeni rəsmi sayt artıq istifadədə!",
+        "content": "Bu sayt Piral kəndinin zəngin tarixini, mədəniyyətini və görkəmli insanlarını tanıtmaq məqsədilə hazırlanıb. Burada kəndimiz haqqında ən son məlumatları, xəbərləri və kəndimizin tanınmış şəxslərinin həyatını izləyə bilərsiniz. Saytı qurub təqdim edən isə mənəm — Raiz Həkimov, kəndimizin gənci və fəalı. Hər kəsə xoş gəlmisiniz!"
     }
 ]
