@@ -1,17 +1,25 @@
 <!DOCTYPE html>
 <html lang="az" dir="ltr">
 <head>
-    <meta charset="UTF-8">
+    <style>
+    @media only screen and (max-width: 768px) {
+        body.home-page {
+            transform: scale(0.88);
+            transform-origin: top left;
+            width: 113.6%; /* 1 / 0.88 = 113.636..., genişliyi balanslamaq üçün */
+        }
+    }
+    </style>
 
+    
+    <meta charset="UTF-8">
     <title data-translate="title_home">Piral Kəndi - Ana Səhifə</title>
     <link rel="icon" type="image/png" href="images/piral_icon.png">
-
-
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/themes.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body class="dark-mode">
+<body class="dark-mode home-page">
     <header>
         <div class="container">
             <div class="logo">

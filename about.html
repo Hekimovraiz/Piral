@@ -1,8 +1,17 @@
 <!DOCTYPE html>
 <html lang="az" dir="ltr">
 <head>
-    <meta charset="UTF-8">
+    <style>
+    @media only screen and (max-width: 768px) {
+        body.about-page {
+            transform: scale(0.96);
+            transform-origin: top left;
+            width: 104.2%; /* 1 / 0.96 = ~104.166... */
+        }
+    }
+    </style>
 
+    <meta charset="UTF-8">
     <title data-translate="title_about">Piral Kəndi - Haqqımızda</title>
     <link rel="icon" type="image/png" href="images/piral_icon.png">
     <link rel="stylesheet" href="css/style.css">
@@ -29,7 +38,8 @@
 
 
 </head>
-<body class="dark-mode">
+<body class="dark-mode about-page">
+
     <header>
         <div class="container">
             <div class="logo">
