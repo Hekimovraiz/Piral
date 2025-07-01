@@ -2,7 +2,6 @@
 <html lang="az" dir="ltr">
 <head>
     <meta charset="UTF-8">
-    
     <title>Piral Kəndi - Admin Panel</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/png" href="images/piral_icon.png">
@@ -222,6 +221,7 @@
             background: #252525;
         }
     </style>
+    </style>
 </head>
 <body class="dark-mode">
     <header>
@@ -250,13 +250,13 @@
         <section class="admin-section">
             <div class="container">
                 <div id="login-section">
-                    <div class="profile-info-wrapper">
-                    <img src="images/raiz1.jpg" alt="Raiz Hekimov" class="profile-image">
-                        <div class="profile-text">
+                    <div class="admin-profile">
+                        <img src="images/raiz1.jpg" alt="Raiz Hekimov" class="profile-image">
+                        <div class="profile-info">
                             <h3>Raiz Hekimov</h3>
-                                <p><strong>Yaşayış yeri:</strong> Piral kəndi, Qusar rayonu, Azərbaycan</p>
-                                <p><strong>İxtisas:</strong> Alqoritmik proqramlaşdırma və veb texnologiyalar</p>
-                                <p><strong>Təcrübə:</strong> Python, C++, JavaScript, CSS, HTML, Git</p>
+                            <p><strong>Yaşayış yeri:</strong> Piral kəndi, Qusar rayonu, Azərbaycan</p>
+                            <p><strong>İxtisas:</strong> Alqoritmik proqramlaşdırma və veb texnologiyalar</p>
+                            <p><strong>Təcrübə:</strong> Python, C++, JavaScript, CSS, HTML, Git</p>
                             <div class="profile-contact">
                                 <a href="mailto:raizhekimov2010@gmail.com"><i class="fas fa-envelope"></i> raizhekimov2010@gmail.com</a>
                                 <a href="https://t.me/Lezgin_R" target="_blank"><i class="fab fa-telegram"></i> @Lezgin_R</a>
@@ -264,8 +264,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                    
+
                     <h2>Admin Girişi</h2>
                     <form id="login-form">
                         <div class="form-group">
@@ -359,12 +358,28 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 Piral Kəndi. Bütün hüquqlar qorunur.</p>
+            <p>&copy; 2026 Piral Kəndi. Bütün huquqlar qorunur.</p>
         </div>
     </footer>
 
     <script src="js/language.js"></script>
     <script src="js/theme.js"></script>
-    <script src="js/admin.js"></script>
+    <script>
+        const loginForm = document.getElementById("login-form");
+        const loginSection = document.getElementById("login-section");
+        const dashboardSection = document.getElementById("dashboard-section");
+        const logoutBtn = document.getElementById("logout-btn");
+
+        loginForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+            loginSection.style.display = "none";
+            dashboardSection.style.display = "block";
+        });
+
+        logoutBtn.addEventListener("click", function () {
+            dashboardSection.style.display = "none";
+            loginSection.style.display = "block";
+        });
+    </script>
 </body>
 </html>
