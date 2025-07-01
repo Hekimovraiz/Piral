@@ -1,239 +1,251 @@
 <!DOCTYPE html>
 <html lang="az">
 <head>
-    <meta charset="UTF-8" />
-    <title>Piral - Qalereya</title>
-    <link rel="icon" type="image/png" href="images/piral_icon.png" />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/themes.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f9fafb;
-            color: #222;
-        }
+  <meta charset="UTF-8" />
+  <title>Piral - Qalereya</title>
+  <link rel="icon" type="image/png" href="images/piral_icon.png" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/themes.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #121212;
+      color: #f1f1f1;
+    }
 
-        header {
-            background: linear-gradient(90deg, #388e3c, #81c784);
-            color: white;
-            padding: 24px 20px;
-            text-align: center;
-            font-size: 28px;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-            position: relative;
-        }
+    header {
+      background: linear-gradient(90deg, #1b5e20, #388e3c);
+      color: white;
+      padding: 24px 20px;
+      text-align: center;
+      font-size: 28px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+      position: relative;
+    }
 
-        header i.fas.fa-images {
-            font-size: 32px;
-            color: #dcedc8;
-        }
+    header i.fas.fa-images {
+      font-size: 32px;
+      color: #dcedc8;
+    }
 
-        .gallery-container {
-            padding: 30px 20px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 22px;
-            max-width: 1200px;
-            margin: 30px auto;
-        }
+    .gallery-container {
+      padding: 30px 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 22px;
+      max-width: 1200px;
+      margin: 30px auto;
+    }
 
-        .gallery-item {
-            overflow: hidden;
-            border-radius: 16px;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-            background-color: white;
-            cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
+    .gallery-item {
+      overflow: hidden;
+      border-radius: 16px;
+      box-shadow: 0 6px 15px rgba(255, 255, 255, 0.05);
+      background-color: #1e1e1e;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-        .gallery-item:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
+    .gallery-item:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+    }
 
-        .gallery-item img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            display: block;
-            transition: transform 0.4s ease;
-        }
+    .gallery-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
 
-        /* Modal (şəkil böyük açılması üçün) */
-        .modal {
-            display: none; 
-            position: fixed;
-            z-index: 1000;
-            padding-top: 60px;
-            left: 0;
-            top: 0;
-            width: 100vw;
-            height: 100vh;
-            overflow: auto;
-            background-color: rgba(0,0,0,0.8);
-            backdrop-filter: blur(4px);
-        }
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      padding-top: 60px;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.9);
+      backdrop-filter: blur(4px);
+    }
 
-        .modal-content {
-            margin: auto;
-            display: block;
-            max-width: 90%;
-            max-height: 80vh;
-            border-radius: 12px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.5);
-            animation: zoomIn 0.3s ease;
-        }
+    .modal-content {
+      margin: auto;
+      display: block;
+      max-width: 90%;
+      max-height: 80vh;
+      border-radius: 12px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+      animation: zoomIn 0.3s ease;
+    }
 
-        @keyframes zoomIn {
-            from {transform: scale(0.7);}
-            to {transform: scale(1);}
-        }
+    @keyframes zoomIn {
+      from {
+        transform: scale(0.7);
+      }
+      to {
+        transform: scale(1);
+      }
+    }
 
-        .modal-close {
-            position: fixed;
-            top: 30px;
-            right: 30px;
-            color: white;
-            font-size: 36px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: color 0.3s;
-            user-select: none;
-        }
+    .modal-close {
+      position: fixed;
+      top: 30px;
+      right: 30px;
+      color: #e0e0e0;
+      font-size: 36px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: color 0.3s;
+      user-select: none;
+    }
 
-        .modal-close:hover {
-            color: #81c784;
-        }
+    .modal-close:hover {
+      color: #81c784;
+    }
 
-        /* Geri qayıt düyməsi sol üst küncə */
-        .back-btn {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            background-color: #2e7d32;
-            color: white;
-            border: none;
-            border-radius: 50px;
-            padding: 12px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            transition: background 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            z-index: 1100;
-        }
+    .back-btn {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background-color: #1b5e20;
+      color: #f1f1f1;
+      border: none;
+      border-radius: 50px;
+      padding: 12px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      transition: background 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      z-index: 1100;
+    }
 
-        .back-btn:hover {
-            background-color: #4caf50;
-        }
+    .back-btn:hover {
+      background-color: #388e3c;
+    }
 
-        /* Responsive adjustments */
-        @media (max-width: 600px) {
-            .gallery-container {
-                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-                padding: 20px 10px;
-                gap: 15px;
-            }
+    @media (max-width: 600px) {
+      .gallery-container {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        padding: 20px 10px;
+        gap: 15px;
+      }
 
-            header {
-                font-size: 22px;
-                padding: 18px 15px;
-            }
+      header {
+        font-size: 22px;
+        padding: 18px 15px;
+      }
 
-            .back-btn {
-                padding: 10px 16px;
-                font-size: 14px;
-                top: 15px;
-                left: 15px;
-            }
-        }
-    </style>
+      .back-btn {
+        padding: 10px 16px;
+        font-size: 14px;
+        top: 15px;
+        left: 15px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <i class="fas fa-images"></i> Piral - Qalereya
-    </header>
 
-    <button class="back-btn" onclick="window.location.href='index.html'">
-        <i class="fas fa-arrow-left"></i> Geri Qayıt
-    </button>
+  <header>
+    <i class="fas fa-images"></i> Piral - Qalereya
+  </header>
 
-    <div class="gallery-container">
-        <div class="gallery-item"><img src="images/slide1.jpg" alt="Piral" /></div>
-        <div class="gallery-item"><img src="images/slide2.jpg" alt="Piral" /></div>
-        <div class="gallery-item"><img src="images/slide3.jpg" alt="Piral" /></div>
-        <div class="gallery-item"><img src="images/slide4.jpg" alt="Piral" /></div>
-        <div class="gallery-item"><img src="images/slide5.jpg" alt="Piral" /></div>
-        <div class="gallery-item"><img src="images/slide6.jpg" alt="Piral" /></div>
-        <div class="gallery-item"><img src="images/slide7.jpg" alt="Piral" /></div>
-        <div class="gallery-item"><img src="images/slide8.jpg" alt="Piral" /></div>
-        <div class="gallery-item"><img src="images/slide9.jpg" alt="Piral" /></div>
-        <div class="gallery-item"><img src="images/slide10.jpg" alt="Piral" /></div>
-        <div class="gallery-item"><img src="images/slide11.jpg" alt="Piral" /></div>
-        <div class="gallery-item"><img src="images/slide12.jpg" alt="Piral" /></div>
-        <div class="gallery-item"><img src="images/slide13.jpg" alt="Piral" /></div>
-        <div class="gallery-item"><img src="images/slide14.jpg" alt="Piral" /></div>
-        <div class="gallery-item"><img src="images/slide15.jpg" alt="Piral" /></div>
-        <div class="gallery-item"><img src="images/slide16.jpg" alt="Piral" /></div>
-        <div class="gallery-item"><img src="images/slide17.jpg" alt="Piral" /></div>
-        <div class="gallery-item"><img src="images/slide18.jpg" alt="Piral" /></div>
-        <div class="gallery-item"><img src="images/slide19.jpg" alt="Piral" /></div>
-        <div class="gallery-item"><img src="images/slide20.jpg" alt="Piral" /></div>
-        <div class="gallery-item"><img src="images/slide21.jpg" alt="Piral" /></div>
-        <div class="gallery-item"><img src="images/slide22.jpg" alt="Piral" /></div>
-        <div class="gallery-item"><img src="images/slide23.jpg" alt="Piral" /></div>
-        <div class="gallery-item"><img src="images/slide24.jpg" alt="Piral" /></div>
-        <div class="gallery-item"><img src="images/slide25.jpg" alt="Piral" /></div>
-        <div class="gallery-item"><img src="images/slide26.jpg" alt="Piral" /></div>
-        <div class="gallery-item"><img src="images/slide27.jpg" alt="Piral" /></div>
-    </div>
+  <button class="back-btn" onclick="window.location.href='index.html'">
+    <i class="fas fa-arrow-left"></i> Geri Qayıt
+  </button>
 
-    <!-- Modal structure -->
-    <div id="modal" class="modal">
-        <span class="modal-close" id="modalClose">&times;</span>
-        <img class="modal-content" id="modalImg" alt="Böyük şəkil" />
-    </div>
+  <div class="gallery-container">
+    <!-- 28 şəkil -->
+    <!-- slide1.jpg - slide28.jpg -->
+    <!-- Aşağıdakı bloklar avtomatik təkrarlanır -->
+    <!-- İstəsən bu hissəni JS ilə daha sonra dinamik də edə bilərik -->
+    <!-- Şəkillər: -->
+    <!-- Əgər şəkillər mövcuddursa, göstəriləcək -->
 
-    <script>
-        // Modal açmaq üçün script
-        const modal = document.getElementById("modal");
-        const modalImg = document.getElementById("modalImg");
-        const modalClose = document.getElementById("modalClose");
+    <!-- loop ilə 1-dən 28-ə qədər -->
+    <!-- bunu html olaraq manual veririk: -->
+    <!-- Əgər JS istəsən, ayrıca deyərsən -->
 
-        document.querySelectorAll(".gallery-item img").forEach(img => {
-            img.addEventListener("click", () => {
-                modal.style.display = "block";
-                modalImg.src = img.src;
-                modalImg.alt = img.alt;
-            });
-        });
+    <!-- ↓ Aşağıda 28 şəkil göstərilir -->
+    <!-- START -->
+    <div class="gallery-item"><img src="images/slide1.jpg" alt="Piral" /></div>
+    <div class="gallery-item"><img src="images/slide2.jpg" alt="Piral" /></div>
+    <div class="gallery-item"><img src="images/slide3.jpg" alt="Piral" /></div>
+    <div class="gallery-item"><img src="images/slide4.jpg" alt="Piral" /></div>
+    <div class="gallery-item"><img src="images/slide5.jpg" alt="Piral" /></div>
+    <div class="gallery-item"><img src="images/slide6.jpg" alt="Piral" /></div>
+    <div class="gallery-item"><img src="images/slide7.jpg" alt="Piral" /></div>
+    <div class="gallery-item"><img src="images/slide8.jpg" alt="Piral" /></div>
+    <div class="gallery-item"><img src="images/slide9.jpg" alt="Piral" /></div>
+    <div class="gallery-item"><img src="images/slide10.jpg" alt="Piral" /></div>
+    <div class="gallery-item"><img src="images/slide11.jpg" alt="Piral" /></div>
+    <div class="gallery-item"><img src="images/slide12.jpg" alt="Piral" /></div>
+    <div class="gallery-item"><img src="images/slide13.jpg" alt="Piral" /></div>
+    <div class="gallery-item"><img src="images/slide14.jpg" alt="Piral" /></div>
+    <div class="gallery-item"><img src="images/slide15.jpg" alt="Piral" /></div>
+    <div class="gallery-item"><img src="images/slide16.jpg" alt="Piral" /></div>
+    <div class="gallery-item"><img src="images/slide17.jpg" alt="Piral" /></div>
+    <div class="gallery-item"><img src="images/slide18.jpg" alt="Piral" /></div>
+    <div class="gallery-item"><img src="images/slide19.jpg" alt="Piral" /></div>
+    <div class="gallery-item"><img src="images/slide20.jpg" alt="Piral" /></div>
+    <div class="gallery-item"><img src="images/slide21.jpg" alt="Piral" /></div>
+    <div class="gallery-item"><img src="images/slide22.jpg" alt="Piral" /></div>
+    <div class="gallery-item"><img src="images/slide23.jpg" alt="Piral" /></div>
+    <div class="gallery-item"><img src="images/slide24.jpg" alt="Piral" /></div>
+    <div class="gallery-item"><img src="images/slide25.jpg" alt="Piral" /></div>
+    <div class="gallery-item"><img src="images/slide26.jpg" alt="Piral" /></div>
+    <div class="gallery-item"><img src="images/slide27.jpg" alt="Piral" /></div>
+    <div class="gallery-item"><img src="images/slide28.jpg" alt="Piral" /></div>
+    <!-- END -->
+  </div>
 
-        modalClose.addEventListener("click", () => {
-            modal.style.display = "none";
-            modalImg.src = "";
-            modalImg.alt = "";
-        });
+  <!-- Modal -->
+  <div id="modal" class="modal">
+    <span class="modal-close" id="modalClose">&times;</span>
+    <img class="modal-content" id="modalImg" alt="Böyük şəkil" />
+  </div>
 
-        // Modal xaricinə kliklə bağlamaq
-        modal.addEventListener("click", e => {
-            if (e.target === modal) {
-                modal.style.display = "none";
-                modalImg.src = "";
-                modalImg.alt = "";
-            }
-        });
-    </script>
+  <script>
+    const modal = document.getElementById("modal");
+    const modalImg = document.getElementById("modalImg");
+    const modalClose = document.getElementById("modalClose");
+
+    document.querySelectorAll(".gallery-item img").forEach(img => {
+      img.addEventListener("click", () => {
+        modal.style.display = "block";
+        modalImg.src = img.src;
+        modalImg.alt = img.alt;
+      });
+    });
+
+    modalClose.addEventListener("click", () => {
+      modal.style.display = "none";
+      modalImg.src = "";
+      modalImg.alt = "";
+    });
+
+    modal.addEventListener("click", e => {
+      if (e.target === modal) {
+        modal.style.display = "none";
+        modalImg.src = "";
+        modalImg.alt = "";
+      }
+    });
+  </script>
 </body>
 </html>
