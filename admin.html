@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="az" dir="ltr">
 <head>
+    <style>
+    @media only screen and (max-width: 768px) {
+        body.admin-page {
+            transform: scale(0.96);
+            transform-origin: top left;
+            width: 104.2%; /* Scale etdiyimiz üçün genişliyi kompensasiya edirik */
+        }
+    }
+    </style>
     <meta charset="UTF-8">
     <title>Piral Kəndi - Admin Panel</title>
     <link rel="stylesheet" href="css/style.css">
@@ -223,7 +232,7 @@
     </style>
     </style>
 </head>
-<body class="dark-mode">
+<body class="dark-mode admin-page">
     <header>
         <div class="container">
             <div class="logo">
