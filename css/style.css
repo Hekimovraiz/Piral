@@ -791,3 +791,53 @@ body.night-mode {
         flex-direction: column;
     }
 }
+
+/* Şəkillər bütün konteynerə sığsın */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Ümumi konteynerlər */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Telefon üçün yazı və layout ölçüləri */
+@media (max-width: 600px) {
+    .about-hero {
+        height: auto !important; /* Sabit hündürlük problem yarada bilər */
+        padding: 40px 15px;
+    }
+    
+    .about-hero h1 {
+        font-size: 1.8rem !important;
+    }
+    
+    .about-hero p {
+        font-size: 1rem !important;
+    }
+    
+    .about-section {
+        padding: 15px !important;
+        margin-bottom: 25px;
+    }
+    
+    .person-card {
+        margin-bottom: 20px;
+    }
+    
+    .people-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+    
+    /* Menü, link və s. kiçik ekran üçün */
+    nav ul {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 10px !important;
+    }
+}
