@@ -9,9 +9,45 @@
             width: 113.6%; /* 1 / 0.88 = 113.636..., genişliyi balanslamaq üçün */
         }
     }
+
+    /* Slider başlıq və düymə yan-yana */
+    .slider-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+    }
+
+    .slider-header h3 {
+        margin: 0;
+        font-size: 1.8rem;
+        font-weight: 600;
+    }
+
+    .btn-gallery {
+        background-color: #2e7d32;
+        color: white;
+        padding: 10px 22px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+        white-space: nowrap;
+        margin-top: 10px;
+        display: inline-block;
+    }
+
+    .btn-gallery:hover {
+        background-color: #388e3c;
+    }
+
+    /* Slider container margin */
+    .slider-container {
+        margin-top: 30px;
+    }
     </style>
 
-    
     <meta charset="UTF-8">
     <title data-translate="title_home">Piral Kəndi - Ana Səhifə</title>
     <link rel="icon" type="image/png" href="images/piral_icon.png">
@@ -33,7 +69,6 @@
                     <li><a href="notable-people.html" class="active" data-translate="menu_people">Tanınmışlar</a></li>
                     <li><a href="contact.html" data-translate="menu_contact">Əlaqə</a></li>
                     <li><a href="admin.html" data-translate="menu_admin">Admin</a></li>
-                    
                 </ul>
             </nav>
             <div class="language-switcher">
@@ -69,7 +104,11 @@
 
         <section class="slider">
             <div class="container">
-                <h3 data-translate="gallery_title">Kəndimizdən Görüntülər</h3>
+                <div class="slider-header">
+                    <h3 data-translate="gallery_title">Kəndimizdən Görüntülər</h3>
+                    <a href="gallery.html" class="btn-gallery" data-translate="btn_gallery">Qalereyaya Bax</a>
+                </div>
+
                 <div class="slider-container">
                     <div class="slide active">
                         <img src="images/slide1.jpg" alt="Piral Duzenliyi" data-translate="slide1_alt">
