@@ -1,17 +1,16 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Admin girişi
+document.addEventListener('DOMContentLoaded', function () {
     const loginForm = document.getElementById('login-form');
     const loginSection = document.getElementById('login-section');
     const dashboardSection = document.getElementById('dashboard-section');
-    
-    // Demo admin girişi
+
+    // Admin Girişi
     if (loginForm) {
-        loginForm.addEventListener('submit', function(e) {
+        loginForm.addEventListener('submit', function (e) {
             e.preventDefault();
-            
+
             const username = document.getElementById('username').value;
             const password = document.getElementById('password').value;
-            
+
             if (username === 'admin' && password === 'piral123') {
                 loginSection.style.display = 'none';
                 dashboardSection.style.display = 'block';
@@ -22,33 +21,28 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-    
-    // Əgər admin artıq giriş edibsə
+
     if (localStorage.getItem('adminLoggedIn') === 'true') {
         if (loginSection) loginSection.style.display = 'none';
         if (dashboardSection) dashboardSection.style.display = 'block';
         loadNews();
     }
-    
-    // Çıxış düyməsi
-    document.getElementById('logout-btn')?.addEventListener('click', function() {
+
+    document.getElementById('logout-btn')?.addEventListener('click', function () {
         localStorage.removeItem('adminLoggedIn');
         window.location.href = 'index.html';
     });
-    
-    // Tab sistemini idarə etmə
+
+    // Tab dəyişmə
     const tabBtns = document.querySelectorAll('.tab-btn');
     const tabContents = document.querySelectorAll('.tab-content');
-    
+
     tabBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
+        btn.addEventListener('click', function () {
             const tabId = this.getAttribute('data-tab');
-            
-            // Aktiv tabı dəyiş
             tabBtns.forEach(b => b.classList.remove('active'));
             this.classList.add('active');
-            
-            // Uyğun kontenti göstər
+
             tabContents.forEach(content => {
                 content.classList.remove('active');
                 if (content.id === tabId) {
@@ -57,61 +51,63 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     });
-    
-    // Xəbər əlavə etmə formu
+
+    // Xəbər əlavə etmə
     const addNewsForm = document.getElementById('add-news-form');
     if (addNewsForm) {
-        addNewsForm.addEventListener('submit', function(e) {
+        addNewsForm.addEventListener('submit', function (e) {
             e.preventDefault();
-            
+
             const title = document.getElementById('news-title').value;
             const date = document.getElementById('news-date').value;
             const summary = document.getElementById('news-summary').value;
             const content = document.getElementById('news-content').value;
             const imageFile = document.getElementById('news-image').files[0];
-            
-            // Şəkil yükləmə
-            let imageUrl = 'images/default-news.jpg';
-            if (imageFile) {
-                imageUrl = URL.createObjectURL(imageFile);
-            }
-            
-            // Yeni xəbər yarat
-            const newNews = {
-                id: Date.now(),
-                title,
-                date,
-                summary,
-                content,
-                image: imageUrl
-            };
-            
-            // Xəbərləri data/news.json faylına əlavə et
-            fetch('data/news.json')
-                .then(response => response.json())
-                .then(data => {
-                    data.unshift(newNews); // Ən üstə əlavə et
-                    return fetch('js/admin.js', {
-                        method: 'POST',
-                        body: JSON.stringify({ news: data }),
-                        headers: {
-                            'Content-Type': 'application/json'
+
+            const reader = new FileReader();
+
+            reader.onload = function () {
+                const newNews = {
+                    id: Date.now(),
+                    title,
+                    date,
+                    summary,
+                    content,
+                    image: reader.result
+                };
+
+                fetch('php/save_news.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(newNews)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.message) {
+                            alert(data.message);
+                            addNewsForm.reset();
+                            loadNews();
+                        } else {
+                            alert('Xəta: ' + (data.error || 'Bilinməyən xəta'));
                         }
+                    })
+                    .catch(err => {
+                        console.error(err);
+                        alert('Serverə qoşulmaq mümkün olmadı.');
                     });
-                })
-                .then(() => {
-                    alert('Xəbər uğurla əlavə edildi!');
-                    this.reset();
-                    loadNews();
-                })
-                .catch(error => {
-                    console.error('Xəta:', error);
-                    alert('Xəbər əlavə edilərkən xəta baş verdi!');
-                });
+            };
+
+            if (imageFile) {
+                reader.readAsDataURL(imageFile);
+            } else {
+                alert('Zəhmət olmasa şəkil seçin.');
+            }
         });
     }
-    
-    // Xəbərləri yüklə və göstər
+
+    // Xəbərləri yüklə
     function loadNews() {
         fetch('data/news.json')
             .then(response => response.json())
@@ -123,12 +119,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 displayAdminNews([]);
             });
     }
-    
-    // Xəbərləri admin panelində göstər
+
+    // Admin panelində xəbərləri göstər
     function displayAdminNews(news) {
         const adminNewsList = document.getElementById('admin-news-list');
         if (!adminNewsList) return;
-        
+
         adminNewsList.innerHTML = news.map(item => `
             <div class="news-item">
                 <div class="news-item-header">
@@ -147,24 +143,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
             </div>
         `).join('');
-        
-        // Sil və düzəlt düymələrinə hadisə əlavə et
+
+        // Silmə funksiyası
         document.querySelectorAll('.delete-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                const newsId = parseInt(this.getAttribute('data-id'));
-                if (confirm('Bu xəbəri silmək istədiyinizə əminsiniz?')) {
-                    // Burada real tətbiqdə serverə silmə sorğusu göndərilməlidir
-                    alert('Xəbər silindi! (Demo rejimində heç nə silinməyəcək)');
-                    loadNews();
-                }
+            btn.addEventListener('click', function () {
+                alert('Sil funksiyası hələ aktiv deyil.');
             });
         });
-        
+
+        // Redaktə funksiyası
         document.querySelectorAll('.edit-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                const newsId = parseInt(this.getAttribute('data-id'));
-                // Burada real tətbiqdə redaktə səhifəsinə yönləndirmə olmalıdır
-                alert('Redaktə funksiyası demo rejimində işləmir');
+            btn.addEventListener('click', function () {
+                alert('Redaktə funksiyası demo rejimindədir.');
             });
         });
     }
