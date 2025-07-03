@@ -74,7 +74,24 @@ document.addEventListener('DOMContentLoaded', function() {
             'pers22' : 'Şəxsi həyatına gəlincə, Sahil sadə və zəhmətkeş kənd mühitində böyümüşdür. Ailəsinə və doğma Piral kəndinə dərin bağlılığı ilə tanınır. Onun üçün uğur yalnız rinqdə qalib gəlmək deyil, həm də gənclərə nümunə olmaq və doğma bölgəsini layiqincə təmsil etməkdir. Boş vaxtlarında idman zalında məşq etmək, sağlam qidalanmaq və ailəsi ilə vaxt keçirmək onun həyat tərzinin ayrılmaz hissələrindəndir. O, həmçinin sosial mediada da aktivdir və gənc idmançılara motivasiya verən çıxışları ilə tanınır.',
             'Sahil' : 'Sahil Şakirov',
             'abtk6' : 'Piral kəndinin əhalisi əsasən kənd təsərrüfatı, xüsusilə də heyvandarlıq və əkinçiliklə məşğuldur. Gənc nəsil arasında təhsilə maraq son illərdə artmaqdadır — bir çox gənclər rayon mərkəzində və ya Bakı şəhərində ali təhsil alır. Kənddə ibtidai və ümumi orta məktəb fəaliyyət göstərir, eyni zamanda dini və milli dəyərlərə bağlılıq da yüksək səviyyədədir.',
-            'ak66' : ' Bu tədbirlər zamanı kəndin sakinləri milli geyimlər geyinir, qədim rəqslər ifa olunur və folklor nümunələri təqdim edilir. Şənliklər həm böyüklər, həm də uşaqlar üçün xüsusi əhəmiyyət daşıyır və icma arasında birliyi daha da möhkəmləndirir. Bu bayramlar, həmçinin, ləzgi mədəniyyətinin gələcək nəsillərə ötürülməsində mühüm rol oynayır.'
+            'ak66' : ' Bu tədbirlər zamanı kəndin sakinləri milli geyimlər geyinir, qədim rəqslər ifa olunur və folklor nümunələri təqdim edilir. Şənliklər həm böyüklər, həm də uşaqlar üçün xüsusi əhəmiyyət daşıyır və icma arasında birliyi daha da möhkəmləndirir. Bu bayramlar, həmçinin, ləzgi mədəniyyətinin gələcək nəsillərə ötürülməsində mühüm rol oynayır.',
+            'title_contact' : "Piral Kəndi - Əlaqə",
+            'menu_home' : "Ana Səhifə",
+            'menu_about' : "Haqqında",
+            'menu_news' : "Xəbərlər",
+            'menu_people' : "Tanınmışlar",
+            'menu_contact' : "Əlaqə",
+            'menu_admin' : "Admin",
+            'contact_title' : "Adminlə Əlaqə",
+            'btn_message' : "Mesaj Yazın",
+            'idea_title' : "Sayt haqqında fikriniz varmı?",
+            'idea_text' : "Əgər sizin də sayt haqqında bir ideyanız və ya təklifiniz varsa, bizimlə paylaşın!",
+            'placeholder_name' : "Adınız",
+            'placeholder_email' : "Email ünvanınız",
+            'placeholder_msg' : "Fikriniz və ya təklifiniz",
+            'btn_submit' : "Göndər",
+            'footer_text' : "© 2025 Piral Kəndi. Bütün hüquqlar qorunur.",
+            'btn_gallery' : 'Qalereyaya Bax'
 
         },
         'en': {
@@ -150,7 +167,24 @@ document.addEventListener('DOMContentLoaded', function() {
             'pers22' : 'As for his personal life, Sahil grew up in a simple and hardworking rural environment. He is known for his deep devotion to his family and his native village of Piral. For him, success is not only about winning in the ring, but also being an example to the youth and representing his native region. In his free time, working out at the gym, eating healthy, and spending time with his family are integral parts of his lifestyle. He is also active on social media and is known for his motivational speeches to young athletes.',
             'Sahil' : 'Sahil Shakirov',
             'abtk6' : 'The population of Piral village is mainly engaged in agriculture, especially animal husbandry and farming. Interest in education among the younger generation has been growing in recent years — many young people are receiving higher education in the regional center or in Baku. There is a primary and secondary school in the village, and at the same time, there is a high level of commitment to religious and national values.',
-            'ak66' : 'During these events, villagers wear national costumes, ancient dances are performed, and folklore performances are presented. The festivities are of particular importance to both adults and children, and further strengthen the unity within the community. These holidays also play an important role in passing on Lezgi culture to future generations.'
+            'ak66' : 'During these events, villagers wear national costumes, ancient dances are performed, and folklore performances are presented. The festivities are of particular importance to both adults and children, and further strengthen the unity within the community. These holidays also play an important role in passing on Lezgi culture to future generations.',
+            'title_contact' : "Piral Village - Contact",
+            'menu_home' : "Home",
+            'menu_about' : "About",
+            'menu_news' : "News",
+            'menu_people' : "Celebrities",
+            'menu_contact' : "Contact",
+            'menu_admin' : "Admin",
+            'contact_title' : "Contact the Admin",
+            'btn_message' : "Send Message",
+            'idea_title' : "Have an idea about the site?",
+            'idea_text' : "If you have any suggestions or ideas about the site, feel free to share!",
+            'placeholder_name' : "Your Name",
+            'placeholder_email' : "Your Email",
+            'placeholder_msg' : "Your suggestion or message",
+            'btn_submit' : "Send",
+            'footer_text' : "© 2025 Piral Village. All rights reserved.",
+            'btn_gallery' : 'View Gallery'
 
         },
         'ru': {
@@ -225,7 +259,24 @@ document.addEventListener('DOMContentLoaded', function() {
             'pers22' : 'Что касается личной жизни, Сахил вырос в простой и трудолюбивой сельской среде. Он известен своей глубокой преданностью своей семье и родной деревне Пирал. Для него успех заключается не только в победе на ринге, но и в том, чтобы быть примером для молодежи и представлять свой родной регион. В свободное время занятия в спортзале, здоровое питание и общение с семьей являются неотъемлемой частью его образа жизни. Он также активен в социальных сетях и известен своими мотивационными речами для молодых спортсменов.',
             'Sahil' : 'Сахил Шакиров',
             'abtk6' : 'Население села Пирал в основном занимается сельским хозяйством, особенно животноводством и земледелием. Интерес к образованию среди молодого поколения в последние годы растет — многие молодые люди получают высшее образование в районном центре или в Баку. В селе есть начальная и средняя школа, и в то же время наблюдается высокий уровень приверженности религиозным и национальным ценностям.',
-            'ak66' : 'Во время этих мероприятий жители села надевают национальные костюмы, исполняются старинные танцы и проводятся фольклорные представления. Праздники имеют особое значение как для взрослых, так и для детей, и еще больше укрепляют единство внутри общины. Эти праздники также играют важную роль в передаче лезгинской культуры будущим поколениям.'
+            'ak66' : 'Во время этих мероприятий жители села надевают национальные костюмы, исполняются старинные танцы и проводятся фольклорные представления. Праздники имеют особое значение как для взрослых, так и для детей, и еще больше укрепляют единство внутри общины. Эти праздники также играют важную роль в передаче лезгинской культуры будущим поколениям.',
+            'title_contact' : "Село Пирал - Контакт",
+            'menu_home' : "Главная",
+            'menu_about' : "О нас",
+            'menu_news' : "Новости",
+            'menu_people' : "Знаменитости",
+            'menu_contact' : "Контакт",
+            'menu_admin' : "Админ",
+            'contact_title' : "Связь с админом",
+            'btn_message' : "Написать",
+            'idea_title' : "Есть идея о сайте?",
+            'idea_text' : "Если у вас есть предложения или идеи по сайту, поделитесь с нами!",
+            'placeholder_name' : "Ваше имя",
+            'placeholder_email' : "Ваш email",
+            'placeholder_msg' : "Ваше предложение или сообщение",
+            'btn_submit' : "Отправить",
+            'footer_text' : "© 2025 Село Пирал. Все права защищены.",
+            'btn_gallery' : 'Посмотреть галерею'
             
         }
     };

@@ -1,23 +1,21 @@
 <!DOCTYPE html>
-<html lang="az">
+<html lang="az" dir="ltr">
 <head>
   <meta charset="UTF-8" />
-  <title id="title">Piral Kəndi - Əlaqə</title>
+  <title data-translate="title_contact">Piral Kəndi - Ɔlaqə</title>
   <link rel="icon" type="image/png" href="images/piral_icon.png" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/themes.css" />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-  />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     .contact-idea-box {
-      background-color: #1e1e1e;
+      background-color: var(--bg-card);
       padding: 30px;
       border-radius: 12px;
       margin-top: 40px;
       text-align: center;
-      color: #fff;
+      color: var(--text-primary);
+      transition: background-color 0.3s ease;
     }
     .idea-form {
       margin-top: 20px;
@@ -30,8 +28,8 @@
       padding: 12px;
       border: none;
       border-radius: 8px;
-      background-color: #2c2c2c;
-      color: #fff;
+      background-color: var(--input-bg);
+      color: var(--text-primary);
     }
     .idea-form input::placeholder,
     .idea-form textarea::placeholder {
@@ -48,114 +46,46 @@
       transition: background-color 0.3s ease;
     }
     .idea-form button:hover {
-      background-color: #2e7d32;
+      background-color: #28992e;
     }
-
-    #ideaText {
-    color: #535553;
-    }
-    
     .admin-name {
       color: #2e7d32;
       font-size: 1.2rem;
       margin-top: 5px;
     }
-    
-    /* Dark/Light mode styles */
-    body {
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
-    
-    .dark-mode {
-      background-color: #121212;
-      color: #e0e0e0;
-    }
-    
-    .light-mode {
-      background-color: #f5f5f5;
-      color: #333;
-    }
-    
-    .dark-mode .contact-card {
-      background-color: #1e1e1e;
-      color: #fff;
-    }
-    
-    .dark-mode .contact-card i {
-      color: #2e7d32;
-    }
-    
-    .dark-mode .btn {
-      background-color: #04aa6d;
-      color: white;
-    }
-    
-    .dark-mode .btn:hover {
-      background-color: #038f5d;
-    }
-    
-    .dark-mode input,
-    .dark-mode textarea {
-      background-color: #2c2c2c !important;
-      color: #fff !important;
-    }
-    
-    .dark-mode .contact-idea-box {
-      background-color: #1e1e1e;
-    }
-    
-    .dark-mode header {
-      background-color: #1a1a1a;
-      border-bottom: 1px solid #333;
-    }
-    
-    footer {
-      background-color: #2e7d32 !important;
-      border-top: 1px solid #333;
-      color: white;
-    }
-    
-    .dark-mode nav ul li a {
-      color: #e0e0e0;
-    }
-    
-    .dark-mode nav ul li a:hover,
-    .dark-mode nav ul li a.active {
-      color: #2e7d32;
-    }
-    
-    .light-mode .contact-idea-box {
-      background-color: #f8f9fa;
-      color: #333;
-    }
-    
-    .light-mode input,
-    .light-mode textarea {
-      background-color: #f1f1f1 !important;
-      color: #333 !important;
+    @media only screen and (max-width: 768px) {
+      body.contact-page {
+        transform: scale(0.88);
+        transform-origin: top left;
+        width: 113.6%;
+      }
     }
   </style>
 </head>
-<body class="dark-mode home page">
+<body class="dark-mode contact-page">
   <header>
     <div class="container">
-      <div class="logo"><h1 class="logo-piral">PIRAL</h1></div>
+      <div class="logo">
+        <h1 class="logo-piral">PIRAL</h1>
+      </div>
       <nav>
         <ul>
-          <li><a id="home" href="index.html">Ana Səhifə</a></li>
-          <li><a id="about" href="about.html">Haqqında</a></li>
-          <li><a id="news" href="news.html">Xəbərlər</a></li>
-          <li><a id="people" href="notable-people.html">Tanınmış Şəxslər</a></li>
-          <li><a id="contact" href="contact.html" class="active">Əlaqə</a></li>
-          <li><a id="admin" href="admin.html">Admin</a></li>
+          <li><a href="index.html" data-translate="menu_home">Ana Səhifə</a></li>
+          <li><a href="about.html" data-translate="menu_about">Haqqında</a></li>
+          <li><a href="news.html" data-translate="menu_news">Xəbərlər</a></li>
+          <li><a href="notable-people.html" data-translate="menu_people">Tanınmışlar</a></li>
+          <li><a href="contact.html" class="active" data-translate="menu_contact">Ɔlaqə</a></li>
+          <li><a href="admin.html" data-translate="menu_admin">Admin</a></li>
         </ul>
       </nav>
       <div class="language-switcher">
-        <button class="lang-btn" onclick="setLang('az')">AZ</button>
-        <button class="lang-btn" onclick="setLang('en')">EN</button>
-        <button class="lang-btn" onclick="setLang('ru')">RU</button>
+        <button class="lang-btn" data-lang="az">AZ</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="ru">RU</button>
       </div>
-      <button id="theme-toggle" class="theme-toggle"><i class="fas fa-sun"></i></button>
+      <button id="theme-toggle" class="theme-toggle">
+        <i class="fas fa-sun"></i>
+      </button>
     </div>
   </header>
 
@@ -163,8 +93,8 @@
     <section class="contact-hero">
       <div class="hero-overlay">
         <div class="container">
-          <h2 id="contactTitle">Adminlə Əlaqə</h2>
-          <p class="admin-name" id="adminName">Raiz Hekimov</p>
+          <h2 data-translate="contact_title">Adminlə Ɔlaqə</h2>
+          <p class="admin-name">Raiz Hekimov</p>
         </div>
       </div>
     </section>
@@ -175,33 +105,30 @@
           <div class="contact-card">
             <i class="fab fa-telegram"></i>
             <h3>Telegram</h3>
-            <a href="https://t.me/Lezgin_R" class="btn" target="_blank" id="msgBtn1">Mesaj Yazın</a>
+            <a href="https://t.me/Lezgin_R" class="btn" target="_blank" data-translate="btn_message">Mesaj Yazın</a>
           </div>
           <div class="contact-card">
             <i class="fab fa-whatsapp"></i>
             <h3>WhatsApp</h3>
-            <a href="tel:+9940707163062" class="btn" id="msgBtn2">Mesaj Yazın</a>
+            <a href="tel:+9940707163062" class="btn" data-translate="btn_message">Mesaj Yazın</a>
           </div>
           <div class="contact-card">
             <i class="fab fa-instagram"></i>
             <h3>Instagram</h3>
-            <a href="https://www.instagram.com/hek1mov_038r" class="btn" target="_blank" id="msgBtn3">Mesaj Yazın</a>
+            <a href="https://www.instagram.com/hek1mov_038r" class="btn" target="_blank" data-translate="btn_message">Mesaj Yazın</a>
           </div>
         </div>
 
+        
+
         <div class="contact-idea-box">
-          <h3 id="ideaTitle">Sayt haqqında fikriniz varmı?</h3>
-          <p id="ideaText">Əgər sizin də sayt haqqında bir ideyanız və ya təklifiniz varsa, bizimlə paylaşın!</p>
-          <form
-            action="mailto:raizhekimov2010@gmail.com"
-            method="post"
-            enctype="text/plain"
-            class="idea-form"
-          >
-            <input type="text" name="name" id="inputName" placeholder="Adınız" required />
-            <input type="email" name="email" id="inputEmail" placeholder="Email ünvanınız" required />
-            <textarea name="message" id="inputMsg" placeholder="Fikriniz və ya təklifiniz" rows="5" required></textarea>
-            <button type="submit" class="btn" id="submitBtn">Göndər</button>
+          <h3 data-translate="idea_title">Sayt haqqında fikriniz varmı?</h3>
+          <p data-translate="idea_text">Əəgər sizin də sayt haqqında bir ideyanız və ya təklifiniz varsa, bizimlə paylaşın!</p>
+          <form action="mailto:raizhekimov2010@gmail.com" method="post" enctype="text/plain" class="idea-form">
+            <input type="text" name="name" placeholder="Adınız" data-translate="placeholder_name" required />
+            <input type="email" name="email" placeholder="Email ünvanınız" data-translate="placeholder_email" required />
+            <textarea name="message" placeholder="Fikriniz və ya təklifiniz" rows="5" data-translate="placeholder_msg" required></textarea>
+            <button type="submit" class="btn" data-translate="btn_submit">Göndər</button>
           </form>
         </div>
       </div>
@@ -210,127 +137,11 @@
 
   <footer>
     <div class="container">
-      <p>&copy; 2025 Piral Kəndi. Bütün hüquqlar qorunur.</p>
+      <p data-translate="footer_text">&copy; 2025 Piral Kəndi. Bütün huquqlar qorunur.</p>
     </div>
   </footer>
 
-  <script>
-    const translations = {
-      az: {
-        title: "Piral Kəndi - Əlaqə",
-        home: "Ana Səhifə",
-        about: "Haqqında",
-        news: "Xəbərlər",
-        people: "Tanınmış Şəxslər",
-        contact: "Əlaqə",
-        admin: "Admin",
-        contactTitle: "Adminlə Əlaqə",
-        adminName: "Raiz Həkimov",
-        msgBtn: "Mesaj Yazın",
-        ideaTitle: "Sayt haqqında fikriniz varmı?",
-        ideaText: "Əgər sizin də sayt haqqında bir ideyanız və ya təklifiniz varsa, bizimlə paylaşın!",
-        inputName: "Adınız",
-        inputEmail: "Email ünvanınız",
-        inputMsg: "Fikriniz və ya təklifiniz",
-        submitBtn: "Göndər"
-      },
-      en: {
-        title: "Piral Village - Contact",
-        home: "Home",
-        about: "About",
-        news: "News",
-        people: "Notable People",
-        contact: "Contact",
-        admin: "Admin",
-        contactTitle: "Contact the Admin",
-        adminName: "Raiz Hekimov",
-        msgBtn: "Send Message",
-        ideaTitle: "Have an idea about the site?",
-        ideaText: "If you have any suggestions or ideas about the site, feel free to share!",
-        inputName: "Your Name",
-        inputEmail: "Your Email",
-        inputMsg: "Your suggestion or message",
-        submitBtn: "Send"
-      },
-      ru: {
-        title: "Село Пирал - Контакт",
-        home: "Главная",
-        about: "О нас",
-        news: "Новости",
-        people: "Известные Люди",
-        contact: "Контакт",
-        admin: "Админ",
-        contactTitle: "Связь с админом",
-        adminName: "Раиз Xaкимов",
-        msgBtn: "Написать",
-        ideaTitle: "Есть идея о сайте?",
-        ideaText: "Если у вас есть предложения или идеи по сайту, поделитесь с нами!",
-        inputName: "Ваше имя",
-        inputEmail: "Ваш email",
-        inputMsg: "Ваше предложение или сообщение",
-        submitBtn: "Отправить"
-      }
-    };
-
-    // Dil funksionallığı
-    function setLang(lang) {
-      localStorage.setItem("lang", lang);
-      const t = translations[lang];
-      document.getElementById("title").innerText = t.title;
-      document.getElementById("home").innerText = t.home;
-      document.getElementById("about").innerText = t.about;
-      document.getElementById("news").innerText = t.news;
-      document.getElementById("people").innerText = t.people;
-      document.getElementById("contact").innerText = t.contact;
-      document.getElementById("admin").innerText = t.admin;
-      document.getElementById("contactTitle").innerText = t.contactTitle;
-      document.getElementById("adminName").innerText = t.adminName;
-      document.getElementById("msgBtn1").innerText = t.msgBtn;
-      document.getElementById("msgBtn2").innerText = t.msgBtn;
-      document.getElementById("msgBtn3").innerText = t.msgBtn;
-      document.getElementById("ideaTitle").innerText = t.ideaTitle;
-      document.getElementById("ideaText").innerText = t.ideaText;
-      document.getElementById("inputName").placeholder = t.inputName;
-      document.getElementById("inputEmail").placeholder = t.inputEmail;
-      document.getElementById("inputMsg").placeholder = t.inputMsg;
-      document.getElementById("submitBtn").innerText = t.submitBtn;
-      document.querySelectorAll(".lang-btn").forEach(btn => {
-        btn.classList.remove("active");
-        if (btn.innerText.toLowerCase() === lang) btn.classList.add("active");
-      });
-      document.documentElement.lang = lang;
-    }
-
-    // Dark/Light Mode Toggle
-    const themeToggle = document.getElementById('theme-toggle');
-    const currentTheme = localStorage.getItem('theme') || 'dark-mode';
-    
-    // Sayt yüklənəndə mövzunu təyin et
-    document.body.className = currentTheme;
-    themeToggle.innerHTML = currentTheme === 'dark-mode' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
-    
-    // Mövzu dəyişdirici
-    themeToggle.addEventListener('click', () => {
-      if (document.body.classList.contains('dark-mode')) {
-        document.body.classList.remove('dark-mode');
-        document.body.classList.add('light-mode');
-        themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-        localStorage.setItem('theme', 'light-mode');
-      } else {
-        document.body.classList.remove('light-mode');
-        document.body.classList.add('dark-mode');
-        themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-        localStorage.setItem('theme', 'dark-mode');
-      }
-    });
-
-    // Dili yadda saxla
-    const savedLang = localStorage.getItem("lang") || "az";
-    setLang(savedLang);
-    document.querySelectorAll(".lang-btn").forEach(btn => {
-      btn.classList.remove("active");
-      if (btn.innerText.toLowerCase() === savedLang) btn.classList.add("active");
-    });
-  </script>
+  <script src="js/language.js"></script>
+  <script src="js/theme.js"></script>
 </body>
 </html>

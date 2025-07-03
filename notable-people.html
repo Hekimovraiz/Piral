@@ -9,14 +9,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body {
-            background-color: #fffefe;
             font-family: sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         .person-section {
             max-width: 800px;
             margin: 50px auto;
-            background: rgb(0, 0, 0);
+            background: var(--card-bg);
             border-radius: 12px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.1);
             padding: 30px;
@@ -29,17 +29,18 @@
             object-fit: cover;
             border-radius: 50%;
             margin-bottom: 20px;
+            border: 4px solid var(--accent-color);
         }
 
         .person-section h2 {
             margin-bottom: 20px;
-            color: #fff; /* Ağ rəng qara fonda başlıqlar üçün */
+            color: var(--text-heading);
         }
 
         .person-bio {
             text-align: left;
-            background-color: #000; /* qara fon */
-            color: #fff;            /* ağ yazı */
+            background-color: var(--bio-bg);
+            color: var(--bio-text);
             padding: 20px;
             border-radius: 10px;
         }
@@ -59,22 +60,43 @@
                 height: 150px;
             }
         }
+
+        body.night-mode {
+            --card-bg: #1e1e1e;
+            --text-heading: #ffffff;
+            --bio-bg: #2a2a2a;
+            --bio-text: #f0f0f0;
+            --accent-color: #2e7d32;
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+
+        body.light-mode {
+            --card-bg: #ffffff;
+            --text-heading: #111;
+            --bio-bg: #f3f3f3;
+            --bio-text: #111;
+            --accent-color: #2e7d32;
+            background-color: #fdfdfd;
+            color: #111;
+        }
     </style>
 </head>
-<body class="dark-mode">
+<body class="dark-mode notable-people page">
     <header>
         <div class="container">
             <div class="logo">
-               <h1 class="logo-piral">PIRAL</h1>
+                <h1 class="logo-piral">PIRAL</h1>
             </div>
             <nav>
                 <ul>
-                    <li><a href="index.html" class="active" data-translate="menu_home">Ana Səhifə</a></li>
+                    <li><a href="index.html" data-translate="menu_home">Ana Səhifə</a></li>
                     <li><a href="about.html" data-translate="menu_about">Haqqında</a></li>
                     <li><a href="news.html" data-translate="menu_news">Xəbərlər</a></li>
-                    <li><a href="notable-people.html" class="active" data-translate="menu_people">Tanınmışlar</a></li>
+                    <li><a href="notable-people.html"class="active"  data-translate="menu_people">Tanınmış Şəxslər</a></li>
                     <li><a href="contact.html" data-translate="menu_contact">Əlaqə</a></li>
                     <li><a href="admin.html" data-translate="menu_admin">Admin</a></li>
+                    
                 </ul>
             </nav>
             <div class="language-switcher">
@@ -100,21 +122,32 @@
 
         <section class="people-container">
             <div class="person-section">
-                <img src="images/person1.jpg" alt="Raiz Hekimov">
+                <img src="images/person1.jpg" alt="" data-translate-alt="Nazim">
                 <h2 data-translate="Nazim">Nazim Hüseynov</h2>
                 <div class="person-bio">
-                    <p data-translate="pers12">Nazim Hüseynov 1969-cu ilin 2 avqust tarixində Bakı şəhərində ləzgi ailəsində anadan olub. Hüseynovun atası əslən Qusar rayonunun Piral kəndidən, anası isə Dağıstanın Axtı rayonundandır. Nazim Hüseynovun birinci məşqçisi Azərbaycanın əməkdar məşqçisi Tərlan Həsənovdur.</p>
-                    <p data-translate="pers1">Sovet boyunduruğunun azad edilməsindən cəmi bir il sonra, 1992-ci ildə Barselona Oyunlarında Nazim fəxri kürsünün ən yüksək pilləsinə qalxdı və olimpiya mükafatlarını qazandı. Uzun illər sonra sakitləşən və dəyişilən Bakıda, cüdo üzrə 2018-ci il Dünya Çempionatı dünya dövrəsinin üfüqündə (sentyabr 2018) və Tokio 2020-yə gedən yolda hələ də tatamidə fəal olan bu sadə qəhrəmanla qarşılaşdıq.</p>
-                    <p data-translate="pers11">Nazim Hüseynov 1969-cu il avqustun 2-də Bakıda anadan olub və hələ uşaqlıqdan idmana əsl sevgi aşılayıb. Əgər o, bir az güləşlə başlamışdısa, baş qəhrəman Yasuhiro Yamaşitanın (JPN) Yapon döyüş sənəti ilə məşğul olduğu sənədli filmi kəşf etdikdən sonra diqqəti sürətlə cüdoya yönəldi: "Dostlarımla kubokun sendviç və ya dondurma olduğu kiçik qarşıdurmalar təşkil edirdik. Yamaşitanın görüşlərini görmüşdüm və bu, mənə çoxlu ilham verdi və bu, mənə tez-tez qələbə qazandırdı".</p>
+                    <p data-translate="pers12">Nazim Hüseynov 1969-cu ilin 2 avqust tarixində Bakı şəhərində ləzgi ailəsində anadan olub...</p>
+                    <p data-translate="pers1">Sovet boyunduruğunun azad edilməsindən cəmi bir il sonra, 1992-ci ildə Barselona Oyunlarında...</p>
+                    <p data-translate="pers11">Nazim Hüseynov 1969-cu il avqustun 2-də Bakıda anadan olub və hələ uşaqlıqdan idmana əsl sevgi aşılayıb...</p>
                 </div>
             </div>
             <div class="person-section">
-                <img src="images/person2.jpg" alt="Raiz Hekimov">
+                <img src="images/person2.jpg" alt="" data-translate-alt="Sahil">
                 <h2 data-translate="Sahil">Sahil Şakirov</h2>
                 <div class="person-bio">
-                    <p data-translate="pers2">Sahil Qorxmaz oğlu Şakirov 1998-ci ildə Azərbaycanın şimalında, Qusar rayonunun Piral kəndində anadan olub. Uşaqlıq illərindən idmana maraq göstərən Sahil, fiziki gücü və mübarizə əzmi ilə yaşıdları arasında seçilirdi.</p>
-                    <p data-translate="pers21">Sahil Şakirov 2025-ci ildə Serbiyanın Belqrad şəhərində keçirilən IMMAF Avropa Çempionatında çıxış edərək bantamweight (61.2 kq) çəki dərəcəsində Avropa çempionu adını qazanmışdır. Bu uğur onu beynəlxalq arenada tanıtdı və Azərbaycanı MMA sahəsində təmsil edən ən ümidverici gənclərdən biri kimi ön plana çıxardı. Onun döyüş tərzi balanslıdır – həm ayaqüstü (stend-up), həm də yerüstü (grappling, submission) texnikalarda ustalığı ilə seçilir. İndiyədək keçirdiyi döyüşlərin əksəriyyətini qalibiyyətlə başa vuraraq məğlubiyyətsiz rekord saxlamışdır.</p>
-                    <p data-translate="pers22">Şəxsi həyatına gəlincə, Sahil sadə və zəhmətkeş kənd mühitində böyümüşdür. Ailəsinə və doğma Piral kəndinə dərin bağlılığı ilə tanınır. Onun üçün uğur yalnız rinqdə qalib gəlmək deyil, həm də gənclərə nümunə olmaq və doğma bölgəsini layiqincə təmsil etməkdir. Boş vaxtlarında idman zalında məşq etmək, sağlam qidalanmaq və ailəsi ilə vaxt keçirmək onun həyat tərzinin ayrılmaz hissələrindəndir. O, həmçinin sosial mediada da aktivdir və gənc idmançılara motivasiya verən çıxışları ilə tanınır.</p>
+                    <p data-translate="pers2">Sahil Qorxmaz oğlu Şakirov 1998-ci ildə Azərbaycanın şimalında, Qusar rayonunun Piral kəndində anadan olub...</p>
+                    <p data-translate="pers21">Sahil Şakirov 2025-ci ildə Serbiyanın Belqrad şəhərində keçirilən IMMAF Avropa Çempionatında...</p>
+                    <p data-translate="pers22">Şəxsi həyatına gəlincə, Sahil sadə və zəhmətkeş kənd mühitində böyümüşdür...</p>
+                </div>
+            </div>
+            <div class="person-section">
+                <img src="images/person3.jpg" alt="" data-translate-alt="Sahil">
+                <h2 data-translate="Serheddin">Sərhəddin Abdullayev</h2>
+                <div class="person-bio">
+                    <p data-translate="pers3">Abdullayev Sərhəddin Qubaddin oğlu 1939-cu il aprel ayının 14-də Qusar rayonunun Piral kəndində dünyaya göz açıb.Bu ailədə dünyaya göz açmış altı körpədən üçü faciəvi surətdə həyatını itirmişdi. Anasının işlədiyi fermadan məktəbə olan yolun uzaqlığı və yaşayış şəraitinin çətinliyi üzündən Sərhəddin məktəbə yalnız 9 yaşında gedə bilib.Bütün fənləri eyni səviyyədə öyrənən Sərhəddin xalq şairi Səməd Vurğunun məktəblərinə qonaq gəlməsini çətinlikdə keçən uşaqlıq-məktəb illərinin ən xoş xatirəsi kimi yadda saxlayır, bundan sonra onun şerlərini həvəslə oxuduğunu və bir çoxlarını isə əzbərdən bildiyini söyləyir. </p>
+                    <p data-translate="pers31">1958-ci ildə Bakı Dövlət Universitetinin Fizika fakültəsinə daxil olub, əla qiymətlərlə oxuduğu üçün o, adlı təqaüdə – “Lenin təqaüdü”nə layiq görülüb. 1963-cü ildə fərqlənmə diplomu ilə bitirib, bir il Quba rayonunun Qımıl kənd məktəbində fizika müəllimi işləyib. 1964-cü ildə görkəmli alim,  Azərbaycanda Nəzəri fizika məktəbinin yaradıcısı professor Abdulla Muxtarovun dəvəti və dəstəyi ilə Bakı Dövlət Universitetində Nəzəri fizika ixtisası üzrə aspiranturaya qəbul olub. Sərhəddin Abdullayev 1970-ci ildə fizika-riyaziyyat elmləri namizədi elmi dərəcəsini alıb.
+
+1967-ci ildən Bakı Dövlət Universitetində əmək fəaliyyətinə başlayıb. Sərhəddin Abdullayev 1996-ci ildə fizika-riyaziyyat elmləri doktoru elmi dərəcəsini alıb. O, 1997-ci ildə professor elmi adını alıb.</p>
+                    <p data-translate="pers32">Sərhəddin Abdullayev pedaqoji fəaliyyətini uğurla davam etdirir.Sərhəddin Abdullayevin fəaliyyəti dövlət tərəfindən yüksək qiymətləndirilib. o, 2014-cü ildə “Qabaqcıl təhsil işçisi” döş nişanına, 2016-cı ildə “Qızıl qələm” mükafatına. O, 2019-cu ildə Rusiyanın Təbiət Elmləri Akademiyasının həqiqi üzvü seçilib. 2019-cu ildə Azərbaycan Respublikası Prezidentinin fərdi təqaüdünə layiq görülüb və "Bakı Dövlət Universitetinin 100 illiyi (1919-2019)" medalı ilə təltif olunub.</p>
                 </div>
             </div>
         </section>
@@ -122,11 +155,407 @@
 
     <footer>
         <div class="container">
-            <p data-translate="footer_text">&copy; 2026 Piral Kəndi. Bütün hüquqlar qorunur.</p>
+            <p data-translate="footer_text">&copy; 2025 Piral Kəndi. Bütün hüquqlar qorunur.</p>
         </div>
     </footer>
 
-    <script src="js/language.js"></script>
-    <script src="js/theme.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const translations = {
+        'az': {
+            // Menu
+            'menu_home': 'Ana Səhifə',
+            'menu_about': 'Haqqında',
+            'menu_gallery': 'Qalereya',
+            'menu_news': 'Xəbərlər',
+            'menu_contact': 'Əlaqə',
+            'menu_admin': 'Admin',
+            
+            // About Page
+            'title_about': 'Piral Kəndi - Haqqımızda',
+            'about_title': 'Piral Kəndi Haqqında',
+            'about_subtitle': 'Qədim tarixi və zəngin mədəniyyəti ilə tanınan kəndimiz',
+            'about_location': 'Coğrafi Mövqe',
+            'about_history': 'Tarixi Arxa Plan',
+            'about_culture': 'Mədəniyyət və Ənənələr',
+            'about_infrastructure': 'İnfrastruktur',
+            'about_p1': 'Piral kəndi Azərbaycanın şimal-şərqində, Qusar rayonunda yerləşir. Dəniz səviyyəsindən 850 metr yüksəklikdə, 41°3137.05" şimal enliyi və 48°1803.54" şərq uzunluğu koordinatlarında yerləşir. Kəndin ümumi sahəsi 2422 hektardır.',
+            'about_p2': 'Kənd şimaldan və qərbdən Böyük Qafqaz dağları ilə əhatələnib. Ətrafı genişyarpaqlı meşələrlə örtülüdür. İqlimi mülayim kontinentaldır',
+            'about_p3': 'Piral kəndinin əsası XVIII əsrin əvvəllərində qoyulub. Kəndin adı "pir" (müqəddəs yer) və "al" (ətraf) sözlərindən yaranıb. Tarixi qaynaqlara görə ilk sakinləri Dağıstandan köçüb gəlmiş ləzgi ailələri olub.',
+            'culture_dance': 'Ləzgi Rəqsləri',
+            'culture_clothes': 'Milli Geyimlər',
+            'infra1': 'Piral kənd orta məktəbi (300+ şagird)',
+            'infra2': 'Kənd xəstəxanası (10+ nəfərlik tibb işçisi heyəti)',
+            'infra3': 'Mədəniyyət evi (150 nəfərlik auditoriya)',
+            'infra4': 'Kütləvi kitabxana (5000-dən çox kitab)',
+            'infra5': 'İdman kompleksi (futbol meydançası, voleybol meydançası)',
+            'map_alt': 'Piral kəndinin xəritədə yeri',
+            'history_alt': 'Piral kəndinin tarixi',
+            'footer_text': '© 2025 Piral Kəndi. Bütün hüquqlar qorunur.',
+            'footer_privacy': 'Məxfilik Siyasəti',
+            'footer_terms': 'İstifadə Qaydaları',
+            // ... other translations ...
+            'about_title': 'Piral Kəndi Haqqında',
+            'about_subtitle': 'Qədim tarixi və zəngin mədəniyyəti ilə tanınan kəndimiz',
+            'about_culture': 'Mədəniyyət',
+            'about_p6': 'Piral kəndində ənənəvi ləzgi mədəniyyəti qorunub saxlanılır. İllik "Ləzgi Mədəniyyəti Günü", "Novruz" və digər milli bayramlar böyük şənliklərlə qeyd olunur.',
+            'about_population': 'Əhali',
+            'about_p5': '2023-cü il məlumatına görə kəndin əhalisi 2097 nəfərdir. Əhalinin əsas hissəsini ləzgilər təşkil edir. Kənddə əsasən azərbaycan və ləzgi dillərində danışılır.',
+            'ppp' : '1921-ci ildə Quba rayonunun Piral kənd icra nümayəndəliyi yaradılıb. 1930-cu ildə Xılı rayonu (1938-ci ildən Qusar rayonu) təşkil edilib.',
+            'title_home': 'Piral Kəndi - Ana Səhifə',
+            'site_title': 'PIRAL',
+            'menu_home': 'Ana Səhifə',
+            'menu_about': 'Haqqında',
+            'menu_news': 'Xəbərlər',
+            'menu_contact': 'Əlaqə',
+            'menu_admin': 'Admin',
+            'welcome_title': 'Piral Kəndinə Xoş Gəlmisiniz',
+            'welcome_subtitle': 'Qədim tarixi və təbii gözəlliyi ilə məşhur olan Piral kəndi',
+            'about_section': 'Piral Haqqında',
+            'about_summary': 'Piral — Azərbaycan Respublikasının Qusar rayonunda yerləşən kənd. Rayon mərkəzindən 20 km şimal-qərbdə yerləşir.',
+            'btn_read_more': 'Daha çox',
+            'gallery_title': 'Kəndimizdən Görüntülər',
+            'slide1_alt': 'Piral dağları',
+            'slide2_alt': 'Piral bulağı',
+            'slide3_alt': 'Piral məktəbi',
+            'latest_news': 'Son Xəbərlər',
+            'btn_all_news': 'Bütün xəbərlər',
+            'footer_text': '© 2025 Piral Kəndi. Bütün hüquqlar qorunur.',
+            'AAA1' : 'Burada yaşayanlar əsasən ləzgi millətinə məxsusdur. 2023-cü il məlumatına görə kəndin əhalisi 3207 nəfərdir. ',
+            'KKK1' : 'Piral Kəndi Xəbərləri',
+            'pers1' : 'Sovet boyunduruğunun azad edilməsindən cəmi bir il sonra, 1992-ci ildə Barselona Oyunlarında Nazim fəxri kürsünün ən yüksək pilləsinə qalxdı və olimpiya mükafatlarını qazandı. Uzun illər sonra sakitləşən və dəyişilən Bakıda, cüdo üzrə 2018-ci il Dünya Çempionatı dünya dövrəsinin üfüqündə (sentyabr 2018) və Tokio 2020-yə gedən yolda hələ də tatamidə fəal olan bu sadə qəhrəmanla qarşılaşdıq.',
+            'pers11' : 'Əgər o, bir az güləşlə başlamışdısa, baş qəhrəman Yasuhiro Yamaşitanın (JPN) Yapon döyüş sənəti ilə məşğul olduğu sənədli filmi kəşf etdikdən sonra diqqəti sürətlə cüdoya yönəldi: "Dostlarımla kubokun sendviç və ya dondurma olduğu kiçik qarşıdurmalar təşkil edirdik. Yamaşitanın görüşlərini görmüşdüm və bu, mənə çoxlu ilham verdi və bu, mənə tez-tez qələbə qazandırdı".',
+            'Nazim' : 'Nazim Hüseynov',
+            'pers12' : 'Nazim Hüseynov 1969-cu ilin 2 avqust tarixində Bakı şəhərində ləzgi ailəsində anadan olub. Hüseynovun atası əslən Qusar rayonunun Piral kəndidən, anası isə Dağıstanın Axtı rayonundandır. Nazim Hüseynovun birinci məşqçisi Azərbaycanın əməkdar məşqçisi Tərlan Həsənovdur.',
+            'menu_people' : 'Tanınmışlar',
+            'people_title' : 'Piral Kəndinin Tanınmış Şəxsləri',
+            'people_subtitle' : 'Kəndimizdən çıxan görkəmli şəxslər və onların nailiyyətləri',
+            'pers2' : 'Sahil Qorxmaz oğlu Şakirov 1998-ci ildə Azərbaycanın şimalında, Qusar rayonunun Piral kəndində anadan olub. Uşaqlıq illərindən idmana maraq göstərən Sahil, fiziki gücü və mübarizə əzmi ilə yaşıdları arasında seçilirdi.',
+            'pers21' : 'Sahil Şakirov 2025-ci ildə Serbiyanın Belqrad şəhərində keçirilən IMMAF Avropa Çempionatında çıxış edərək bantamweight (61.2 kq) çəki dərəcəsində Avropa çempionu adını qazanmışdır. Bu uğur onu beynəlxalq arenada tanıtdı və Azərbaycanı MMA sahəsində təmsil edən ən ümidverici gənclərdən biri kimi ön plana çıxardı. Onun döyüş tərzi balanslıdır – həm ayaqüstü (stend-up), həm də yerüstü (grappling, submission) texnikalarda ustalığı ilə seçilir. İndiyədək keçirdiyi döyüşlərin əksəriyyətini qalibiyyətlə başa vuraraq məğlubiyyətsiz rekord saxlamışdır',
+            'pers22' : 'Şəxsi həyatına gəlincə, Sahil sadə və zəhmətkeş kənd mühitində böyümüşdür. Ailəsinə və doğma Piral kəndinə dərin bağlılığı ilə tanınır. Onun üçün uğur yalnız rinqdə qalib gəlmək deyil, həm də gənclərə nümunə olmaq və doğma bölgəsini layiqincə təmsil etməkdir. Boş vaxtlarında idman zalında məşq etmək, sağlam qidalanmaq və ailəsi ilə vaxt keçirmək onun həyat tərzinin ayrılmaz hissələrindəndir. O, həmçinin sosial mediada da aktivdir və gənc idmançılara motivasiya verən çıxışları ilə tanınır.',
+            'Sahil' : 'Sahil Şakirov',
+            'abtk6' : 'Piral kəndinin əhalisi əsasən kənd təsərrüfatı, xüsusilə də heyvandarlıq və əkinçiliklə məşğuldur. Gənc nəsil arasında təhsilə maraq son illərdə artmaqdadır — bir çox gənclər rayon mərkəzində və ya Bakı şəhərində ali təhsil alır. Kənddə ibtidai və ümumi orta məktəb fəaliyyət göstərir, eyni zamanda dini və milli dəyərlərə bağlılıq da yüksək səviyyədədir.',
+            'ak66' : ' Bu tədbirlər zamanı kəndin sakinləri milli geyimlər geyinir, qədim rəqslər ifa olunur və folklor nümunələri təqdim edilir. Şənliklər həm böyüklər, həm də uşaqlar üçün xüsusi əhəmiyyət daşıyır və icma arasında birliyi daha da möhkəmləndirir. Bu bayramlar, həmçinin, ləzgi mədəniyyətinin gələcək nəsillərə ötürülməsində mühüm rol oynayır.',
+            'title_contact' : "Piral Kəndi - Əlaqə",
+            'menu_home' : "Ana Səhifə",
+            'menu_about' : "Haqqında",
+            'menu_news' : "Xəbərlər",
+            'menu_people' : "Tanınmışlar",
+            'menu_contact' : "Əlaqə",
+            'menu_admin' : "Admin",
+            'contact_title' : "Adminlə Əlaqə",
+            'btn_message' : "Mesaj Yazın",
+            'idea_title' : "Sayt haqqında fikriniz varmı?",
+            'idea_text' : "Əgər sizin də sayt haqqında bir ideyanız və ya təklifiniz varsa, bizimlə paylaşın!",
+            'placeholder_name' : "Adınız",
+            'placeholder_email' : "Email ünvanınız",
+            'placeholder_msg' : "Fikriniz və ya təklifiniz",
+            'btn_submit' : "Göndər",
+            'footer_text' : "© 2025 Piral Kəndi. Bütün hüquqlar qorunur.",
+            'pers3' : 'Abdullayev Sərhəddin Qubaddin oğlu 1939-cu il aprel ayının 14-də Qusar rayonunun Piral kəndində dünyaya göz açıb.Bu ailədə dünyaya göz açmış altı körpədən üçü faciəvi surətdə həyatını itirmişdi. Anasının işlədiyi fermadan məktəbə olan yolun uzaqlığı və yaşayış şəraitinin çətinliyi üzündən Sərhəddin məktəbə yalnız 9 yaşında gedə bilib.Bütün fənləri eyni səviyyədə öyrənən Sərhəddin xalq şairi Səməd Vurğunun məktəblərinə qonaq gəlməsini çətinlikdə keçən uşaqlıq-məktəb illərinin ən xoş xatirəsi kimi yadda saxlayır, bundan sonra onun şerlərini həvəslə oxuduğunu və bir çoxlarını isə əzbərdən bildiyini söyləyir.',
+            'Serheddin' : 'Sərhəddin Abdullayev',
+            'pers31' : '1958-ci ildə Bakı Dövlət Universitetinin Fizika fakültəsinə daxil olub, əla qiymətlərlə oxuduğu üçün o, adlı təqaüdə – “Lenin təqaüdü”nə layiq görülüb. 1963-cü ildə fərqlənmə diplomu ilə bitirib, bir il Quba rayonunun Qımıl kənd məktəbində fizika müəllimi işləyib. 1964-cü ildə görkəmli alim,  Azərbaycanda Nəzəri fizika məktəbinin yaradıcısı professor Abdulla Muxtarovun dəvəti və dəstəyi ilə Bakı Dövlət Universitetində Nəzəri fizika ixtisası üzrə aspiranturaya qəbul olub. Sərhəddin Abdullayev 1970-ci ildə fizika-riyaziyyat elmləri namizədi elmi dərəcəsini alıb. 1967-ci ildən Bakı Dövlət Universitetində əmək fəaliyyətinə başlayıb. Sərhəddin Abdullayev 1996-ci ildə fizika-riyaziyyat elmləri doktoru elmi dərəcəsini alıb. O, 1997-ci ildə professor elmi adını alıb.',
+            'pers32' : 'Sərhəddin Abdullayev pedaqoji fəaliyyətini uğurla davam etdirir.Sərhəddin Abdullayevin fəaliyyəti dövlət tərəfindən yüksək qiymətləndirilib. o, 2014-cü ildə “Qabaqcıl təhsil işçisi” döş nişanına, 2016-cı ildə “Qızıl qələm” mükafatına. O, 2019-cu ildə Rusiyanın Təbiət Elmləri Akademiyasının həqiqi üzvü seçilib. 2019-cu ildə Azərbaycan Respublikası Prezidentinin fərdi təqaüdünə layiq görülüb və "Bakı Dövlət Universitetinin 100 illiyi (1919-2019)" medalı ilə təltif olunub.'
+
+        },
+        'en': {
+            // Menu
+            'menu_home': 'Home',
+            'menu_about': 'About',
+            'menu_gallery': 'Gallery',
+            'menu_news': 'News',
+            'menu_contact': 'Contact',
+            'menu_admin': 'Admin',
+            
+            // About Page
+            'title_about': 'Piral Village - About',
+            'about_title': 'About Piral Village',
+            'about_subtitle': 'Our village known for its ancient history and rich culture',
+            'about_location': 'Geographic Location',
+            'about_history': 'Historical Background',
+            'about_culture': 'Culture and Traditions',
+            'about_infrastructure': 'Infrastructure',
+            'about_p1': 'Piral village is located in the north-east of Azerbaijan, in the Gusar district. It is located at an altitude of 850 meters above sea level, at the coordinates of 41°3137.05" north latitude and 48°1803.54" east longitude. The total area of ​​the village is 2422 hectares.',
+            'about_p2': 'The village is surrounded by the Greater Caucasus Mountains to the north and west. It is covered with broad-leaved forests. Its climate is temperate continental.',
+            'about_p3': 'The village of Piral was founded in the early 18th century. The name of the village comes from the words "pir" (sacred place) and "al" (surroundings). According to historical sources, the first inhabitants were Lezgi families who migrated from Dagestan.',
+            'culture_dance': 'Lezgi Dances',
+            'culture_clothes': 'Traditional Clothes',
+            'infra1': 'Piral village secondary school (300+ students)',
+            'infra2': 'Village hospital (10+ medical staff)',
+            'infra3': 'Culture house (150-seat auditorium)',
+            'infra4': 'Public library (more than 5000 books)',
+            'infra5': 'Sports complex (football field, volleyball)',
+            'map_alt': 'Location of Piral village on map',
+            'history_alt': 'History of Piral village',
+            'footer_text': '© 2025 Piral Village. All rights reserved.',
+            'footer_privacy': 'Privacy Policy',
+            'footer_terms': 'Terms of Use',
+            // ... other translations ...
+            'about_title': 'About Piral Village',
+            'about_subtitle': 'Our village known for its ancient history and rich culture',
+            'about_culture': 'Culture',
+            'about_p6': 'Traditional Lezgi culture is preserved in Piral village. Annual "Lezgi Culture Day", "Novruz" and other national holidays are celebrated with great festivities.',
+            'about_population': 'Population',
+            'about_p5': 'According to 2023 data, the population of the village is 2097 people. The majority of the population are Lezgins. Mainly Azerbaijani and Lezgi languages are spoken in the village.',
+            'ppp' : 'In 1921, the Piral village executive office of the Guba region was established. In 1930, the Khili region (Gusar region since 1938) was organized.',
+            'title_home': 'Piral Village - Home',
+            'site_title': 'PIRAL',
+            'menu_home': 'Home',
+            'menu_about': 'About',
+            'menu_news': 'News',
+            'menu_contact': 'Contact',
+            'menu_admin': 'Admin',
+            'welcome_title': 'Welcome to Piral Village',
+            'welcome_subtitle': 'Piral village famous for its ancient history and natural beauty',
+            'about_section': 'About Piral',
+            'about_summary': 'Piral is a village in Gusar District of Azerbaijan. It is located 20 km northwest of the district center.',
+            'btn_read_more': 'Read more',
+            'gallery_title': 'Images from Our Village',
+            'slide1_alt': 'Piral mountains',
+            'slide2_alt': 'Piral spring',
+            'slide3_alt': 'Piral school',
+            'latest_news': 'Latest News',
+            'btn_all_news': 'All news',
+            'footer_text': '© 2025 Piral Village. All rights reserved.',
+            'AAA1' : 'The people living here are mainly Lezgi. According to 2023 data, the village-s population is 3,207 people.',
+            'KKK1' : 'Piral Village News',
+            'pers1' : 'Only one year after the liberation of the Soviet yoke, at the Barcelona Games in 1992, Nazim climbed on top of the podium and won Olympic laurels. Many years later, in a city of Baku appeased and transformed, while the Judo World Championships 2018 are looming on the horizon of the world circuit (September 2018) and on the road to Tokyo 2020, we met this simple hero, who is still active on the tatami.',
+            'pers11' : 'If he started with a bit of wrestling, his attention quickly turned to judo after he discovered a documentary in which the main character, Yasuhiro Yamashita (JPN), practiced the Japanese martial art: "With my friends we used to organize small confrontations during which the trophy was a sandwich or an ice cream. I had seen Yamashitas matches, and that inspired me a lot and especially it allowed me to win the trophy often."',
+            'Nazim' : 'Nazim Huseynov',
+            'pers12' : 'Nazim Huseynov was born on August 2, 1969 in Baku to a Lezgi family. Huseynov-s father is originally from the village of Piral in the Gusar region, and his mother is from the Akhty region of Dagestan. Nazim Huseynov-s first coach was the Honored Coach of Azerbaijan, Tarlan Hasanov.',
+            'menu_people' : 'Celebrities',
+            'people_title' : 'Famous People of Piral Village',
+            'people_subtitle' : 'Prominent people from our village and their achievements',
+            'pers2' : 'Sahil Gorkhmaz oglu Shakirov was born in 1998 in the village of Piral, Gusar district, in northern Azerbaijan. Sahil, who showed interest in sports since childhood, stood out among his peers with his physical strength and fighting spirit.',
+            'pers21' : 'Sahil Shakirov won the European bantamweight (61.2 kg) title at the 2025 IMMAF European Championships in Belgrade, Serbia. This success introduced him to the international arena and brought him to the forefront as one of the most promising young people representing Azerbaijan in the MMA field. His fighting style is balanced - he is distinguished by his mastery of both stand-up (stand-up) and ground (grappling, submission) techniques. He has won most of his fights so far and has an undefeated record',
+            'pers22' : 'As for his personal life, Sahil grew up in a simple and hardworking rural environment. He is known for his deep devotion to his family and his native village of Piral. For him, success is not only about winning in the ring, but also being an example to the youth and representing his native region. In his free time, working out at the gym, eating healthy, and spending time with his family are integral parts of his lifestyle. He is also active on social media and is known for his motivational speeches to young athletes.',
+            'Sahil' : 'Sahil Shakirov',
+            'abtk6' : 'The population of Piral village is mainly engaged in agriculture, especially animal husbandry and farming. Interest in education among the younger generation has been growing in recent years — many young people are receiving higher education in the regional center or in Baku. There is a primary and secondary school in the village, and at the same time, there is a high level of commitment to religious and national values.',
+            'ak66' : 'During these events, villagers wear national costumes, ancient dances are performed, and folklore performances are presented. The festivities are of particular importance to both adults and children, and further strengthen the unity within the community. These holidays also play an important role in passing on Lezgi culture to future generations.',
+            'title_contact' : "Piral Village - Contact",
+            'menu_home' : "Home",
+            'menu_about' : "About",
+            'menu_news' : "News",
+            'menu_people' : "Celebrities",
+            'menu_contact' : "Contact",
+            'menu_admin' : "Admin",
+            'contact_title' : "Contact the Admin",
+            'btn_message' : "Send Message",
+            'idea_title' : "Have an idea about the site?",
+            'idea_text' : "If you have any suggestions or ideas about the site, feel free to share!",
+            'placeholder_name' : "Your Name",
+            'placeholder_email' : "Your Email",
+            'placeholder_msg' : "Your suggestion or message",
+            'btn_submit' : "Send",
+            'footer_text' : "© 2025 Piral Village. All rights reserved.",
+            'pers3' : 'Abdullayev Sarhaddin Gubaddin oglu was born on April 14, 1939 in the village of Piral, Gusar region. Three of the six children born to this family tragically lost their lives. Due to the distance from the farm where his mother worked to the school and the difficult living conditions, Sarhaddin was able to go to school only at the age of 9. Sarhaddin, who studied all subjects at the same level, remembers the visit of the national poet Samad Vurgun to his school as the most pleasant memory of his difficult childhood and school years, and says that after that he read his poems with enthusiasm and knew many of them by heart.',
+            'Serheddin' : 'Sarhaddin Abdullayev',
+            'pers31' : 'In 1958, he entered the Physics Faculty of Baku State University and, having studied with excellent grades, was awarded a named scholarship - the "Lenin Scholarship". In 1963, he graduated with honors and worked as a physics teacher at the Gimil village school in the Guba region for a year. In 1964, with the invitation and support of the prominent scientist, the founder of the Theoretical Physics School in Azerbaijan, Professor Abdulla Mukhtarov, he was admitted to postgraduate study in Theoretical Physics at Baku State University. Sarhaddin Abdullayev received the scientific degree of Candidate of Physical and Mathematical Sciences in 1970. He began his labor activity at Baku State University in 1967. Sarhaddin Abdullayev received the scientific degree of Doctor of Physical and Mathematical Sciences in 1996. He received the scientific title of Professor in 1997.',
+            'pers32' : 'Sarhaddin Abdullayev successfully continues his pedagogical activity. Sarhaddin Abdullayev-s activities have been highly appreciated by the state. In 2014, he was awarded the "Advanced Education Worker" badge, and in 2016, the "Golden Pen" award. In 2019, he was elected a full member of the Russian Academy of Natural Sciences. In 2019, he was awarded a personal scholarship of the President of the Republic of Azerbaijan and the "100th Anniversary of Baku State University (1919-2019)" medal.'
+
+        },
+        'ru': {
+            // Menu
+            'menu_home': 'Главная',
+            'menu_about': 'О нас',
+            'menu_gallery': 'Галерея',
+            'menu_news': 'Новости',
+            'menu_contact': 'Контакты',
+            'menu_admin': 'Админ',
+            
+            // About Page
+            'title_about': 'Село Пирал - О нас',
+            'about_title': 'О селе Пирал',
+            'about_subtitle': 'Наше село, известное своей древней историей и богатой культурой',
+            'about_location': 'Географическое положение',
+            'about_history': 'Историческая справка',
+            'about_culture': 'Культура и традиции',
+            'about_infrastructure': 'Инфраструктура',
+            'about_p1': 'Село Пирал расположено на северо-востоке Азербайджана, в Гусарском районе. Расположено на высоте 850 метров над уровнем моря, с координатами 41°3137.05" северной широты и 48°1803.54" восточной долготы. Общая площадь села составляет 2422 гектара.',
+            'about_p2': 'Село окружено горами Большого Кавказа с севера и запада. Оно покрыто широколиственными лесами. Климат умеренно-континентальный.',
+            'about_p3': 'Село Пирал было основано в начале XVIII века. Название села происходит от слов «пир» (святое место) и «ал» (окрестности). Согласно историческим источникам, первыми жителями были лезгинские семьи, переселившиеся из Дагестана.',
+            'culture_dance': 'Лезгинские танцы',
+            'culture_clothes': 'Национальная одежда',
+            'infra1': 'Средняя школа села Пирал (300+ учеников)',
+            'infra2': 'Сельская больница (10+ медицинских работников)',
+            'infra3': 'Дом культуры (зал на 150 мест)',
+            'infra4': 'Общественная библиотека (более 5000 книг)',
+            'infra5': 'Спортивный комплекс (футбольное поле, залы для волейбола)',
+            'map_alt': 'Расположение села Пирал на карте',
+            'history_alt': 'История села Пирал',
+            'footer_text': '© 2025 Село Пирал. Все права защищены.',
+            'footer_privacy': 'Политика конфиденциальности',
+            'footer_terms': 'Условия использования',
+            'about_title': 'О селе Пирал',
+            'about_subtitle': 'Наше село, известное своей древней историей и богатой культурой',
+            'about_culture': 'Культура',
+            'about_p6': 'В селе Пирал сохраняется традиционная лезгинская культура. Ежегодно отмечаются "День лезгинской культуры", "Новруз" и другие национальные праздники.',
+            'about_population': 'Население',
+            'about_p5': 'По данным 2023 года, население села составляет 2097 человек. Большую часть населения составляют лезгины. В селе в основном говорят на азербайджанском и лезгинском языках.',
+            'title_home': 'Село Пирал - Главная',
+            'site_title': 'ПИРАЛ',
+            'menu_home': 'Главная',
+            'menu_about': 'О нас',
+            'menu_news': 'Новости',
+            'menu_contact': 'Контакты',
+            'menu_admin': 'Админ',
+            'welcome_title': 'Добро пожаловать в село Пирал',
+            'welcome_subtitle': 'Село Пирал, известное своей древней историей и природной красотой',
+            'about_section': 'О Пирале',
+            'about_summary': 'Пирал — село в составе административно-территориальной единицы Гусарского района Азербайджанской Республики. Расположено в 20 км к северо-западу от районного центра.',
+            'btn_read_more': 'Подробнее',
+            'gallery_title': 'Фотографии нашего села',
+            'slide1_alt': 'Горы Пирала',
+            'slide2_alt': 'Родник Пирала',
+            'slide3_alt': 'Школа Пирала',
+            'latest_news': 'Последние новости',
+            'btn_all_news': 'Все новости',
+            'footer_text': '© 2025 Село Пирал. Все права защищены.',
+            'ppp' : 'В 1921 году был создан Пиральский сельский исполнительный орган Губинского района. В 1930 году был организован Хилийский район (с 1938 года — Гусарский район).',
+            'AAA1' : 'Проживающие здесь люди в основном лезгины. По данным на 2023 год население села составляет 3207 человек.',
+            'KKK1' : 'Новости деревни Пирал',
+            'pers1' : 'Всего через год после освобождения от советского ига, на Играх в Барселоне в 1992 году, Назим поднялся на вершину пьедестала и завоевал олимпийские лавры. Много лет спустя, в умиротворенном и преображенном Баку, в то время как чемпионат мира по дзюдо 2018 года маячил на горизонте мирового турнира (сентябрь 2018 года) и на пути в Токио 2020 года, мы встретили этого простого героя, который все еще активен на татами.',
+            'pers11' : 'Если он начинал с борьбы, то его внимание быстро переключилось на дзюдо после того, как он обнаружил документальный фильм, в котором главный герой Ясухиро Ямашита (Япония) практиковал японское боевое искусство: «Мы с друзьями устраивали небольшие стычки, во время которых трофеем был сэндвич или мороженое. Я видел поединки Ямашиты, и это меня очень вдохновляло, и особенно это позволяло мне часто выигрывать трофей».',
+            'Nazim' : 'Назим Гусейнов',
+            'pers12' : 'Назим Гусейнов родился 2 августа 1969 года в Баку в лезгинской семье. Отец Гусейнова родом из села Пирал Гусарского района, а мать — из Ахтынского района Дагестана. Первым тренером Назима Гусейнова был заслуженный тренер Азербайджана Тарлан Гасанов.',
+            'menu_people' : 'Знаменитости',
+            'people_title' : 'Знаменитые люди деревни Пирал',
+            'people_subtitle' : 'Известные люди нашего села и их достижения',
+            'pers2' : 'Сахил Горхмаз оглу Шакиров родился в 1998 году в селе Пирал Гусарского района на севере Азербайджана. Сахил, проявлявший интерес к спорту с детства, выделялся среди сверстников физической силой и бойцовским духом.',
+            'pers21' : 'Сахил Шакиров завоевал титул чемпиона Европы в легчайшем весе (61,2 кг) на чемпионате Европы IMMAF 2025 года в Белграде, Сербия. Этот успех вывел его на международную арену и вывел его на передовые позиции как одного из самых перспективных молодых людей, представляющих Азербайджан в области ММА. Его стиль боя сбалансирован - он отличается мастерством как в стойке (стойка), так и в партере (грепплинг, сабмишн). Он выиграл большинство своих боев и имеет непобежденный рекорд',
+            'pers22' : 'Что касается личной жизни, Сахил вырос в простой и трудолюбивой сельской среде. Он известен своей глубокой преданностью своей семье и родной деревне Пирал. Для него успех заключается не только в победе на ринге, но и в том, чтобы быть примером для молодежи и представлять свой родной регион. В свободное время занятия в спортзале, здоровое питание и общение с семьей являются неотъемлемой частью его образа жизни. Он также активен в социальных сетях и известен своими мотивационными речами для молодых спортсменов.',
+            'Sahil' : 'Сахил Шакиров',
+            'abtk6' : 'Население села Пирал в основном занимается сельским хозяйством, особенно животноводством и земледелием. Интерес к образованию среди молодого поколения в последние годы растет — многие молодые люди получают высшее образование в районном центре или в Баку. В селе есть начальная и средняя школа, и в то же время наблюдается высокий уровень приверженности религиозным и национальным ценностям.',
+            'ak66' : 'Во время этих мероприятий жители села надевают национальные костюмы, исполняются старинные танцы и проводятся фольклорные представления. Праздники имеют особое значение как для взрослых, так и для детей, и еще больше укрепляют единство внутри общины. Эти праздники также играют важную роль в передаче лезгинской культуры будущим поколениям.',
+            'title_contact' : "Село Пирал - Контакт",
+            'menu_home' : "Главная",
+            'menu_about' : "О нас",
+            'menu_news' : "Новости",
+            'menu_people' : "Знаменитости",
+            'menu_contact' : "Контакт",
+            'menu_admin' : "Админ",
+            'contact_title' : "Связь с админом",
+            'btn_message' : "Написать",
+            'idea_title' : "Есть идея о сайте?",
+            'idea_text' : "Если у вас есть предложения или идеи по сайту, поделитесь с нами!",
+            'placeholder_name' : "Ваше имя",
+            'placeholder_email' : "Ваш email",
+            'placeholder_msg' : "Ваше предложение или сообщение",
+            'btn_submit' : "Отправить",
+            'footer_text' : "© 2025 Село Пирал. Все права защищены.",
+            'pers3' : 'Абдуллаев Сархаддин Губаддин оглы родился 14 апреля 1939 года в селе Пирал Гусарского района. Трое из шести детей, родившихся в этой семье, трагически погибли. Из-за удаленности от школы фермы, где работала его мать, и тяжелых условий жизни Сархаддин смог пойти в школу только в 9 лет. Сархаддин, изучавший все предметы на одном уровне, вспоминает визит народного поэта Самеда Вургуна в свою школу как самое приятное воспоминание о своем тяжелом детстве и школьных годах и говорит, что после этого он с увлечением читал его стихи и знал многие из них наизусть.',
+            'Serheddin' : 'Сархаддин Абдуллаев',
+            'pers31' : 'В 1958 году поступил на физический факультет Бакинского государственного университета и, учась на отлично, был удостоен именной стипендии - «Стипендия Ленина». В 1963 году окончил его с отличием и год проработал учителем физики в школе села Гимиль Губинского района. В 1964 году по приглашению и поддержке видного ученого, основоположника школы теоретической физики в Азербайджане, профессора Абдуллы Мухтарова был принят в аспирантуру по теоретической физике Бакинского государственного университета. В 1970 году Сархаддин Абдуллаев получил ученую степень кандидата физико-математических наук. Трудовую деятельность начал в Бакинском государственном университете в 1967 году. В 1996 году Сархаддин Абдуллаев получил ученую степень доктора физико-математических наук. В 1997 году получил ученое звание профессора.',
+            'pers32' : 'Сархаддин Абдуллаев успешно продолжает свою педагогическую деятельность. Деятельность Сархаддина Абдуллаева высоко оценена государством. В 2014 году он был награжден знаком «Отличник образования», а в 2016 году — премией «Золотое перо». В 2019 году он был избран действительным членом Российской академии естественных наук. В 2019 году он был награжден именной стипендией Президента Азербайджанской Республики и медалью «100-летие Бакинского государственного университета (1919-2019)».'
+            
+        }
+    };
+    document.addEventListener('DOMContentLoaded', () => {
+    const langButtons = document.querySelectorAll('.lang-btn');
+    let currentLang = 'az';
+
+    function translatePage(lang) {
+        currentLang = lang;
+        const dict = translations[lang];
+        if (!dict) return;
+
+        document.querySelectorAll('[data-translate]').forEach(el => {
+            const key = el.getAttribute('data-translate');
+            if (dict[key]) el.innerHTML = dict[key];
+        });
+
+        document.querySelectorAll('[data-translate-alt]').forEach(el => {
+            const key = el.getAttribute('data-translate-alt');
+            if (dict[key]) el.alt = dict[key];
+        });
+
+        document.title = dict[`title_${document.body.classList.contains("notable-people") ? 'people' : 'home'}`] || document.title;
+    }
+
+    langButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            langButtons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const selectedLang = btn.getAttribute('data-lang');
+            translatePage(selectedLang);
+        });
+    });
+
+    // Əgər localStorage istifadə etmək istəsən, buraya əlavə edə bilərik
+    translatePage(currentLang);
+});
+
+        function setLanguage(lang) {
+            document.querySelectorAll('[data-translate]').forEach(el => {
+                const key = el.getAttribute('data-translate');
+                if (translations[lang] && translations[lang][key]) {
+                    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                        el.placeholder = translations[lang][key];
+                    } else {
+                        el.textContent = translations[lang][key];
+                    }
+                }
+            });
+
+            // Alt atributları üçün ayrıca yoxlama (məsələn şəkillərin alt mətnləri)
+            document.querySelectorAll('[data-translate-alt]').forEach(el => {
+                const key = el.getAttribute('data-translate-alt');
+                if (translations[lang] && translations[lang][key]) {
+                    el.alt = translations[lang][key];
+                }
+            });
+
+            // Dil düymələrinin aktivliyini dəyiş
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.dataset.lang === lang) btn.classList.add('active');
+            });
+
+            document.documentElement.lang = lang;
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        function initLanguage() {
+            const savedLang = localStorage.getItem('preferredLanguage');
+            const browserLang = navigator.language.substring(0, 2);
+            const defaultLang = 'az';
+            setLanguage(savedLang || (['az','en','ru'].includes(browserLang) ? browserLang : defaultLang));
+        }
+
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                setLanguage(btn.dataset.lang);
+            });
+        });
+
+        initLanguage();
+
+        // Gecə/gündüz rejimi düyməsi
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        themeToggleBtn.addEventListener('click', () => {
+            if(document.body.classList.contains('light-mode')){
+                document.body.classList.remove('light-mode');
+                document.body.classList.add('night-mode');
+                themeToggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
+                localStorage.setItem('theme', 'night-mode');
+            } else {
+                document.body.classList.remove('night-mode');
+                document.body.classList.add('light-mode');
+                themeToggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
+                localStorage.setItem('theme', 'light-mode');
+            }
+        });
+
+        // Səhifə yüklənəndə saxlanmış tema tətbiq et
+        const savedTheme = localStorage.getItem('theme');
+        if(savedTheme){
+            document.body.classList.remove('light-mode', 'night-mode');
+            document.body.classList.add(savedTheme);
+            if(savedTheme === 'night-mode'){
+                themeToggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
+            }
+        }
+    });
+    </script>
 </body>
 </html>
