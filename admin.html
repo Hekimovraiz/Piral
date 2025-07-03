@@ -190,6 +190,11 @@
             gap: 10px;
             margin-top: 15px;
         }
+
+        #login-section,
+        #dashboard-section {
+            margin-top: 120px; /* buradan nə qədər aşağıdan başlasın deyirsənsə, dəyəri artır (məs: 100px) */
+        }
         
         .edit-btn {
             background: #2196F3;
@@ -241,14 +246,10 @@
             <nav>
                 <ul>
                     <li><a href="index.html" data-translate="menu_home">Ana Səhifə</a></li>
-                    <li><a href="admin.html" data-translate="menu_admin">Admin</a></li>
+                    <li><a href="admin.html" class="active" data-translate="menu_admin">Admin</a></li>
                 </ul>
             </nav>
-            <div class="language-switcher">
-                <button class="lang-btn active" data-lang="az">AZ</button>
-                <button class="lang-btn" data-lang="en">EN</button>
-                <button class="lang-btn" data-lang="ru">RU</button>
-            </div>
+
             <button id="theme-toggle" class="theme-toggle">
                 <i class="fas fa-moon"></i>
             </button>
@@ -262,7 +263,7 @@
                     <div class="admin-profile">
                         <img src="images/raiz1.jpg" alt="Raiz Hekimov" class="profile-image">
                         <div class="profile-info">
-                            <h3>Raiz Hekimov</h3>
+                            <h3>Raiz Həkimov</h3>
                             <p><strong>Yaşayış yeri:</strong> Piral kəndi, Qusar rayonu, Azərbaycan</p>
                             <p><strong>İxtisas:</strong> Alqoritmik proqramlaşdırma və veb texnologiyalar</p>
                             <p><strong>Təcrübə:</strong> Python, C++, JavaScript, CSS, HTML, Git</p>
