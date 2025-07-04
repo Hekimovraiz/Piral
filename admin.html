@@ -6,7 +6,7 @@
         body.admin-page {
             transform: scale(0.96);
             transform-origin: top left;
-            width: 104.2%; /* Scale etdiyimiz üçün genişliyi kompensasiya edirik */
+            width: 104.2%;
         }
     }
     </style>
@@ -37,11 +37,16 @@
             object-fit: cover;
             border: 5px solid white;
         }
+
+        body.light-mode .profile-info h3 {
+                color: white;
+        }   
+
         
         .profile-info h3 {
             font-size: 24px;
             margin-bottom: 10px;
-            border-bottom: 2px solid rgba(255,255,255,0.3);
+            border-bottom: 2px solid rgb(255, 255, 255);
             padding-bottom: 10px;
         }
         
@@ -235,26 +240,37 @@
             background: #252525;
         }
     </style>
-    </style>
 </head>
-<body class="dark-mode admin-page">
+<body class="night-mode home-page">
     <header>
-        <div class="container">
-            <div class="logo">
-                <h1 class="logo-piral">PIRAL | Admin</h1> 
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html" data-translate="menu_home">Ana Səhifə</a></li>
-                    <li><a href="admin.html" class="active" data-translate="menu_admin">Admin</a></li>
-                </ul>
-            </nav>
+    <div class="container">
+        <div class="logo">
+            <h1 class="logo-piral">PIRAL | Admin</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" data-translate="menu_home">Ana Səhifə</a></li>
+                <li><a href="admin.html" class="active" data-translate="menu_admin">Admin</a></li>
+            </ul>
+        </nav>
 
+        <!-- Yeni header-controls qutusu -->
+        <div class="header-controls">
+            <!-- Dil dəyişmə -->
+            <div class="language-switcher">
+                <button class="lang-btn active" data-lang="az">AZ</button>
+                <button class="lang-btn" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="ru">RU</button>
+            </div>
+
+            <!-- Tema düyməsi -->
             <button id="theme-toggle" class="theme-toggle">
                 <i class="fas fa-moon"></i>
             </button>
         </div>
-    </header>
+    </div>
+</header>
+
 
     <main>
         <section class="admin-section">
@@ -263,7 +279,7 @@
                     <div class="admin-profile">
                         <img src="images/raiz1.jpg" alt="Raiz Hekimov" class="profile-image">
                         <div class="profile-info">
-                            <h3>Raiz Həkimov</h3>
+                            <h2>Raiz Həkimov</h2>
                             <p><strong>Yaşayış yeri:</strong> Piral kəndi, Qusar rayonu, Azərbaycan</p>
                             <p><strong>İxtisas:</strong> Alqoritmik proqramlaşdırma və veb texnologiyalar</p>
                             <p><strong>Təcrübə:</strong> Python, C++, JavaScript, CSS, HTML, Git</p>
@@ -316,7 +332,7 @@
 
                         <div class="tab-content active" id="news-tab">
                             <h3>Yeni Xəbər Əlavə Et</h3>
-                            <form id="add-news-form">
+                            <form id="add-news-form" enctype="multipart/form-data">
                                 <div class="form-group">
                                     <label>Başlıq:</label>
                                     <input type="text" id="news-title" required>
@@ -327,7 +343,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Şəkil:</label>
-                                    <input type="file" id="news-image" accept="image/*">
+                                    <input type="file" id="news-image" accept="image/*" required>
                                 </div>
                                 <div class="form-group">
                                     <label>Qısa məzmun:</label>
@@ -374,22 +390,6 @@
 
     <script src="js/language.js"></script>
     <script src="js/theme.js"></script>
-    <script>
-        const loginForm = document.getElementById("login-form");
-        const loginSection = document.getElementById("login-section");
-        const dashboardSection = document.getElementById("dashboard-section");
-        const logoutBtn = document.getElementById("logout-btn");
-
-        loginForm.addEventListener("submit", function (e) {
-            e.preventDefault();
-            loginSection.style.display = "none";
-            dashboardSection.style.display = "block";
-        });
-
-        logoutBtn.addEventListener("click", function () {
-            dashboardSection.style.display = "none";
-            loginSection.style.display = "block";
-        });
-    </script>
+    <script src="js/admin.js"></script>
 </body>
 </html>
