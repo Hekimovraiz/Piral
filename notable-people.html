@@ -12,6 +12,41 @@
             font-family: sans-serif;
             transition: background-color 0.3s ease, color 0.3s ease;
         }
+        .category-btn {
+            padding: 14px 28px;      /* Daxili boşluq - düymənin ölçüsünü böyüdür */
+            font-size: 18px;         /* Yazı ölçüsü */
+            border-radius: 25px;     /* Yumşaq künclər */
+            margin: 6px;             /* Aralarındakı boşluq */
+            background: var(--card-bg);
+            color: var(--text-heading);
+            border: 2px solid var(--accent-color);
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .category-filter {
+            max-width: 800px;
+            margin: 30px auto 0 auto;
+            text-align: center;
+        }
+        .category-filter button {
+            background: var(--card-bg);
+            color: var(--text-heading);
+            border: 2px solid var(--accent-color);
+            border-radius: 20px;
+            padding: 8px 20px;
+            margin: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .category-filter button.active,
+        .category-filter button:hover {
+            background-color: var(--accent-color);
+            color: #fff;
+            border-color: var(--accent-color);
+        }
 
         .person-section {
             max-width: 800px;
@@ -21,6 +56,7 @@
             box-shadow: 0 4px 20px rgba(0,0,0,0.1);
             padding: 30px;
             text-align: center;
+            transition: all 0.3s ease;
         }
 
         .person-section img {
@@ -59,6 +95,15 @@
                 width: 150px;
                 height: 150px;
             }
+            .category-filter {
+                max-width: 100%;
+                margin: 20px 10px 0 10px;
+            }
+            .category-filter button {
+                padding: 6px 14px;
+                font-size: 14px;
+                margin: 3px;
+            }
         }
 
         body.night-mode {
@@ -82,7 +127,7 @@
         }
     </style>
 </head>
-<body class="night-mode home-page">
+<body class="night-mode home-page notable-people">
     <header>
         <div class="container">
             <div class="logo">
@@ -93,10 +138,9 @@
                     <li><a href="index.html" data-translate="menu_home">Ana Səhifə</a></li>
                     <li><a href="about.html" data-translate="menu_about">Haqqında</a></li>
                     <li><a href="news.html" data-translate="menu_news">Xəbərlər</a></li>
-                    <li><a href="notable-people.html"class="active"  data-translate="menu_people">Tanınmış Şəxslər</a></li>
+                    <li><a href="notable-people.html" class="active" data-translate="menu_people">Tanınmış Şəxslər</a></li>
                     <li><a href="contact.html" data-translate="menu_contact">Əlaqə</a></li>
                     <li><a href="admin.html" data-translate="menu_admin">Admin</a></li>
-                    
                 </ul>
             </nav>
             <div class="language-switcher">
@@ -120,8 +164,19 @@
             </div>
         </section>
 
+        <!-- Yeni kateqoriya filter -->
+        <section class="category-filter">
+            <button class="category-btn active" data-category="all" data-translate="all1">Hamısı</button>
+            <button class="category-btn" data-category="idmancilar" data-translate="all2">İdmançılar</button>
+            <button class="category-btn" data-category="professorlar" data-translate="all3">Professorlar</button>
+            <button class="category-btn" data-category="milyonchular" data-translate="all4">Milyonçular</button>
+            <button class="category-btn" data-category="shairler" data-translate="all5">Şairlər</button>
+        </section>
+
         <section class="people-container">
-            <div class="person-section">
+
+            <!-- İdmançılar -->
+            <div class="person-section" data-category="idmancilar">
                 <img src="images/person1.jpg" alt="" data-translate-alt="Nazim">
                 <h2 data-translate="Nazim">Nazim Hüseynov</h2>
                 <div class="person-bio">
@@ -130,7 +185,7 @@
                     <p data-translate="pers11">Nazim Hüseynov 1969-cu il avqustun 2-də Bakıda anadan olub və hələ uşaqlıqdan idmana əsl sevgi aşılayıb...</p>
                 </div>
             </div>
-            <div class="person-section">
+            <div class="person-section" data-category="idmancilar">
                 <img src="images/person2.jpg" alt="" data-translate-alt="Sahil">
                 <h2 data-translate="Sahil">Sahil Şakirov</h2>
                 <div class="person-bio">
@@ -139,8 +194,22 @@
                     <p data-translate="pers22">Şəxsi həyatına gəlincə, Sahil sadə və zəhmətkeş kənd mühitində böyümüşdür...</p>
                 </div>
             </div>
-            <div class="person-section">
-                <img src="images/person3.jpg" alt="" data-translate-alt="Sahil">
+            <div class="person-section" data-category="idmancilar">
+                <img src="images/person5.jpg" alt="" data-translate-alt="Shahlar">
+                <h2 data-translate="Shahlar">Şahlar Mustafayev</h2>
+                <div class="person-bio">
+                    <p data-translate="pers5">Şahlar Mustafayev 1948-ci ildə Qusar rayonunun Piral kəndində anadan olmuşdur. Orta təhsilini doğulduğu Piral kənd orta məktəbində almış, sonralar isə Azərbaycan Bədən Tərbiyəsi İnstitutunu bitirərək idman sahəsində peşəkar fəaliyyətə başlamışdır.O, Azərbaycanda sambo güləşinin inkişafında müstəsna xidmətləri olan şəxslərdən biri olmuş, bu idman növünün ölkədə formalaşmasına və sistemləşməsinə rəhbərlik etmişdir. Məşqçi, hakim və təşkilatçı kimi bir çox uğurlara imza atmışdır.</p>
+                    <p data-translate="pers51">Şahlar Mustafayev sambo üzrə beynəlxalq ekstra dərəcəli hakim, respublikanın əməkdar məşqçisi və Azərbaycan Sambo Federasiyasının Nəzarət-Təftiş Komissiyasının sədri olmuşdur.Onun yetirmələri respublika, Avropa və dünya çempionatlarında Azərbaycanı uğurla təmsil etmişlər.</p>
+                    <p data-translate="pers52">Azərbaycan Respublikasının Prezidenti İlham Əliyevin idmanın inkişafına xüsusi diqqəti çərçivəsində, Şahlar Mustafayev bir sıra yüksək dövlət mükafatları ilə təltif olunmuşdur:
+“Əməkdar bədən tərbiyəsi və idman xadimi” fəxri adı – 2019-cu ildə verilmişdir , Azərbaycan Respublikası Prezidentinin Fəxri Diplomu ,  “Şöhrət” ordeni ,  Azərbaycan Respublikası Prezidentinin fərdi təqaüdçüsü statusu – 2019-cu ildən etibarən.
+O, bu mükafatları ölkədə idmanın inkişafına verdiyi töhfələrin qiymətləndirilməsi kimi qəbul edirdi və dəfələrlə Prezidentə öz təşəkkürünü ifadə etmişdir.</p>
+                    <p data-translate="pers53">Şahlar Mustafayev 16 noyabr 2022-ci ildə vəfat etmişdir. Onun vəfatı Azərbaycan idman ictimaiyyəti üçün böyük itki oldu. Lakin o, həm fəaliyyəti, həm yetirmələri, həm də yaratdığı mərkəzlə yaddaşlarda iz qoydu. Sambo idman növünün Azərbaycanda formalaşmasında onun adı daima xatırlanacaq.</p>
+                </div>
+            </div>
+
+            <!-- Professorlar -->
+            <div class="person-section" data-category="professorlar">
+                <img src="images/person3.jpg" alt="" data-translate-alt="Serheddin">
                 <h2 data-translate="Serheddin">Sərhəddin Abdullayev</h2>
                 <div class="person-bio">
                     <p data-translate="pers3">Abdullayev Sərhəddin Qubaddin oğlu 1939-cu il aprel ayının 14-də Qusar rayonunun Piral kəndində dünyaya göz açıb.Bu ailədə dünyaya göz açmış altı körpədən üçü faciəvi surətdə həyatını itirmişdi. Anasının işlədiyi fermadan məktəbə olan yolun uzaqlığı və yaşayış şəraitinin çətinliyi üzündən Sərhəddin məktəbə yalnız 9 yaşında gedə bilib.Bütün fənləri eyni səviyyədə öyrənən Sərhəddin xalq şairi Səməd Vurğunun məktəblərinə qonaq gəlməsini çətinlikdə keçən uşaqlıq-məktəb illərinin ən xoş xatirəsi kimi yadda saxlayır, bundan sonra onun şerlərini həvəslə oxuduğunu və bir çoxlarını isə əzbərdən bildiyini söyləyir. </p>
@@ -150,6 +219,21 @@
                     <p data-translate="pers32">Sərhəddin Abdullayev pedaqoji fəaliyyətini uğurla davam etdirir.Sərhəddin Abdullayevin fəaliyyəti dövlət tərəfindən yüksək qiymətləndirilib. o, 2014-cü ildə “Qabaqcıl təhsil işçisi” döş nişanına, 2016-cı ildə “Qızıl qələm” mükafatına. O, 2019-cu ildə Rusiyanın Təbiət Elmləri Akademiyasının həqiqi üzvü seçilib. 2019-cu ildə Azərbaycan Respublikası Prezidentinin fərdi təqaüdünə layiq görülüb və "Bakı Dövlət Universitetinin 100 illiyi (1919-2019)" medalı ilə təltif olunub.</p>
                 </div>
             </div>
+
+            <!-- Milyonçular -->
+            <div class="person-section" data-category="professorlar">
+                <img src="images/person4.jpg" alt="" data-translate-alt="Ramil">
+                <h2 data-translate="Ramil">Ramil Niftəliyev</h2>
+                <div class="person-bio">
+                    <p data-translate="pers4">Ramil Yüzəhməd oğlu Niftəliyev 1967-cı ilin mayın 16-da Qusar rayonunun Piral kəndində anadan olmuşdur. Orta təhsilini həmin kənddə almışdır. R.Y. Niftəliyev 1991-ci ildə Bakı Dövlət Universitetinin tarix fakültəsini bitirmişdir. 1991-ci ildə Azərbaycan Milli Elmlər Akademiyasının A.A. Bakıxanov adına Tarix İnstitutunun əyani aspiranturasına daxil olmuşdur.</p>
+                    <p data-translate="pers41">1999-cu ilin yanvar ayının 27-də AMEA-nın müxbir üzvü M.Ə. İsmayılovun elmi rəhbərlik etdiyi “XIX əsrin II yarısında Azərbaycan kəndlilərinin azadlıq hərəkatı” mövzusunda dissertasiya uğurla müdafiə etmiş və həmin ilin oktyabr ayının 15-də tarix elmləri namizədi elmi dərəcəsi almışdır. Bu dissertasiyada Vətən tarix elmində ilk dəfə olaraq XIX əsrin ikinci yarısında Şimali Azərbaycan kəndlilərinin azadlıq hərəkatı araşdırılmış, mənbələr və elmi ədəbiyyat əsasında onun başlanma səbəbləri, gedişatı və nəticələri tədqiq edilmişdir.</p>
+                    <p data-translate="pers42">R.Y. Niftəliyev “Azərbaycan tarixi ilk mənbələrdə” adlı layihə proqramına əsasən, Tarix İnstitutunun nəşr etdirdiyi sənədlər toplularının hazırlanmasında yaxından iştirak etmişdir. O, Rusiya Federasiyasının Sankt-Peterburq şəhərindəki Rusiya Dövlət Hərbi Dəniz Donanması Arxivindən və Rusiya Dövlət Tarix Arxivindən gətirilərək tərtib olunmuş arxiv sənədləri  toplularının həmmüəllifidir.</p>
+                </div>
+            </div>
+
+            <!-- Şairlər -->
+            <!-- Hazırda nümunə yoxdu, istəsən əlavə edə bilərik -->
+
         </section>
     </main>
 
@@ -255,7 +339,21 @@
             'pers3' : 'Abdullayev Sərhəddin Qubaddin oğlu 1939-cu il aprel ayının 14-də Qusar rayonunun Piral kəndində dünyaya göz açıb.Bu ailədə dünyaya göz açmış altı körpədən üçü faciəvi surətdə həyatını itirmişdi. Anasının işlədiyi fermadan məktəbə olan yolun uzaqlığı və yaşayış şəraitinin çətinliyi üzündən Sərhəddin məktəbə yalnız 9 yaşında gedə bilib.Bütün fənləri eyni səviyyədə öyrənən Sərhəddin xalq şairi Səməd Vurğunun məktəblərinə qonaq gəlməsini çətinlikdə keçən uşaqlıq-məktəb illərinin ən xoş xatirəsi kimi yadda saxlayır, bundan sonra onun şerlərini həvəslə oxuduğunu və bir çoxlarını isə əzbərdən bildiyini söyləyir.',
             'Serheddin' : 'Sərhəddin Abdullayev',
             'pers31' : '1958-ci ildə Bakı Dövlət Universitetinin Fizika fakültəsinə daxil olub, əla qiymətlərlə oxuduğu üçün o, adlı təqaüdə – “Lenin təqaüdü”nə layiq görülüb. 1963-cü ildə fərqlənmə diplomu ilə bitirib, bir il Quba rayonunun Qımıl kənd məktəbində fizika müəllimi işləyib. 1964-cü ildə görkəmli alim,  Azərbaycanda Nəzəri fizika məktəbinin yaradıcısı professor Abdulla Muxtarovun dəvəti və dəstəyi ilə Bakı Dövlət Universitetində Nəzəri fizika ixtisası üzrə aspiranturaya qəbul olub. Sərhəddin Abdullayev 1970-ci ildə fizika-riyaziyyat elmləri namizədi elmi dərəcəsini alıb. 1967-ci ildən Bakı Dövlət Universitetində əmək fəaliyyətinə başlayıb. Sərhəddin Abdullayev 1996-ci ildə fizika-riyaziyyat elmləri doktoru elmi dərəcəsini alıb. O, 1997-ci ildə professor elmi adını alıb.',
-            'pers32' : 'Sərhəddin Abdullayev pedaqoji fəaliyyətini uğurla davam etdirir.Sərhəddin Abdullayevin fəaliyyəti dövlət tərəfindən yüksək qiymətləndirilib. o, 2014-cü ildə “Qabaqcıl təhsil işçisi” döş nişanına, 2016-cı ildə “Qızıl qələm” mükafatına. O, 2019-cu ildə Rusiyanın Təbiət Elmləri Akademiyasının həqiqi üzvü seçilib. 2019-cu ildə Azərbaycan Respublikası Prezidentinin fərdi təqaüdünə layiq görülüb və "Bakı Dövlət Universitetinin 100 illiyi (1919-2019)" medalı ilə təltif olunub.'
+            'pers32' : 'Sərhəddin Abdullayev pedaqoji fəaliyyətini uğurla davam etdirir.Sərhəddin Abdullayevin fəaliyyəti dövlət tərəfindən yüksək qiymətləndirilib. o, 2014-cü ildə “Qabaqcıl təhsil işçisi” döş nişanına, 2016-cı ildə “Qızıl qələm” mükafatına. O, 2019-cu ildə Rusiyanın Təbiət Elmləri Akademiyasının həqiqi üzvü seçilib. 2019-cu ildə Azərbaycan Respublikası Prezidentinin fərdi təqaüdünə layiq görülüb və "Bakı Dövlət Universitetinin 100 illiyi (1919-2019)" medalı ilə təltif olunub.',
+            'pers4' : 'Ramil Yüzəhməd oğlu Niftəliyev 1967-cı ilin mayın 16-da Qusar rayonunun Piral kəndində anadan olmuşdur. Orta təhsilini həmin kənddə almışdır. R.Y. Niftəliyev 1991-ci ildə Bakı Dövlət Universitetinin tarix fakültəsini bitirmişdir. 1991-ci ildə Azərbaycan Milli Elmlər Akademiyasının A.A. Bakıxanov adına Tarix İnstitutunun əyani aspiranturasına daxil olmuşdur.',
+            'pers41' : '1999-cu ilin yanvar ayının 27-də AMEA-nın müxbir üzvü M.Ə. İsmayılovun elmi rəhbərlik etdiyi “XIX əsrin II yarısında Azərbaycan kəndlilərinin azadlıq hərəkatı” mövzusunda dissertasiya uğurla müdafiə etmiş və həmin ilin oktyabr ayının 15-də tarix elmləri namizədi elmi dərəcəsi almışdır. Bu dissertasiyada Vətən tarix elmində ilk dəfə olaraq XIX əsrin ikinci yarısında Şimali Azərbaycan kəndlilərinin azadlıq hərəkatı araşdırılmış, mənbələr və elmi ədəbiyyat əsasında onun başlanma səbəbləri, gedişatı və nəticələri tədqiq edilmişdir.',
+            'pers42' : 'R.Y. Niftəliyev “Azərbaycan tarixi ilk mənbələrdə” adlı layihə proqramına əsasən, Tarix İnstitutunun nəşr etdirdiyi sənədlər toplularının hazırlanmasında yaxından iştirak etmişdir. O, Rusiya Federasiyasının Sankt-Peterburq şəhərindəki Rusiya Dövlət Hərbi Dəniz Donanması Arxivindən və Rusiya Dövlət Tarix Arxivindən gətirilərək tərtib olunmuş arxiv sənədləri  toplularının həmmüəllifidir.',
+            'Ramil' : 'Ramil Niftəliyev',
+            'pers5' : 'Şahlar Mustafayev 1948-ci ildə Qusar rayonunun Piral kəndində anadan olmuşdur. Orta təhsilini doğulduğu Piral kənd orta məktəbində almış, sonralar isə Azərbaycan Bədən Tərbiyəsi İnstitutunu bitirərək idman sahəsində peşəkar fəaliyyətə başlamışdır.O, Azərbaycanda sambo güləşinin inkişafında müstəsna xidmətləri olan şəxslərdən biri olmuş, bu idman növünün ölkədə formalaşmasına və sistemləşməsinə rəhbərlik etmişdir. Məşqçi, hakim və təşkilatçı kimi bir çox uğurlara imza atmışdır.',
+            'pers51' : 'Şahlar Mustafayev sambo üzrə beynəlxalq ekstra dərəcəli hakim, respublikanın əməkdar məşqçisi və Azərbaycan Sambo Federasiyasının Nəzarət-Təftiş Komissiyasının sədri olmuşdur.Onun yetirmələri respublika, Avropa və dünya çempionatlarında Azərbaycanı uğurla təmsil etmişlər.',
+            'pers52' : 'Azərbaycan Respublikasının Prezidenti İlham Əliyevin idmanın inkişafına xüsusi diqqəti çərçivəsində, Şahlar Mustafayev bir sıra yüksək dövlət mükafatları ilə təltif olunmuşdur: Əməkdar bədən tərbiyəsi və idman xadimi - fəxri adı – 2019-cu ildə verilmişdir , Azərbaycan Respublikası Prezidentinin Fəxri Diplomu ,  “Şöhrət” ordeni ,  Azərbaycan Respublikası Prezidentinin fərdi təqaüdçüsü statusu – 2019-cu ildən etibarən. O, bu mükafatları ölkədə idmanın inkişafına verdiyi töhfələrin qiymətləndirilməsi kimi qəbul edirdi və dəfələrlə Prezidentə öz təşəkkürünü ifadə etmişdir.',
+            'Shahlar' : 'Şahlar Mustafayev',
+            'pers53' : 'Şahlar Mustafayev 16 noyabr 2022-ci ildə vəfat etmişdir. Onun vəfatı Azərbaycan idman ictimaiyyəti üçün böyük itki oldu. Lakin o, həm fəaliyyəti, həm yetirmələri, həm də yaratdığı mərkəzlə yaddaşlarda iz qoydu. Sambo idman növünün Azərbaycanda formalaşmasında onun adı daima xatırlanacaq.',
+            'all1' : 'Hamısı',
+            'all2' : 'İdmançılar',
+            'all3' : 'Professorlar',
+            'all4' : 'Milyonçular',
+            'all5' : 'Şairlər',
 
         },
         'en': {
@@ -351,7 +449,21 @@
             'pers3' : 'Abdullayev Sarhaddin Gubaddin oglu was born on April 14, 1939 in the village of Piral, Gusar region. Three of the six children born to this family tragically lost their lives. Due to the distance from the farm where his mother worked to the school and the difficult living conditions, Sarhaddin was able to go to school only at the age of 9. Sarhaddin, who studied all subjects at the same level, remembers the visit of the national poet Samad Vurgun to his school as the most pleasant memory of his difficult childhood and school years, and says that after that he read his poems with enthusiasm and knew many of them by heart.',
             'Serheddin' : 'Sarhaddin Abdullayev',
             'pers31' : 'In 1958, he entered the Physics Faculty of Baku State University and, having studied with excellent grades, was awarded a named scholarship - the "Lenin Scholarship". In 1963, he graduated with honors and worked as a physics teacher at the Gimil village school in the Guba region for a year. In 1964, with the invitation and support of the prominent scientist, the founder of the Theoretical Physics School in Azerbaijan, Professor Abdulla Mukhtarov, he was admitted to postgraduate study in Theoretical Physics at Baku State University. Sarhaddin Abdullayev received the scientific degree of Candidate of Physical and Mathematical Sciences in 1970. He began his labor activity at Baku State University in 1967. Sarhaddin Abdullayev received the scientific degree of Doctor of Physical and Mathematical Sciences in 1996. He received the scientific title of Professor in 1997.',
-            'pers32' : 'Sarhaddin Abdullayev successfully continues his pedagogical activity. Sarhaddin Abdullayev-s activities have been highly appreciated by the state. In 2014, he was awarded the "Advanced Education Worker" badge, and in 2016, the "Golden Pen" award. In 2019, he was elected a full member of the Russian Academy of Natural Sciences. In 2019, he was awarded a personal scholarship of the President of the Republic of Azerbaijan and the "100th Anniversary of Baku State University (1919-2019)" medal.'
+            'pers32' : 'Sarhaddin Abdullayev successfully continues his pedagogical activity. Sarhaddin Abdullayev-s activities have been highly appreciated by the state. In 2014, he was awarded the "Advanced Education Worker" badge, and in 2016, the "Golden Pen" award. In 2019, he was elected a full member of the Russian Academy of Natural Sciences. In 2019, he was awarded a personal scholarship of the President of the Republic of Azerbaijan and the "100th Anniversary of Baku State University (1919-2019)" medal.',
+            'pers4' : 'Ramil Yuzahmad oglu Niftaliyev was born on May 16, 1967 in the village of Piral, Gusar region. He received his secondary education in the same village. R.Y. Niftaliyev graduated from the Faculty of History of Baku State University in 1991. In 1991, he entered the full-time postgraduate course of the Institute of History named after A.A. Bakikhanov of the Azerbaijan National Academy of Sciences.',
+            'pers41' : 'On January 27, 1999, he successfully defended his dissertation on the topic “The liberation movement of Azerbaijani peasants in the second half of the 19th century” under the scientific supervision of M.A. Ismayilov, a corresponding member of ANAS, and on October 15 of the same year, he received the degree of candidate of historical sciences. In this dissertation, for the first time in the science of history of the Motherland, the liberation movement of Northern Azerbaijan peasants in the second half of the 19th century was investigated, and the reasons for its beginning, course and results were studied on the basis of sources and scientific literature.',
+            'pers42' : 'R.Y. Niftaliyev closely participated in the preparation of collections of documents published by the Institute of History under the project program “Azerbaijani History in Primary Sources”. He is a co-author of collections of archival documents brought from the Russian State Naval Archive and the Russian State Historical Archive in St. Petersburg, Russian Federation.',
+            'Ramil' : 'Ramil Niftaliyev',
+            'pers5' : 'Shahlar Mustafayev was born in 1948 in the village of Piral, Gusar region. He received his secondary education at the secondary school of the village of Piral, where he was born, and later graduated from the Azerbaijan Institute of Physical Education and began his professional activity in the field of sports. He was one of the people who made exceptional contributions to the development of sambo wrestling in Azerbaijan, and led the formation and systematization of this sport in the country. He achieved many successes as a coach, referee and organizer.',
+            'pers51' : 'Shahlar Mustafayev was an international extra-class sambo referee, an honored coach of the republic, and the chairman of the Control and Inspection Commission of the Azerbaijan Sambo Federation. His students successfully represented Azerbaijan in republican, European, and world championships.',
+            'pers52' : 'As part of the special attention of the President of the Republic of Azerbaijan Ilham Aliyev to the development of sports, Shahlar Mustafayev was awarded a number of high state awards: Honored Figure of Physical Culture and Sports - honorary title - awarded in 2019, Honorary Diploma of the President of the Republic of Azerbaijan, "Shohrat" Order, status of individual pensioner of the President of the Republic of Azerbaijan - since 2019. He perceived these awards as an assessment of his contributions to the development of sports in the country and repeatedly expressed his gratitude to the President.',
+            'Shahlar' : 'Shahlar Mustafayev',
+            'pers53' : 'Shahlar Mustafayev passed away on November 16, 2022. His death was a great loss for the Azerbaijani sports community. However, he left a mark in the memory with his activities, his students, and the center he created. His name will always be remembered in the formation of the Sambo sport in Azerbaijan.',
+            'all1' : 'All',
+            'all2' : 'Athletes',
+            'all3' : 'Professors',
+            'all4' : 'Millionaires',
+            'all5' : 'Poets'
 
         },
         'ru': {
@@ -446,44 +558,90 @@
             'pers3' : 'Абдуллаев Сархаддин Губаддин оглы родился 14 апреля 1939 года в селе Пирал Гусарского района. Трое из шести детей, родившихся в этой семье, трагически погибли. Из-за удаленности от школы фермы, где работала его мать, и тяжелых условий жизни Сархаддин смог пойти в школу только в 9 лет. Сархаддин, изучавший все предметы на одном уровне, вспоминает визит народного поэта Самеда Вургуна в свою школу как самое приятное воспоминание о своем тяжелом детстве и школьных годах и говорит, что после этого он с увлечением читал его стихи и знал многие из них наизусть.',
             'Serheddin' : 'Сархаддин Абдуллаев',
             'pers31' : 'В 1958 году поступил на физический факультет Бакинского государственного университета и, учась на отлично, был удостоен именной стипендии - «Стипендия Ленина». В 1963 году окончил его с отличием и год проработал учителем физики в школе села Гимиль Губинского района. В 1964 году по приглашению и поддержке видного ученого, основоположника школы теоретической физики в Азербайджане, профессора Абдуллы Мухтарова был принят в аспирантуру по теоретической физике Бакинского государственного университета. В 1970 году Сархаддин Абдуллаев получил ученую степень кандидата физико-математических наук. Трудовую деятельность начал в Бакинском государственном университете в 1967 году. В 1996 году Сархаддин Абдуллаев получил ученую степень доктора физико-математических наук. В 1997 году получил ученое звание профессора.',
-            'pers32' : 'Сархаддин Абдуллаев успешно продолжает свою педагогическую деятельность. Деятельность Сархаддина Абдуллаева высоко оценена государством. В 2014 году он был награжден знаком «Отличник образования», а в 2016 году — премией «Золотое перо». В 2019 году он был избран действительным членом Российской академии естественных наук. В 2019 году он был награжден именной стипендией Президента Азербайджанской Республики и медалью «100-летие Бакинского государственного университета (1919-2019)».'
+            'pers32' : 'Сархаддин Абдуллаев успешно продолжает свою педагогическую деятельность. Деятельность Сархаддина Абдуллаева высоко оценена государством. В 2014 году он был награжден знаком «Отличник образования», а в 2016 году — премией «Золотое перо». В 2019 году он был избран действительным членом Российской академии естественных наук. В 2019 году он был награжден именной стипендией Президента Азербайджанской Республики и медалью «100-летие Бакинского государственного университета (1919-2019)».',
+            'pers4' : 'Рамиль Юзахмед оглы Нифталиев родился 16 мая 1967 года в селе Пирал Гусарского района. Среднее образование получил в том же селе. Р.Ю.Нифталиев в 1991 году окончил исторический факультет Бакинского государственного университета. В 1991 году поступил в очную аспирантуру Института истории имени А.А.Бакиханова Национальной академии наук Азербайджана.',
+            'pers41' : '27 января 1999 года успешно защитил диссертацию на тему «Освободительное движение крестьян Азербайджана во второй половине XIX века» под научным руководством члена-корреспондента НАНА М.А.Исмаилова, а 15 октября того же года получил ученую степень кандидата исторических наук. В этой диссертации впервые в отечественной исторической науке исследовано освободительное движение крестьян Северного Азербайджана во второй половине XIX века, на основе источников и научной литературы изучены причины его начала, ход и результаты.',
+            'pers42' : 'Р.Ю.Нифталиев принимал непосредственное участие в подготовке сборников документов, изданных Институтом истории в рамках проектной программы «История Азербайджана в первоисточниках». Он является соавтором сборников архивных документов, привезенных из Российского государственного военно-морского архива и Российского государственного исторического архива в г. Санкт-Петербурге, Российская Федерация.',
+            'Ramil' : 'Рамиль Нифталиев',
+            'pers5' : 'Шахлар Мустафаев родился в 1948 году в селе Пирал Гусарского района. Среднее образование получил в средней школе села Пирал, где родился, а затем окончил Азербайджанский институт физкультуры и начал профессиональную деятельность в сфере спорта. Он был одним из тех, кто внес исключительный вклад в развитие борьбы самбо в Азербайджане, руководил становлением и систематизацией этого вида спорта в стране. Добился многих успехов как тренер, судья и организатор.',
+            'pers51' : 'Шахлар Мустафаев был международным судьей экстра-класса по самбо, заслуженным тренером республики, председателем Контрольно-ревизионной комиссии Федерации самбо Азербайджана. Его ученики успешно представляли Азербайджан на чемпионатах республики, Европы и мира.',
+            'pers52' : 'В рамках особого внимания Президента Азербайджанской Республики Ильхама Алиева к развитию спорта Шахлар Мустафаев был удостоен ряда высоких государственных наград: Заслуженный деятель физической культуры и спорта - почетное звание - присвоено в 2019 году, Почетная грамота Президента Азербайджанской Республики, орден «Шохрат», статус персонального пенсионера Президента Азербайджанской Республики - с 2019 года. Он воспринял эти награды как оценку своего вклада в развитие спорта в стране и неоднократно выражал Президенту свою признательность.',
+            'Shahlar' : 'Шахлар Мустафаев',
+            'pers53' : 'Шахлар Мустафаев ушел из жизни 16 ноября 2022 года. Его смерть стала большой потерей для азербайджанского спортивного сообщества. Однако он оставил след в памяти своей деятельностью, своими учениками и созданным им центром. Его имя навсегда останется в истории становления самбо в Азербайджане.',
+            'all1' : 'Все',
+            'all2' : 'Спортсмены',
+            'all3' : 'Профессора',
+            'all4' : 'Миллионеры',
+            'all5' : 'Поэты'
             
         }
     };
-    document.addEventListener('DOMContentLoaded', () => {
-    const langButtons = document.querySelectorAll('.lang-btn');
-    let currentLang = 'az';
 
-    function translatePage(lang) {
-        currentLang = lang;
-        const dict = translations[lang];
-        if (!dict) return;
+        // Kateqoriya filtr funksiyası
+        const categoryButtons = document.querySelectorAll('.category-btn');
+        const persons = document.querySelectorAll('.person-section');
 
-        document.querySelectorAll('[data-translate]').forEach(el => {
-            const key = el.getAttribute('data-translate');
-            if (dict[key]) el.innerHTML = dict[key];
+        function filterCategory(category) {
+            if(category === 'all') {
+                persons.forEach(p => p.style.display = 'block');
+            } else {
+                persons.forEach(p => {
+                    if(p.dataset.category === category) {
+                        p.style.display = 'block';
+                    } else {
+                        p.style.display = 'none';
+                    }
+                });
+            }
+        }
+
+        categoryButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Butonların aktivliyini dəyişək
+                categoryButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                // Filtrlə
+                filterCategory(btn.dataset.category);
+            });
         });
 
-        document.querySelectorAll('[data-translate-alt]').forEach(el => {
-            const key = el.getAttribute('data-translate-alt');
-            if (dict[key]) el.alt = dict[key];
+        // İlk yüklənəndə hamısını göstər
+        filterCategory('all');
+
+        // Mövcud sənədin tərcümə funksiyaları, dillərin dəyişdirilməsi, tema toggle funksiyaları burada qalır (sənin mövcud koddan)
+
+        const langButtons = document.querySelectorAll('.lang-btn');
+        let currentLang = 'az';
+
+        function translatePage(lang) {
+            currentLang = lang;
+            const dict = translations[lang];
+            if (!dict) return;
+
+            document.querySelectorAll('[data-translate]').forEach(el => {
+                const key = el.getAttribute('data-translate');
+                if (dict[key]) el.innerHTML = dict[key];
+            });
+
+            document.querySelectorAll('[data-translate-alt]').forEach(el => {
+                const key = el.getAttribute('data-translate-alt');
+                if (dict[key]) el.alt = dict[key];
+            });
+
+            document.title = dict[`title_${document.body.classList.contains("notable-people") ? 'people' : 'home'}`] || document.title;
+        }
+
+        langButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                langButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const selectedLang = btn.getAttribute('data-lang');
+                translatePage(selectedLang);
+            });
         });
 
-        document.title = dict[`title_${document.body.classList.contains("notable-people") ? 'people' : 'home'}`] || document.title;
-    }
-
-    langButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            langButtons.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            const selectedLang = btn.getAttribute('data-lang');
-            translatePage(selectedLang);
-        });
-    });
-
-    // Əgər localStorage istifadə etmək istəsən, buraya əlavə edə bilərik
-    translatePage(currentLang);
-});
+        translatePage(currentLang);
 
         function setLanguage(lang) {
             document.querySelectorAll('[data-translate]').forEach(el => {
@@ -497,7 +655,6 @@
                 }
             });
 
-            // Alt atributları üçün ayrıca yoxlama (məsələn şəkillərin alt mətnləri)
             document.querySelectorAll('[data-translate-alt]').forEach(el => {
                 const key = el.getAttribute('data-translate-alt');
                 if (translations[lang] && translations[lang][key]) {
@@ -505,7 +662,6 @@
                 }
             });
 
-            // Dil düymələrinin aktivliyini dəyiş
             document.querySelectorAll('.lang-btn').forEach(btn => {
                 btn.classList.remove('active');
                 if (btn.dataset.lang === lang) btn.classList.add('active');
@@ -530,7 +686,7 @@
 
         initLanguage();
 
-        // Gecə/gündüz rejimi düyməsi
+        // Tema düyməsi
         const themeToggleBtn = document.getElementById('theme-toggle');
         themeToggleBtn.addEventListener('click', () => {
             if(document.body.classList.contains('light-mode')){
@@ -546,7 +702,7 @@
             }
         });
 
-        // Səhifə yüklənəndə saxlanmış tema tətbiq et
+        // Yüklənəndə saxlanmış temanı yüklə
         const savedTheme = localStorage.getItem('theme');
         if(savedTheme){
             document.body.classList.remove('light-mode', 'night-mode');
