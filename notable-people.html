@@ -24,6 +24,13 @@
             font-weight: 600;
             transition: background-color 0.3s ease, color 0.3s ease;
         }
+        @media only screen and (max-width: 768px) {
+        body.home-page {
+            transform: scale(0.88);
+            transform-origin: top left;
+            width: 113.6%; /* 1 / 0.88 = 113.636..., genişliyi balanslamaq üçün */
+        }
+        }
 
         .category-filter {
             max-width: 800px;
@@ -127,7 +134,7 @@
         }
     </style>
 </head>
-<body class="night-mode home-page notable-people">
+<body class="night-mode">
     <header>
         <div class="container">
             <div class="logo">
@@ -148,6 +155,7 @@
                 <button class="lang-btn" data-lang="en">EN</button>
                 <button class="lang-btn" data-lang="ru">RU</button>
             </div>
+            <!-- Tema düyməsi -->
             <button id="theme-toggle" class="theme-toggle">
                 <i class="fas fa-moon"></i>
             </button>
@@ -158,6 +166,12 @@
         <section class="people-hero">
             <div class="hero-overlay">
                 <div class="container">
+                    <h2>
+
+
+
+                        
+                    </h2>
                     <h2 data-translate="people_title">Piral Kəndinin Tanınmış Şəxsləri</h2>
                     <p data-translate="people_subtitle">Kəndimizdən çıxan görkəmli şəxslər və onların nailiyyətləri</p>
                 </div>
@@ -219,6 +233,7 @@ O, bu mükafatları ölkədə idmanın inkişafına verdiyi töhfələrin qiymə
                     <p data-translate="pers32">Sərhəddin Abdullayev pedaqoji fəaliyyətini uğurla davam etdirir.Sərhəddin Abdullayevin fəaliyyəti dövlət tərəfindən yüksək qiymətləndirilib. o, 2014-cü ildə “Qabaqcıl təhsil işçisi” döş nişanına, 2016-cı ildə “Qızıl qələm” mükafatına. O, 2019-cu ildə Rusiyanın Təbiət Elmləri Akademiyasının həqiqi üzvü seçilib. 2019-cu ildə Azərbaycan Respublikası Prezidentinin fərdi təqaüdünə layiq görülüb və "Bakı Dövlət Universitetinin 100 illiyi (1919-2019)" medalı ilə təltif olunub.</p>
                 </div>
             </div>
+
             <div class="person-section" data-category="professorlar">
                 <img src="images/person4.jpg" alt="" data-translate-alt="Ramil">
                 <h2 data-translate="Ramil">Ramil Niftəliyev</h2>
@@ -229,7 +244,55 @@ O, bu mükafatları ölkədə idmanın inkişafına verdiyi töhfələrin qiymə
                 </div>
             </div>
 
+                <div class="person-section" data-category="professorlar">
+                     <img src="images/person8.png" alt="" data-translate-alt="Rafiq">
+                     <h2 data-translate="Rafiq">Rafiq Nurmətov</h2>
+                     <div class="person-bio">
+                         <p data-translate="pers8">Texnika elmləri doktoru Rafiq Camov oğlu Nurmətov Qusar rayonunun Piral kəndində anadan olmuşdur. Orta məktəbi bitirib, Azərbaycan Kənd Təsərrüfatı İnstitutunun mexanizasiya fakultəsində təhsil almışdır. Buranı fərqlənmə diplomu ilə bitirən R. Nurmətov Qusarın Piral və Yasab kəndlərində baş mühəndis işləmiş, savadı və bacarığı ilə seçildiyinə görə irəli çəkilərək, rayon kənd təsərrüfatı idarəsinin rəisi təyin olunmuşdur.</p>
+                         <p data-translate="pers81">Elmə olan böyük marağı Rafiqi Moskvaya aparıb çıxarmış, burada o, aspiranturaya daxil olmuş, iki ixtisaslı mexanizasiyaya sahəsində dissertasiya müdafiə etmişdir. Bu, Ümumittifaq Elmi Tədqiqat Tərəvəzçilik İnstitutunun tarixində görünməmiş hadisə idi. İstedadlı alim baş elmi işçi vəzifəsinə təyin olunmuş, elmi məsələlər üzrə direktorun müavini vəzifəsinə qədər yüksəlmişdir.</p>
+                         <p data-translate="pers82">1971-ci ildən taleyini bu instituta bağlayan R. Nurmətovun elmi işlərinin əsas istiqamətləri kənd təsərrüfatı bitkilərinin əkini üçün yeni texnologiyaların hazırlanması ilə bağlıdır. Onun iştirakı və rəhbərliyi ilə MDB ölkələrinin kənd təsərrüfatı üçün 100-dən artıq texniki avadanlıq və qurğu hazırlanmışdır. 1998-ci ildə doktorluq dissertasiyasını müdafiə edən alim 100-dən çox elmi əsərin və 30-a yaxın ixtiranın müəllifidir. Onun fundamental əsəri “Tərəvəzçilikdə istehsalat proseslərinin layihələndirilməsinin əsasları” adlanır.</p>
+                </div>
+            </div>
+
+            <div class="person-section" data-category="professorlar">
+                 <img src="images/person9.png" alt="" data-translate-alt="Ilyas">
+                 <h2 data-translate="Ilyas">İlyas İlyasov</h2>
+                 <div class="person-bio">
+                     <p data-translate="pers9">
+            Azərbaycan Dövlət Universitetinin tarix fakültəsinin ilk məzunlarından biri respublikamızın adlı-sanlı maarifçisi İlyas İlyasov olmuşdur.
+                     </p>
+                     <p data-translate="pers91">
+            İlyas Aydabəy oğlu İlyasov 1900-cü ildə Quba qəzəsinin Piral kəndində anadan olmuşdur. Burada ibtidai məktəbi bitirib, Həzrə kəndində orta təhsil almışdır. 1919-cu ildə Azərbaycan Dövlət Universitetinin açılması xəbərini eşidib, imtahan verərək universitetə qəbul olunmuşdur. Fərqlənmə diplomu ilə bitirdikdən sonra Xalq Maarif Komissarlığında idarə rəisi vəzifəsinə təyin olunmuş, daha sonra müxtəlif rəhbər vəzifələrdə çalışmışdır.
+                     </p>
+                     <p data-translate="pers92">
+            O, “Sosializm tempi” qəzetinin redaktoru, Qusar Aqropedtexnikumunun və Quba Müəllimlər İnstitutunun direktoru, Qusar rayon Xalq Təhsili Şöbəsinin müdiri və orta məktəb direktoru olmuşdur. Qusarda xalq maarifinin inkişafında böyük xidmətləri olmuşdur.
+                     </p>
+                     <p data-translate="pers93">
+            Xalq şairi Səməd Vurğunla uzun illər dost olmuşdur. Şairin onu qorumağa çalışdığı 1937-ci il hadisələri və 1951-ci ildə Səməd Vurğunun Qusarda qarşılanması bu dostluğun gücünü göstərir. Böyük Vətən müharibəsi illərində də kəndini tərk etməyərək elinə sadiq qalmışdır.
+                     </p>
+                 </div>
+            </div>
+
+            <div class="person-section" data-category="professorlar">
+                 <img src="images/person10.png" alt="" data-translate-alt="Agaverdi">
+                 <h2 data-translate="Agaverdi">Ağaverdi Ağaverdiyev</h2>
+                 <div class="person-bio">
+                     <p data-translate="pers101">Biologiya elmləri doktoru Ağaverdiyev Ağaverdi Şahverdi oğlu 1934-cü ildə Qusar rayonunun Piral kəndində anadan olmuşdur. Burada səkkizillik məktəbi, Həzrə kəndində isə qızıl medalla orta məktəbi bitirmişdir. Bakıda hərbi məktəbdə oxumuş, 1957-ci ildə Azərbaycan Dövlət Universitetinin biologiya fakültəsinə daxil olmuşdur. Universiteti fərqlənmə diplomu ilə bitirmişdir.</p>
+                     <p data-translate="pers10">Biologiya elminə sanballı töhfələr vermiş Rusiyanın adlı-sanlı alimlərindən biri Ağaverdi Ağaverdiyevin əldə etdiyi elmi nəticələrdən uzun illərdir kənd təsərrüfatında geniş istifadə olunur.</p>
+                     <p data-translate="pers102">O, M.V. Lomonosov adına Moskva Dövlət Universitetinin 3 illik aspiranturasını 1½ ilə başa vurmuş və namizədlik dissertasiyasını müdafiə etmişdir. Daha sonra Perm Universitetinin müsabiqəsində qalib gələrək müəllim, baş müəllim, kafedra müdiri kimi fəaliyyət göstərmiş və burada doktorluq dissertasiyası müdafiə etmişdir.</p>
+                     <p data-translate="pers103">1974-cü ildə V.R. Vilyams adına Elmi Tədqiqat İnstitutunda elmi işçi, 1985-ci ildə Sentrosvyozda tədqiqatçı kimi çalışmışdır. 1993-cü ildən Dağıstanda “Yujdaq” Universitetində kafedra müdiri olmuş, 1995-ci ildən professor elmi adını almışdır.</p>
+                     <p data-translate="pers104">Ağaverdi Ağaverdiyev 100-dən çox elmi əsərin, bir neçə ixtiranın, dərs vəsaitlərinin və metodik tövsiyələrin müəllifidir. O, həm də 50-dən artıq norma və göstəricinin müəllifi olan “Pırallılar” adlı antibioqrafik əsəri yazmışdır. Lakin vaxtsız vəfatı bu əsərin tamamlanmasına imkan verməmiş və əsər bir sıra səbəblərdən çap olunmamışdır.</p>
+                </div>
+            </div>
+
+
+
+
+
+
             <!-- Milyonçular -->
+            <!-- Heleliy Yoxdur :) -->
+
 
             <!-- Şairlər -->
              <div class="person-section" data-category="shairler">
@@ -265,7 +328,10 @@ O, bu mükafatları ölkədə idmanın inkişafına verdiyi töhfələrin qiymə
 
 
 
-            <!-- Hazırda nümunə yoxdu, istəsən əlavə edə bilərik -->
+
+
+
+
 
         </section>
     </main>
@@ -387,16 +453,37 @@ O, bu mükafatları ölkədə idmanın inkişafına verdiyi töhfələrin qiymə
             'all3' : 'Professorlar',
             'all4' : 'Milyonçular',
             'all5' : 'Şairlər',
+
             'Terane' : 'Təranə Kərimova',
             'pers6' : 'Terane Kerimova (Oruceva) 1967-ci ildə Qusar rayonunun Piral kəndində anadan olub. Ədəbi yaradıcılığa yeniyetmə yaşlarından başlayıb. Onun poetik dili həm ləzgi, həm azərbaycan, həm də rus dilində oxucularla təmas qurmağı bacarır.',
             'pers61' : 'Onun poeziyasında səmimilik və mənəviyyat əsas mövqedədir. 2021-ci ildə Moskvada "Qrifon" nəşriyyatında ləzgi və rus dillərində "Не грусти, сердце!" adlı ilk kitabı nəşr olunub. Daha sonra "Взлетай!" adlı ikinci kitabı da eyni şəkildə ikidilli formatda oxuculara təqdim edilib. Əsərlərində məhəbbət lirikası, vətənpərvərlik, təbiət və fəlsəfi düşüncələr mühüm yer tutur.',
             'pers62' : 'Terane xanım üçün poeziya milli kimliyin ifadəsidir. O, ləzgi xalqına və onun mədəni irsinə böyük məhəbbətlə bağlıdır. Lezgi dilinin qorunması və inkişafı üçün çalışır, xalq mahnılarını və dəyərlərini poeziyasında yaşadır. O, gənc nəslə çağırış edir ki, köklərindən qopmadan, mədəniyyətinə sahib çıxaraq yaratsın və yaşatsın.',
+
             'Tera' : 'Teyara Velimetova',
             'pers7': 'Tera Velimetova 1959-cu ildə Azərbaycanın Qusar rayonunun Piral kəndində anadan olub. Bakı şəhərində yerləşən Mirzə Fətəli Axundzadə adına Rus dili və ədəbiyyatı institutunu bitirib. Onun 45 illik pedaqoji fəaliyyəti təhsilə və gənc nəslin inkişafına həsr olunub.',
             'pers71': 'O, uzun illər boyu SSRİ-nin məşhur sənətkarı Müslüm Maqomayevin yaradıcılığına heyran olub və onun həyatını tədqiq edib. Bu mövzuya həsr olunmuş "Uzun məhəbbətim" romanı 2019-cu ildə Tamara Sinyavskayanın təşəbbüsü ilə çap olunub və oxucular tərəfindən böyük rəğbətlə qarşılanıb. Əsərə görə o, “Qızıl Yesenin” medalı və Müslüm Maqomayev adına beynəlxalq ədəbi-musiqili mükafatla təltif olunub.',
-            'pers72': 'Velimetova həmçinin "Azazel küçələri" adlı əsərində Yaxın Şərqdə baş verən hadisələri, müxtəlif xalqların bir-birinə münasibətini və Rusiyanın humanitar rolunu işıqlandırıb. O, bədii əsərlərlə yanaşı, metodik və ekoloji mövzularda uşaq yazıları da yazır. Tera Velimetova Rusiya və Beynəlxalq Yazıçılar İttifaqının üzvüdür, "Moskvanın Qızıl Qələmi" mükafatına layiq görülüb.'
- 
+            'pers72': 'Velimetova həmçinin "Azazel küçələri" adlı əsərində Yaxın Şərqdə baş verən hadisələri, müxtəlif xalqların bir-birinə münasibətini və Rusiyanın humanitar rolunu işıqlandırıb. O, bədii əsərlərlə yanaşı, metodik və ekoloji mövzularda uşaq yazıları da yazır. Tera Velimetova Rusiya və Beynəlxalq Yazıçılar İttifaqının üzvüdür, "Moskvanın Qızıl Qələmi" mükafatına layiq görülüb.',
+            
+            "Rafiq": "Rafiq Nurmətov",
+            "Rafiq_alt": "Rafiq",
+            "pers8": "Texnika elmləri doktoru Rafiq Camov oğlu Nurmətov Qusar rayonunun Piral kəndində anadan olmuşdur. Orta məktəbi bitirib, Azərbaycan Kənd Təsərrüfatı İnstitutunun mexanizasiya fakultəsində təhsil almışdır. Buranı fərqlənmə diplomu ilə bitirən R. Nurmətov Qusarın Piral və Yasab kəndlərində baş mühəndis işləmiş, savadı və bacarığı ilə seçildiyinə görə irəli çəkilərək, rayon kənd təsərrüfatı idarəsinin rəisi təyin olunmuşdur.",
+            "pers81": "Elmə olan böyük marağı Rafiqi Moskvaya aparıb çıxarmış, burada o, aspiranturaya daxil olmuş, iki ixtisaslı mexanizasiyaya sahəsində dissertasiya müdafiə etmişdir. Bu, Ümumittifaq Elmi Tədqiqat Tərəvəzçilik İnstitutunun tarixində görünməmiş hadisə idi. İstedadlı alim baş elmi işçi vəzifəsinə təyin olunmuş, elmi məsələlər üzrə direktorun müavini vəzifəsinə qədər yüksəlmişdir.",
+            "pers82": "1971-ci ildən taleyini bu instituta bağlayan R. Nurmətovun elmi işlərinin əsas istiqamətləri kənd təsərrüfatı bitkilərinin əkini üçün yeni texnologiyaların hazırlanması ilə bağlıdır. Onun iştirakı və rəhbərliyi ilə MDB ölkələrinin kənd təsərrüfatı üçün 100-dən artıq texniki avadanlıq və qurğu hazırlanmışdır. 1998-ci ildə doktorluq dissertasiyasını müdafiə edən alim 100-dən çox elmi əsərin və 30-a yaxın ixtiranın müəllifidir. Onun fundamental əsəri “Tərəvəzçilikdə istehsalat proseslərinin layihələndirilməsinin əsasları” adlanır.",
 
+            "Ilyas": "İlyas İlyasov",
+            "Ilyas_alt": "İlyas",
+            "pers9": "Azərbaycan Dövlət Universitetinin tarix fakültəsinin ilk məzunlarından biri respublikamızın adlı-sanlı maarifçisi İlyas İlyasov olmuşdur.",
+            "pers91": "İlyas Aydabəy oğlu İlyasov 1900-cü ildə Quba qəzəsinin Piral kəndində anadan olmuşdur. Burada ibtidai məktəbi bitirib, Həzrə kəndində orta təhsil almışdır. 1919-cu ildə Azərbaycan Dövlət Universitetinin açılması xəbərini eşidib, imtahan verərək universitetə qəbul olunmuşdur. Fərqlənmə diplomu ilə bitirdikdən sonra Xalq Maarif Komissarlığında idarə rəisi vəzifəsinə təyin olunmuş, daha sonra müxtəlif rəhbər vəzifələrdə çalışmışdır.",
+            "pers92": "O, “Sosializm tempi” qəzetinin redaktoru, Qusar Aqropedtexnikumunun və Quba Müəllimlər İnstitutunun direktoru, Qusar rayon Xalq Təhsili Şöbəsinin müdiri və orta məktəb direktoru olmuşdur. Qusarda xalq maarifinin inkişafında böyük xidmətləri olmuşdur.",
+            "pers93": "Xalq şairi Səməd Vurğunla uzun illər dost olmuşdur. Şairin onu qorumağa çalışdığı 1937-ci il hadisələri və 1951-ci ildə Səməd Vurğunun Qusarda qarşılanması bu dostluğun gücünü göstərir. Böyük Vətən müharibəsi illərində də kəndini tərk etməyərək elinə sadiq qalmışdır.",
+
+            "Agaverdi": "Ağaverdi Ağaverdiyev",
+            "Agaverdi_alt": "Ağaverdi",
+            "pers101": "Biologiya elmləri doktoru Ağaverdiyev Ağaverdi Şahverdi oğlu 1934-cü ildə Qusar rayonunun Piral kəndində anadan olmuşdur. Burada səkkizillik məktəbi, Həzrə kəndində isə qızıl medalla orta məktəbi bitirmişdir. Bakıda hərbi məktəbdə oxumuş, 1957-ci ildə Azərbaycan Dövlət Universitetinin biologiya fakültəsinə daxil olmuşdur. Universiteti fərqlənmə diplomu ilə bitirmişdir.",
+            "pers10": "Biologiya elminə sanballı töhfələr vermiş Rusiyanın adlı-sanlı alimlərindən biri Ağaverdi Ağaverdiyevin əldə etdiyi elmi nəticələrdən uzun illərdir kənd təsərrüfatında geniş istifadə olunur.",
+            "pers102": "O, M.V. Lomonosov adına Moskva Dövlət Universitetinin 3 illik aspiranturasını 1½ ilə başa vurmuş və namizədlik dissertasiyasını müdafiə etmişdir. Daha sonra Perm Universitetinin müsabiqəsində qalib gələrək müəllim, baş müəllim, kafedra müdiri kimi fəaliyyət göstərmiş və burada doktorluq dissertasiyası müdafiə etmişdir.",
+            "pers103": "1974-cü ildə V.R. Vilyams adına Elmi Tədqiqat İnstitutunda elmi işçi, 1985-ci ildə Sentrosvyozda tədqiqatçı kimi çalışmışdır. 1993-cü ildən Dağıstanda “Yujdaq” Universitetində kafedra müdiri olmuş, 1995-ci ildən professor elmi adını almışdır.",
+            "pers104": "Ağaverdi Ağaverdiyev 100-dən çox elmi əsərin, bir neçə ixtiranın, dərs vəsaitlərinin və metodik tövsiyələrin müəllifidir. O, həm də 50-dən artıq norma və göstəricinin müəllifi olan “Pirallılar” adlı antibioqrafik əsəri yazmışdır. Lakin vaxtsız vəfatı bu əsərin tamamlanmasına imkan verməmiş və əsər bir sıra səbəblərdən çap olunmamışdır."
         },
         'en': {
             // Menu
@@ -515,8 +602,28 @@ O, bu mükafatları ölkədə idmanın inkişafına verdiyi töhfələrin qiymə
             'Tera' : 'Teyara Velimetova',
             'pers7': 'Teyara Velimetova was born in 1959 in the village of Piral, Qusar district of Azerbaijan. She graduated from the Mirza Fatali Akhundov Institute of Russian Language and Literature in Baku. Her 45-year teaching career has been dedicated to education and youth development.',
             'pers71': 'For many years, she admired the work of the legendary Soviet singer Muslim Magomayev and studied his life. In 2019, her novel "My Long Love" was published with the support of Tamara Sinyavskaya and was warmly received by readers. For this work, she was awarded the Golden Yesenin Medal and a diploma from the International Literary and Musical Contest named after Muslim Magomayev.',
-            'pers72': 'Velimetova’s book "Streets of Azazel" highlights events in the Middle East, interethnic relations, and Russia’s humanitarian role in the region. In addition to fiction, she also writes methodological guides and children-s stories on ecological topics. She is a member of the Union of Writers of Russia and the International Union of Writers, and a recipient of the "Golden Pen of Moscow" award.'
+            'pers72': 'Velimetova’s book "Streets of Azazel" highlights events in the Middle East, interethnic relations, and Russia’s humanitarian role in the region. In addition to fiction, she also writes methodological guides and children-s stories on ecological topics. She is a member of the Union of Writers of Russia and the International Union of Writers, and a recipient of the "Golden Pen of Moscow" award.',
+
+            "Rafiq": "Rafiq Nurmatov",
+            "Rafiq_alt": "Rafiq",
+            "pers8": "Doctor of Technical Sciences Rafiq Jamov oglu Nurmatov was born in the village of Piral, Qusar district. He completed secondary school and studied at the Faculty of Mechanization at the Azerbaijan Agricultural Institute. After graduating with honors, R. Nurmatov worked as a chief engineer in the villages of Piral and Yasab in Qusar. Due to his knowledge and skills, he was promoted to the head of the district agricultural department.",
+            "pers81": "His strong interest in science led Rafiq to Moscow, where he entered postgraduate studies and defended a dissertation in dual-specialization mechanization. This was an unprecedented event in the history of the All-Union Scientific Research Institute of Vegetable Growing. The talented scientist was appointed as a senior researcher and rose to the position of deputy director for scientific affairs.",
+            "pers82": "Since 1971, R. Nurmatov has dedicated his career to this institute. His main research direction focused on developing new technologies for sowing agricultural crops. Under his leadership and participation, over 100 technical devices and equipment were created for agriculture in CIS countries. In 1998, he defended his doctoral dissertation. He is the author of more than 100 scientific works and around 30 inventions. His fundamental work is titled 'Principles of Designing Production Processes in Vegetable Growing.'",
+
+            "Ilyas": "Ilyas Ilyasov",
+            "Ilyas_alt": "Ilyas",
+            "pers9": "One of the first graduates of the history faculty of Azerbaijan State University was the prominent educator of our republic, Ilyas Ilyasov.",
+            "pers91": "Ilyas Aydabay oglu Ilyasov was born in 1900 in the village of Piral, Quba district. He completed primary school there and secondary education in Hazra village. In 1919, upon hearing about the opening of Azerbaijan State University, he took the entrance exam and was admitted. After graduating with honors, he was appointed head of the secondary schools department at the People's Commissariat for Education and held various leadership positions later.",
+            "pers92": "He worked as editor of the newspaper 'Socialism tempi', director of Qusar Agro-Pedagogical Technical School and Quba Teachers' Institute, head of the Qusar Department of Public Education, and school principal. He made significant contributions to the development of education in Qusar.",
+            "pers93": "He had a long-standing friendship with the national poet Samad Vurgun. The events of 1937 and the poet’s visit to Qusar in 1951 reflected their deep bond. Even during World War II, he remained loyal to his homeland and did not leave his village.",
       
+            "Agaverdi": "Agaverdi Agaverdiyev",
+            "Agaverdi_alt": "Agaverdi",
+            "pers101": "Doctor of Biological Sciences Agaverdi Shahverdi oglu Agaverdiyev was born in 1934 in the village of Piral, Qusar district. He completed eight years of schooling there and graduated with a gold medal from secondary school in Hazra. He studied at a military school in Baku and entered the Faculty of Biology at Azerbaijan State University in 1957. He graduated with honors.",
+            "pers10": "One of Russia’s renowned scientists who made significant contributions to biology, Agaverdi Agaverdiyev's scientific achievements have been widely applied in agriculture for many years.",
+            "pers102": "He completed a three-year postgraduate program at Lomonosov Moscow State University in 1.5 years and defended his PhD dissertation. Later, he won a competition to teach at Perm University, where he worked as a lecturer, senior lecturer, and head of department. He defended his doctoral dissertation there.",
+            "pers103": "In 1974, he worked as a researcher at the V.R. Williams Scientific Research Institute, and in 1985 as a researcher at Sentrosvyaz. Since 1993, he has been head of department at Yujdaq University in Dagestan. In 1995, he was awarded the title of professor.",
+            "pers104": "Agaverdi Agaverdiyev is the author of over 100 scientific works, several inventions, textbooks, and methodological guidelines. He also wrote the autobiographical work 'Pirallilars', which includes more than 50 standards and indicators, but his untimely death prevented its completion and the work was never published."
         },
         'ru': {
             // Menu
@@ -634,8 +741,28 @@ O, bu mükafatları ölkədə idmanın inkişafına verdiyi töhfələrin qiymə
             'Tera' : 'Теяра Велиметова',
             'pers7': 'Теяра Велиметова родилась в 1959 году в селе Пирал Кусарского района Азербайджана. Окончила Институт русского языка и литературы имени Мирзы Фатали Ахундова в городе Баку. Её 45-летняя педагогическая деятельность была посвящена образованию и воспитанию молодёжи.',
             'pers71': 'Много лет она восхищалась творчеством выдающегося советского певца Муслима Магомаева и занималась изучением его жизни. В 2019 году по инициативе Тамары Синявской был опубликован роман «Долгая любовь моя», который получил широкое признание. За это произведение Велиметова была награждена Золотой Есенинской медалью и дипломом Международного литературно-музыкального конкурса имени Муслима Магомаева.',
-            'pers72': 'В книге «Улицы Азазеля» Велиметова осветила события на Ближнем Востоке, отношения между народами и гуманитарную роль России в регионе. Помимо художественных произведений, она пишет методические пособия и детские рассказы на экологическую тематику. Является членом Союза писателей России и Международного союза писателей. Лауреат премии «Золотое перо Москвы».'
+            'pers72': 'В книге «Улицы Азазеля» Велиметова осветила события на Ближнем Востоке, отношения между народами и гуманитарную роль России в регионе. Помимо художественных произведений, она пишет методические пособия и детские рассказы на экологическую тематику. Является членом Союза писателей России и Международного союза писателей. Лауреат премии «Золотое перо Москвы».',
+
+            "Rafiq": "Рафик Нурматов",
+            "Rafiq_alt": "Рафик",
+            "pers8": "Доктор технических наук Рафиг Джамов оглы Нурматов родился в селе Пирал Кусарского района. Он окончил среднюю школу и поступил на факультет механизации Азербайджанского сельскохозяйственного института. Окончив его с отличием, Р. Нурматов работал главным инженером в селах Пирал и Ясаб, после чего благодаря своим знаниям и способностям был назначен руководителем районного управления сельского хозяйства.",
+            "pers81": "Большой интерес к науке привёл Рафика в Москву, где он поступил в аспирантуру и защитил диссертацию по механизации с двумя специальностями. Это было беспрецедентное событие в истории Всесоюзного научно-исследовательского института овощеводства. Талантливый учёный был назначен старшим научным сотрудником и дослужился до заместителя директора по научным вопросам.",
+            "pers82": "С 1971 года Р. Нурматов связал свою судьбу с этим институтом. Основные направления его научной деятельности связаны с разработкой новых технологий посева сельскохозяйственных культур. При его участии и руководстве было создано более 100 технических устройств и оборудования для сельского хозяйства стран СНГ. В 1998 году он защитил докторскую диссертацию. Автор более 100 научных работ и около 30 изобретений. Его фундаментальный труд называется «Основы проектирования производственных процессов в овощеводстве».",
+
+            "Ilyas": "Ильяс Ильясов",
+            "Ilyas_alt": "Ильяс",
+            "pers9": "Одним из первых выпускников исторического факультета Азербайджанского государственного университета стал известный просветитель нашей республики Ильяс Ильясов.",
+            "pers91": "Ильяс Айдабей оглы Ильясов родился в 1900 году в селе Пирал Кубинского уезда. Начальное образование получил там же, среднее — в селе Хэзрэ. В 1919 году, услышав об открытии Азербайджанского государственного университета, он сдал экзамены и был зачислен. После окончания университета с отличием был назначен начальником отдела средних школ Народного комиссариата просвещения, затем работал на различных руководящих должностях.",
+            "pers92": "Он был редактором газеты «Темп социализма», директором Кусарского агропедтехникума и Кубинского института учителей, заведующим отделом народного образования Кусарского района и директором средней школы. Он внес значительный вклад в развитие народного образования в Кусаре.",
+            "pers93": "Много лет дружил с народным поэтом Самедом Вургуном. События 1937 года и прием поэта в Кусаре в 1951 году показывают силу их дружбы. Даже во время Великой Отечественной войны он не покидал родное село и оставался верен своему народу.",
             
+            "Agaverdi": "Агаверди Агавердиев",
+            "Agaverdi_alt": "Агаверди",
+            "pers101": "Доктор биологических наук Агаверди Шахверди оглы Агавердиев родился в 1934 году в селе Пирал Кусарского района. Там он закончил восьмилетнюю школу, а среднюю школу в селе Хэзрэ окончил с золотой медалью. Учился в военной школе в Баку и в 1957 году поступил на биологический факультет Азербайджанского государственного университета. Окончил с отличием.",
+            "pers10": "Один из выдающихся российских ученых, внёсших значительный вклад в биологию, Агаверди Агавердиев, чьи научные достижения широко применяются в сельском хозяйстве уже многие годы.",
+            "pers102": "Он окончил трёхлетнюю аспирантуру МГУ им. М.В. Ломоносова за 1,5 года и защитил кандидатскую диссертацию. Позже выиграл конкурс на преподавание в Пермском университете, где работал преподавателем, старшим преподавателем и заведующим кафедрой. Там же защитил докторскую диссертацию.",
+            "pers103": "В 1974 году он работал научным сотрудником в научно-исследовательском институте им. В.Р. Вильямса, а в 1985 году — исследователем в Центросвязи. С 1993 года заведует кафедрой в университете «Юждаг» в Дагестане. В 1995 году ему присвоено звание профессора.",
+            "pers104": "Агаверди Агавердиев является автором более 100 научных работ, нескольких изобретений, учебных пособий и методических рекомендаций. Он также написал автобиографическую работу «Пираллинцы», содержащую более 50 норм и показателей, но его преждевременная смерть не позволила завершить её, и работа так и не была опубликована."
         }
     };
 
@@ -775,5 +902,6 @@ O, bu mükafatları ölkədə idmanın inkişafına verdiyi töhfələrin qiymə
         }
     });
     </script>
+    <script src="js/main.js"></script>
 </body>
 </html>

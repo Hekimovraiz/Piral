@@ -141,7 +141,7 @@ document.addEventListener('DOMContentLoaded', function() {
             'menu_news': 'News',
             'menu_contact': 'Contact',
             'menu_admin': 'Admin',
-            'welcome_title': 'Welcome to Piral Village',
+            'welcome_title': 'Welcome to Piral',
             'welcome_subtitle': 'Piral village famous for its ancient history and natural beauty',
             'about_section': 'About Piral',
             'about_summary': 'Piral is a village in Gusar District of Azerbaijan. It is located 20 km northwest of the district center.',
