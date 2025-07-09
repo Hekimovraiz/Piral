@@ -1,42 +1,46 @@
-# 🏞️ Piral Village Website
+<p align="center">
+  <img src="images/piral_kendi.jpg" alt="Piral Village" width="100%" style="border-radius:10px;">
+</p>
 
-A multilingual website showcasing the village of Piral (Qusar, Azerbaijan), its notable individuals, gallery, and local news.  
-Created by **Raiz Stxa (Hekimov)** to preserve and present the rich culture and identity of Piral.
+<h1 align="center">🏞️ Welcome to the Piral Village Website</h1>
+
+<p align="center">
+  <strong>Discover the heritage, history and culture of Piral village in Qusar, Azerbaijan</strong>
+</p>
 
 ---
 
 ## 🌟 Features
 
-- 📸 **Gallery** (`gallery.html`) — Photo showcase of Piral's environment and life
-- 📰 **News System** (`news.html`) — JSON-based local news list and details
-- 👤 **Notable People** (`notable-people.html`) — Detailed biographies with multilingual support
-- 📬 **Contact Page** (`contact.html`) — Contact form and direct communication links
-- 🌓 **Dark Mode** — Modern responsive UI with night-friendly theme
-- 🌍 **Languages** — Azerbaijani, English, Russian support with JS-based translation
-- 🔐 **Admin Panel** (`admin.html`) — Private content addition interface (planned or active)
-- 🐍 **Python Scripts** (`zzz.py`) — Data processing or internal tools
+- 📸 Gallery with local landscapes and people
+- 📰 News updates from the village
+- 👤 Notable people section with biographies
+- 🌐 Multilingual support: Azerbaijani, English, Russian
+- 🌓 Dark mode and mobile friendly layout
+- 📬 Contact page and social links
 
 ---
 
-## 📁 Project Structure
+## 📂 Folder Structure
 
+```bash
 Piral/
-├── index.html # Home page
-├── about.html # Info about Piral
-├── contact.html # Contact section
-├── gallery.html # Gallery of images
-├── news.html # News listing
-├── notable-people.html # Famous people from Piral
-├── admin.html # Admin panel
-│
-├── css/ # Styling files
-├── js/ # JavaScript (translation, interaction)
-├── images/ # Photo & asset storage
+├── index.html
+├── about.html
+├── contact.html
+├── gallery.html
+├── news.html
+├── notable-people.html
+├── admin.html
+├── css/
+├── js/
+├── images/
+│   └── piral_kendi.jpg
 ├── data/
-│ ├── news.json # News data
-│ └── people.json # Notable people bios
-├── php/ # (Optional backend handlers, if any)
-└── zzz.py # Python helper script
+│   ├── news.json
+│   └── people.json
+├── php/
+└── zzz.py
 
 ---
 
