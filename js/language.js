@@ -91,7 +91,14 @@ document.addEventListener('DOMContentLoaded', function() {
             'placeholder_msg' : "Fikriniz və ya təklifiniz",
             'btn_submit' : "Göndər",
             'footer_text' : "© 2025 Piral Kəndi. Bütün hüquqlar qorunur.",
-            'btn_gallery' : 'Qalereyaya Bax'
+            'btn_gallery' : 'Qalereyaya Bax',
+            "title_others": "Digər Bölmələr",
+    "other_sections_title": "Digər Bölmələr",
+    "link_about_piral": "Piral kəndi haqqında tam məlumat",
+    "link_gallery": "Piral kəndidən maraqlı şəkillər",
+    "link_channels": "Kəndimiz haqqında maraqlı paylaşım edən kanallar",
+    "link_admin_info": "Admin haqqında tam məlumat",
+    'menu_other' : 'Digər...'
 
         },
         'en': {
@@ -184,7 +191,14 @@ document.addEventListener('DOMContentLoaded', function() {
             'placeholder_msg' : "Your suggestion or message",
             'btn_submit' : "Send",
             'footer_text' : "© 2025 Piral Village. All rights reserved.",
-            'btn_gallery' : 'View Gallery'
+            'btn_gallery' : 'View Gallery',
+             "title_others": "Other Sections",
+    "other_sections_title": "Other Sections",
+    "link_about_piral": "Full information about Piral village",
+    "link_gallery": "Interesting pictures from Piral village",
+    "link_channels": "Interesting channels about our village",
+    "link_admin_info": "Full information about Admin",
+    'menu_other' : 'Other...'
 
         },
         'ru': {
@@ -276,7 +290,14 @@ document.addEventListener('DOMContentLoaded', function() {
             'placeholder_msg' : "Ваше предложение или сообщение",
             'btn_submit' : "Отправить",
             'footer_text' : "© 2025 Село Пирал. Все права защищены.",
-            'btn_gallery' : 'Посмотреть галерею'
+            'btn_gallery' : 'Посмотреть галерею',
+            "title_others": "Другие разделы",
+    "other_sections_title": "Другие разделы",
+    "link_about_piral": "Полная информация о селе Пирал",
+    "link_gallery": "Интересные фотографии из села Пирал",
+    "link_channels": "Интересные каналы о нашем селе",
+    "link_admin_info": "Полная информация об администраторе",
+    'menu_other' : 'Другой...'
             
         }
     };

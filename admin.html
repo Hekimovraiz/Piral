@@ -17,6 +17,58 @@
     <link rel="stylesheet" href="css/themes.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        .contact-idea-box {
+      background-color: var(--bg-card);
+      padding: 30px;
+      border-radius: 12px;
+      margin-top: 40px;
+      text-align: center;
+      color: var(--text-primary);
+      transition: background-color 0.3s ease;
+    }
+    .idea-form {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .idea-form input,
+    .idea-form textarea {
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      background-color: var(--input-bg);
+      color: var(--text-primary);
+    }
+    .idea-form input::placeholder,
+    .idea-form textarea::placeholder {
+      color: #aaa;
+    }
+    .idea-form button {
+      background-color: #2e7d32;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+    .idea-form button:hover {
+      background-color: #28992e;
+    }
+    .admin-name {
+      color: #2e7d32;
+      font-size: 1.2rem;
+      margin-top: 5px;
+    }
+    @media only screen and (max-width: 768px) {
+      body.contact-page {
+        transform: scale(0.88);
+        transform-origin: top left;
+        width: 113.6%;
+      }
+    }
         /* Admin Profil Dizaynı */
         .admin-profile {
             background: #2e7d32;
@@ -291,6 +343,51 @@
                             </div>
                         </div>
                     </div>
+                    <main>
+    <section class="contact-hero">
+      <div class="hero-overlay">
+        <div class="container">
+          <h2 data-translate="contact_title">Adminlə Ɔlaqə</h2>
+          <p class="admin-name">Raiz Hekimov</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-content">
+      <div class="container">
+        <div class="contact-methods">
+          <div class="contact-card">
+            <i class="fab fa-telegram"></i>
+            <h3>Telegram</h3>
+            <a href="https://t.me/Lezgin_R" class="btn" target="_blank" data-translate="btn_message">Mesaj Yazın</a>
+          </div>
+          <div class="contact-card">
+            <i class="fab fa-whatsapp"></i>
+            <h3>WhatsApp</h3>
+            <a href="tel:+9940707163062" class="btn" data-translate="btn_message">Mesaj Yazın</a>
+          </div>
+          <div class="contact-card">
+            <i class="fab fa-instagram"></i>
+            <h3>Instagram</h3>
+            <a href="https://www.instagram.com/hek1mov_038r" class="btn" target="_blank" data-translate="btn_message">Mesaj Yazın</a>
+          </div>
+        </div>
+
+        
+
+        <div class="contact-idea-box">
+          <h3 data-translate="idea_title">Sayt haqqında fikriniz varmı?</h3>
+          <p data-translate="idea_text">Əəgər sizin də sayt haqqında bir ideyanız və ya təklifiniz varsa, bizimlə paylaşın!</p>
+          <form action="mailto:raizhekimov2010@gmail.com" method="post" enctype="text/plain" class="idea-form">
+            <input type="text" name="name" placeholder="Adınız" data-translate="placeholder_name" required />
+            <input type="email" name="email" placeholder="Email ünvanınız" data-translate="placeholder_email" required />
+            <textarea name="message" placeholder="Fikriniz və ya təklifiniz" rows="5" data-translate="placeholder_msg" required></textarea>
+            <button type="submit" class="btn" data-translate="btn_submit">Göndər</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
 
                     <h2>Admin Girişi</h2>
                     <form id="login-form">

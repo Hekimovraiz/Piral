@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="az" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <title data-translate="title_others">Digər Bölmələr</title>
+    <link rel="icon" type="image/png" href="images/piral_icon.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/themes.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* Düymələr alt-alta, mərkəzləşdirilmiş, yaxşı görünüşlü */
+        .button-list {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            margin-top: 40px;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .button-list a {
+            display: inline-block;
+            background-color: #2e7d32;
+            color: white;
+            padding: 14px 28px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.2rem;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .button-list a:hover {
+            background-color: #28992e;
+            transform: translateY(-3px);
+        }
+
+        body:not(.night-mode) .button-list a {
+            background-color: #444;
+            color: #fff;
+        }
+
+        /* Mobil üçün daha rahat */
+        @media (max-width: 480px) {
+            .button-list {
+                max-width: 90%;
+                gap: 15px;
+            }
+            .button-list a {
+                font-size: 1.1rem;
+                padding: 12px 20px;
+            }
+        }
+    </style>
+</head>
+<body class="night-mode">
+    <header>
+        <div class="container">
+            <div class="logo">
+               <h1 class="logo-piral">PIRAL</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html" data-translate="menu_home">Ana Səhifə</a></li>
+                    <li><a href="about.html" data-translate="menu_about">Haqqında</a></li>
+                    <li><a href="news.html" data-translate="menu_news">Xəbərlər</a></li>
+                    <li><a href="notable-people.html" data-translate="menu_people">Tanınmışlar</a></li>
+                    <li><a href="admin.html" data-translate="menu_admin">Admin</a></li>
+                    <li><a href="others.html" class="active" data-translate="menu_other">Digər...</a></li>
+                </ul>
+            </nav>
+            <div class="language-switcher">
+                <button class="lang-btn active" data-lang="az">AZ</button>
+                <button class="lang-btn" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="ru">RU</button>
+            </div>
+            <button id="theme-toggle" class="theme-toggle">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="intro">
+            <div class="container">
+                <h2 data-translate="other_sections_title">Digər Bölmələr</h2>
+                <div class="button-list">
+                    <a href="about-piral.html" data-translate="link_about_piral">Piral kəndi haqqında tam məlumat</a>
+                    <a href="gallery.html" data-translate="link_gallery">Piral kəndidən maraqlı şəkillər</a>
+                    <a href="channels.html" data-translate="link_channels">Kəndimiz haqqında maraqlı paylaşım edən kanallar</a>
+                    <a href="admin-info.html" data-translate="link_admin_info">Admin haqqında tam məlumat</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p data-translate="footer_text">&copy; 2025 Piral Kəndi. Bütün hüquqlar qorunur.</p>
+        </div>
+    </footer>
+
+    <script src="js/language.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+</html>
