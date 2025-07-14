@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="az" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <title data-translate="title_channels">Sosial Media Kanalları</title>
+  <link rel="icon" type="image/png" href="images/piral_icon.png">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/themes.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+    }
+
+    header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .back-btn {
+      background-color: #1b5e20;
+      color: #f1f1f1;
+      border: none;
+      border-radius: 50px;
+      padding: 10px 18px;
+      font-size: 15px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      transition: background 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .back-btn:hover {
+      background-color: #388e3c;
+    }
+
+    .logo h1.logo-piral {
+      font-size: 22px;
+      margin: 0;
+      text-align: center;
+    }
+
+    .channel-list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      margin-top: 40px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .channel {
+      display: flex;
+      align-items: center;
+      background-color: #2e7d32;
+      color: white;
+      padding: 14px 20px;
+      border-radius: 10px;
+      width: 100%;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .channel:hover {
+      background-color: #28992e;
+      transform: translateY(-2px);
+    }
+
+    .channel i {
+      font-size: 1.5rem;
+      margin-right: 15px;
+      width: 30px;
+      text-align: center;
+    }
+
+    .channel a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    body:not(.night-mode) .channel {
+      background-color: #28992e;
+    }
+
+    .language-switcher {
+      display: flex;
+      gap: 6px;
+    }
+
+    .theme-toggle {
+      font-size: 18px;
+      padding: 6px;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #1b5e20;
+      color: white;
+    }
+
+    @media (max-width: 600px) {
+      .logo h1.logo-piral {
+        font-size: 18px;
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+      }
+
+      .back-btn {
+        font-size: 14px;
+        padding: 8px 14px;
+      }
+
+      header .container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+      .channel-list {
+        margin-top: 20px;
+      }
+    }
+  </style>
+</head>
+<body class="night-mode">
+  <header>
+    <div class="container">
+      <!-- Solda geri düyməsi -->
+      <button class="back-btn" onclick="window.location.href='others.html'">
+        <i class="fas fa-arrow-left"></i>
+        <span data-translate="back_button">Geri Qayıt</span>
+      </button>
+
+      <!-- Ortada logo -->
+      <div class="logo">
+        <h1 class="logo-piral">PIRAL</h1>
+      </div>
+
+      <!-- Sağda dillər və tema -->
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <div class="language-switcher">
+          <button class="lang-btn active" data-lang="az">AZ</button>
+          <button class="lang-btn" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="ru">RU</button>
+        </div>
+        <button id="theme-toggle" class="theme-toggle">
+          <i class="fas fa-moon"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="intro">
+      <div class="container">
+        <h2 data-translate="channel_section_title">Sosial Media Kanalları</h2>
+        <div class="channel-list">
+          <!-- Instagram -->
+          <div class="channel"><i class="fab fa-instagram"></i><a href="https://www.instagram.com/piral_xur_o38/" target="_blank">piral_xur_o38</a></div>
+          <div class="channel"><i class="fab fa-instagram"></i><a href="https://www.instagram.com/piral_qusar_azerbaijan/" target="_blank">Piral Qusar Azərbaycan</a></div>
+          <div class="channel"><i class="fab fa-instagram"></i><a href="https://www.instagram.com/piral_village/" target="_blank">Piral Village</a></div>
+          <div class="channel"><i class="fab fa-instagram"></i><a href="https://www.instagram.com/piral_football_club/" target="_blank">Piral Kənd Futbol Klub</a></div>
+          <div class="channel"><i class="fab fa-instagram"></i><a href="https://www.instagram.com/piral_cake_house/" target="_blank">Piral Cake House</a></div>
+          <div class="channel"><i class="fab fa-instagram"></i><a href="https://www.instagram.com/piralonline/" target="_blank">Piral Online</a></div>
+          <div class="channel"><i class="fab fa-instagram"></i><a href="https://www.instagram.com/qusar_manzara27/" target="_blank">Piral Mənzərə</a></div>
+
+          <!-- YouTube -->
+          <div class="channel"><i class="fab fa-youtube"></i><a href="https://www.youtube.com/@%D0%9B%D0%B5%D0%B7%D0%B3%D0%B8%D1%8F%D1%80-%D0%9B%D0%B5%D0%B7%D0%B3%D0%B8%D0%BD%D1%8B" target="_blank">Лезгияр - Lezgilər</a></div>
+          <div class="channel"><i class="fab fa-youtube"></i><a href="https://www.youtube.com/@judopiralqusar998/featured" target="_blank">Judo Piral Qusar</a></div>
+          <div class="channel"><i class="fab fa-youtube"></i><a href="https://www.youtube.com/watch?v=2RS1Z9P6x94" target="_blank">Пирал хуьр</a></div>
+          <div class="channel"><i class="fab fa-youtube"></i><a href="https://www.youtube.com/watch?v=whapSx5z4_w" target="_blank">Пирал 🤍 Лезгияр</a></div>
+          <div class="channel"><i class="fab fa-youtube"></i><a href="https://www.youtube.com/@diana.khadidi" target="_blank">Diana Khadidi</a></div>
+
+          <!-- Facebook -->
+          <div class="channel"><i class="fab fa-facebook"></i><a href="https://www.facebook.com/search/top?q=%D0%BF%D0%B8%D1%80%D0%B0%D0%BB%20%D1%85%D1%83%D1%8C%D1%80%20-%20piral%20k%C9%99nd" target="_blank">Пирал хуьр - Piral kənd</a></div>
+          <div class="channel"><i class="fab fa-facebook"></i><a href="https://www.facebook.com/profile.php?id=100063877999285" target="_blank">Piral kənd tam orta məktəbi</a></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p data-translate="footer_text">&copy; 2025 Piral Kəndi. Bütün hüquqlar qorunur.</p>
+    </div>
+  </footer>
+
+  <script src="js/language.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
