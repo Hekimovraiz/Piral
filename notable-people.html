@@ -913,22 +913,6 @@ O, bu mükafatları ölkədə idmanın inkişafına verdiyi töhfələrin qiymə
 
         initLanguage();
 
-        // Tema düyməsi
-        const themeToggleBtn = document.getElementById('theme-toggle');
-        themeToggleBtn.addEventListener('click', () => {
-            if(document.body.classList.contains('light-mode')){
-                document.body.classList.remove('light-mode');
-                document.body.classList.add('night-mode');
-                themeToggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
-                localStorage.setItem('theme', 'night-mode');
-            } else {
-                document.body.classList.remove('night-mode');
-                document.body.classList.add('light-mode');
-                themeToggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
-                localStorage.setItem('theme', 'light-mode');
-            }
-        });
-
         // Yüklənəndə saxlanmış temanı yüklə
         const savedTheme = localStorage.getItem('theme');
         if(savedTheme){
@@ -941,5 +925,6 @@ O, bu mükafatları ölkədə idmanın inkişafına verdiyi töhfələrin qiymə
     });
     </script>
     <script src="js/main.js"></script>
+    <script src="js/theme.js"></script>
 </body>
 </html>
