@@ -9,12 +9,11 @@ body {
     line-height: 1.6;
     color: #e0e0e0;
     overflow-x: hidden;
-    background: url('piralcandirraizkraldir.jpg') no-repeat center center fixed;
+    background: url('piral.jpg') no-repeat center center fixed;
     background-size: cover;
     min-height: 100vh;
 }
 
-/* Overlay for better readability */
 body::before {
     content: '';
     position: fixed;
@@ -34,25 +33,43 @@ body::before {
     z-index: 1;
 }
 
-/* Header */
+/* Header - asvalt.jpg ARXA PLAN */
 .header {
-    background: rgba(44, 62, 80, 0.95);
+    background: url('asvalt.png') no-repeat center center;
+    background-size: cover;
     color: #fff;
     text-align: center;
     padding: 60px 0;
-    backdrop-filter: blur(10px);
+    position: relative;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+
+.header .container {
+    position: relative;
+    z-index: 2;
 }
 
 .logo {
     font-size: 2.8rem;
     font-weight: 700;
     margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 .subtitle {
     font-size: 1.1rem;
-    opacity: 0.9;
+    opacity: 0.95;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
 }
 
 /* Section Titles */
@@ -73,17 +90,11 @@ body::before {
 }
 
 .map-container {
-    height: 400px;
+    height: 500px !important;
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     border: 2px solid #34495e;
-}
-
-@media (max-width: 768px) {
-    .map-container {
-        height: 300px;
-    }
 }
 
 /* About Section */
@@ -157,12 +168,6 @@ body::before {
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-}
-
-@media (max-width: 768px) {
-    .carousel {
-        height: 250px;
-    }
 }
 
 .carousel-img {
@@ -246,13 +251,6 @@ body::before {
     gap: 40px;
 }
 
-@media (max-width: 768px) {
-    .contact-content {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-}
-
 .contact-links {
     display: flex;
     flex-direction: column;
@@ -281,8 +279,8 @@ body::before {
     color: #fff;
 }
 
-.contact-link.telegram {
-    border-left: 5px solid #0088cc;
+.contact-link.piral-site {
+    border-left: 5px solid #9b59b6;
 }
 
 .contact-link.whatsapp {
@@ -349,6 +347,15 @@ body::before {
     margin-top: 20px;
 }
 
+.footer a {
+    color: #2ecc71;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
 /* Animations */
 @keyframes fadeIn {
     from {
@@ -366,12 +373,11 @@ section {
     animation: fadeIn 0.8s ease forwards;
 }
 
-/* Smooth Scroll */
 html {
     scroll-behavior: smooth;
 }
 
-/* Mobile Optimizations */
+/* MOBILE */
 @media (max-width: 768px) {
     .logo {
         font-size: 2rem;
@@ -391,10 +397,19 @@ html {
     }
 
     .project-info {
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: 1fr;
     }
 
-    .amount-buttons {
-        grid-template-columns: repeat(2, 1fr);
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .map-container {
+        height: 350px !important;
+    }
+
+    .carousel {
+        height: 250px;
     }
 }
