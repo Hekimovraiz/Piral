@@ -1,58 +1,87 @@
-// Map Initialization (OpenStreetMap) - YENİ KOORDINATLAR
 let map;
 let currentSlide = 0;
 const totalSlides = 4;
 
 function initMap() {
-    // YENİ KOORDINATLAR: Piral başlanğıc və son nöqtələri
-    const startLat = 41.49837975969222;
-    const startLng = 48.294214063280165;
-    const endLat = 41.479011260722224;
-    const endLng = 48.27517368419263;
-
-    const centerLat = (startLat + endLat) / 2;
-    const centerLng = (startLng + endLng) / 2;
-
-    map = L.map('map').setView([centerLat, centerLng], 14);
-
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '© OpenStreetMap'
-    }).addTo(map);
-
-    // YOL ROTASI (başlanğıc-dan son-a)
     const roadCoords = [
-        [startLat, startLng],
-        [41.4900, 48.2850], // Aralıq nöqtə 1
-        [41.4850, 48.2800], // Aralıq nöqtə 2
-        [endLat, endLng]
+        [41.49840928838477, 48.2942075434036],
+        [41.49782506422974, 48.292583498610405],
+        [41.49739746818773, 48.29186459743658],
+        [41.4975101397748, 48.28958662198602],
+        [41.496758992158426, 48.28943618964494],
+        [41.49582254006677, 48.28799937041494],
+        [41.49587075569661, 48.28723762303616],
+        [41.49271419363961, 48.28690423742677],
+        [41.491125531559575, 48.284715829541234],
+        [41.48881207266099, 48.28249260138276],
+        [41.48536555790238, 48.27885147351034],
+        [41.483072075797246, 48.27716344280398],
+        [41.479448364972335, 48.2755432912965],
+        [41.47889974757609, 48.275138901013634]
     ];
 
+    const centerLat = roadCoords.reduce((sum, coord) => sum + coord[0], 0) / roadCoords.length;
+    const centerLng = roadCoords.reduce((sum, coord) => sum + coord[1], 0) / roadCoords.length;
+
+    // 🛰️ CANLI UYDU GÖRÜNTÜSÜ - EVLER GÖRÜNÜR!
+    map = L.map('map', {
+        center: [centerLat, centerLng],
+        zoom: 18,
+        zoomControl: true,
+        layers: [
+            L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+                attribution: '© Esri & OpenStreetMap'
+            })
+        ]
+    });
+
+    // 🛣 SARı QALIN YOL (2.9 km)
     const road = L.polyline(roadCoords, {
         color: '#f1c40f',
-        weight: 10,
-        opacity: 0.9
+        weight: 14,
+        opacity: 1,
+        smoothFactor: 1
     }).addTo(map);
 
-    // MARKERLƏR
-    L.marker([startLat, startLng]).addTo(map)
-        .bindPopup('<b>🚩 Начало</b><br>Центр деревни Пирал')
+    // 🚩 BAŞLANĞIÇ (SARI)
+    L.marker(roadCoords[0], {
+        icon: L.divIcon({
+            html: '<div style="background: #f1c40f; width: 30px; height: 30px; border-radius: 50%; border: 3px solid white; box-shadow: 0 0 10px #f1c40f;"></div>',
+            iconSize: [30, 30],
+            className: 'custom-marker'
+        })
+    }).addTo(map)
+        .bindPopup('<h3 style="color: #f1c40f;">🚩 Начало</h3><p></p>')
         .openPopup();
 
-    L.marker([endLat, endLng]).addTo(map)
-        .bindPopup('<b>🏫 Конец</b><br>Школа и центр');
+    // 🏁 SON (QIRMIZI)
+    L.marker(roadCoords[roadCoords.length - 1], {
+        icon: L.divIcon({
+            html: '<div style="background: #e74c3c; width: 30px; height: 30px; border-radius: 50%; border: 3px solid white; box-shadow: 0 0 10px #e74c3c;"></div>',
+            iconSize: [30, 30],
+            className: 'custom-marker'
+        })
+    }).addTo(map)
+        .bindPopup('<h3 style="color: #e74c3c;">🏁 Конец</h3><p></p>');
 
-    // YOL MƏLUMATI
+    // 📋 YOL MƏLUMAT
     road.bindPopup(`
-        <div style="text-align: center; width: 200px;">
-            <h3 style="color: #f1c40f;">🛣 Новая дорога</h3>
-            <p><strong>Длина:</strong> 4.2 км</p>
-            <p><strong>Статус:</strong> Сбор средств</p>
-            <p><strong>Срок:</strong> Август 2025</p>
+        <div style="width: 280px; background: #2c3e50; color: white; padding: 15px; border-radius: 10px;">
+            <h3 style="color: #f1c40f; margin: 0 0 10px;">🛣 Новая асфальтированная дорога</h3>
+            <hr style="border: 1px solid #f1c40f;">
+            <p><strong>📏 Длина:</strong> <span style="color: #f1c40f;">2.9 км</span></p>
+            <p><strong>💰 Бюджет:</strong> <span style="color: #f1c40f;">200 000 ₼</span></p>
+            <p><strong>⏰ Срок:</strong> <span style="color: #f1c40f;">Август 2026</span></p>
+            <p><strong>🚧 Статус:</strong> <span style="color: #e74c3c;">Сбор средств</span></p>
+            <hr style="border: 1px solid #f1c40f;">
+            <small><strong>14 точек маршрута</strong></small>
         </div>
     `);
+
+    // AVTO ZOOM YOLA
+    map.fitBounds(road.getBounds().pad(0.05));
 }
 
-// Carousel
 function changeSlide(direction) {
     const slides = document.querySelectorAll('.carousel-img');
     const dots = document.querySelectorAll('.dot');
@@ -68,29 +97,22 @@ function changeSlide(direction) {
     dots[currentSlide].classList.add('active');
 }
 
-// Initialize Dots
 function initDots() {
     const dotsContainer = document.getElementById('carouselDots');
     for (let i = 0; i < totalSlides; i++) {
         const dot = document.createElement('span');
         dot.className = 'dot';
-        dot.onclick = () => {
-            currentSlide = i;
-            changeSlide(0);
-        };
+        dot.onclick = () => { currentSlide = i; changeSlide(0); };
         if (i === 0) dot.classList.add('active');
         dotsContainer.appendChild(dot);
     }
 }
 
-// Auto slide
 setInterval(() => changeSlide(1), 5000);
 
-// Contact form
 document.addEventListener('DOMContentLoaded', function () {
     initMap();
     initDots();
-
     document.getElementById('contactForm').addEventListener('submit', function (e) {
         e.preventDefault();
         alert('Спасибо! Ваше сообщение отправлено.');
