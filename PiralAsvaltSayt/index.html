@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Проект дороги Пирал | Безопасная дорога для нашей деревни</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">Проект дороги Пирал</h1>
+            <p class="subtitle">Поддержите безопасную и удобную дорогу для нашей деревни</p>
+        </div>
+    </header>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <h2 class="section-title">Маршрут дороги</h2>
+            <div id="map" class="map-container"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="container">
+            <h2 class="section-title">О проекте</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Почему эта дорога важна?</h3>
+                    <p>Дорога соединит все районы деревни, обеспечив безопасный проезд для детей в школу, скорой помощи и доставки товаров.</p>
+                    
+                    <div class="project-info">
+                        <div class="info-item">
+                            <span class="info-number">2.9 км</span>
+                            <span>Длина дороги</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-number">Август 2026</span>
+                            <span>Срок завершения</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-number">200 000 ₼</span>
+                            <span>Необходимая сумма</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+        <div class="container">
+            <h2 class="section-title">Галерея</h2>
+            <div class="carousel-container">
+                <div class="carousel" id="carousel">
+                    <img src="https://via.placeholder.com/800x500/4CAF50/FFFFFF?text=Текущая+дорога+1" alt="Текущая дорога 1" class="carousel-img active">
+                    <img src="https://via.placeholder.com/800x500/4CAF50/FFFFFF?text=Текущая+дорога+2" alt="Текущая дорога 2" class="carousel-img">
+                    <img src="https://via.placeholder.com/800x500/FFEB3B/000000?text=План+новой+дороги" alt="План новой дороги" class="carousel-img">
+                    <img src="https://via.placeholder.com/800x500/2196F3/FFFFFF?text=Строительные+работы" alt="Строительные работы" class="carousel-img">
+                </div>
+                <button class="carousel-btn prev" onclick="changeSlide(-1)">❮</button>
+                <button class="carousel-btn next" onclick="changeSlide(1)">❯</button>
+                <div class="carousel-dots" id="carouselDots"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Контакты</h2>
+            <div class="contact-content">
+                <div class="contact-links">
+                    <a href="https://t.me/piraldoroga" class="contact-link telegram" target="_blank">Telegram</a>
+                    <a href="https://wa.me/994XXXXXXXXX" class="contact-link whatsapp" target="_blank">WhatsApp</a>
+                    <a href="mailto:piral.doroga@gmail.com" class="contact-link email">Email</a>
+                </div>
+                
+                <form class="contact-form" id="contactForm">
+                    <input type="text" placeholder="Ваше имя" required>
+                    <textarea placeholder="Сообщение" rows="4" required></textarea>
+                    <button type="submit">Отправить</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Проект дороги Пирал. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="script.js"></script>
+</body>
+</html>
