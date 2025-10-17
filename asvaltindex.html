@@ -6,6 +6,7 @@
     <title>Проект дороги Пирал | Безопасная дорога для нашей деревни</title>
     <link rel="stylesheet" href="asvaltstyle.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
 <body>
     <!-- Header -->
@@ -19,7 +20,7 @@
     <!-- Map Section -->
     <section class="map-section">
         <div class="container">
-            <h2 class="section-title">Маршрут дороги</h2>
+            <h2 class="section-title">🗺 Реальный маршрут дороги</h2>
             <div id="map" class="map-container"></div>
         </div>
     </section>
@@ -58,10 +59,10 @@
             <h2 class="section-title">Галерея</h2>
             <div class="carousel-container">
                 <div class="carousel" id="carousel">
-                    <img src="https://via.placeholder.com/800x500/4CAF50/FFFFFF?text=Текущая+дорога+1" alt="Текущая дорога 1" class="carousel-img active">
-                    <img src="https://via.placeholder.com/800x500/4CAF50/FFFFFF?text=Текущая+дорога+2" alt="Текущая дорога 2" class="carousel-img">
-                    <img src="https://via.placeholder.com/800x500/FFEB3B/000000?text=План+новой+дороги" alt="План новой дороги" class="carousel-img">
-                    <img src="https://via.placeholder.com/800x500/2196F3/FFFFFF?text=Строительные+работы" alt="Строительные работы" class="carousel-img">
+                    <img src="myph1.jpg" alt="Текущая дорога 1" class="carousel-img active">
+                    <img src="myph2.jpg" alt="Текущая дорога 2" class="carousel-img">
+                    <img src="myph3.jpg" alt="План новой дороги" class="carousel-img">
+                    <img src="myph4.jpg" alt="Строительные работы" class="carousel-img">
                 </div>
                 <button class="carousel-btn prev" onclick="changeSlide(-1)">❮</button>
                 <button class="carousel-btn next" onclick="changeSlide(1)">❯</button>
@@ -76,9 +77,9 @@
             <h2 class="section-title">Контакты</h2>
             <div class="contact-content">
                 <div class="contact-links">
-                    <a href="https://t.me/piraldoroga" class="contact-link telegram" target="_blank">Telegram</a>
+                    <a href="https://piral.site" class="contact-link piral-site" target="_blank">🌐 Piral.site</a>
                     <a href="https://wa.me/994XXXXXXXXX" class="contact-link whatsapp" target="_blank">WhatsApp</a>
-                    <a href="mailto:piral.doroga@gmail.com" class="contact-link email">Email</a>
+                    <a href="mailto:raizhekimov2010gmail.com" class="contact-link email">Email</a>
                 </div>
                 
                 <form class="contact-form" id="contactForm">
@@ -93,13 +94,12 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Проект дороги Пирал. Все права защищены.</p>
+            <p>&copy; 2025 Проект дороги Пирал. Все права защищены. <a href="https://piral.site">piral.site</a></p>
         </div>
     </footer>
 
-    <!-- Scripts -->
+    <!-- Leaflet -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="asvaltscript.js"></script>
 </body>
 </html>
