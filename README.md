@@ -58,22 +58,6 @@ Sayt **3 dildə** təqdim olunur:
 
 ---
 
-## 👨‍💻 Müəllif
-
-**Raiz Stxa (Hekimov)**  
-📍 Piral kəndi, Qusar rayonu  
-🧑‍💻 Developer, Lezgi gənci, mədəniyyət araşdırıcısı  
-
-### Əlaqə və Sosial Şəbəkələr:
-- 🔗 GitHub: [Hekimovraiz](https://github.com/Hekimovraiz)
-- 💬 Telegram (şəxsi): [@hakimovr](https://t.me/hakimovr)
-- 📢 Telegram (kanal): [@python_qusar](https://t.me/python_qusar)
-- 📞 WhatsApp: [+994 70 716 30 62](https://wa.me/994707163062)
-- 📸 Instagram: [@hek1mov_038r](https://www.instagram.com/hek1mov_038r)
-- ▶️ YouTube: [@py-qusar](https://www.youtube.com/@py-qusar)
-
----
-
 > Bu layihə Piral kəndinin mədəni kimliyini qorumaq və gələcək nəsillərə ötürmək üçün hazırlanmışdır.  
 > Saytda yer alan bütün məlumatlar yerli mənbələrə əsaslanır. Əlavə etmək istədiyiniz şəxs və ya məlumat varsa, mənimlə əlaqə saxlaya bilərsiniz.
 
